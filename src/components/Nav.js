@@ -19,6 +19,8 @@ export default function Nav() {
                 <li><a href="#INTRO" id="btnI" title="景點介紹">景點介紹</a></li>
                 <li><a href="#RECOMMEND" id="btnC" title="我要推薦">我要推薦</a></li>
                 <li><a href="#OTHERS" id="btnO" title="其他">其他</a></li>
+                <li><a href="#OTHERS" id="btnO" title="其他">這次新增的東西</a></li>
+                <li><a href="#OTHERS" id="btnO" title="其他">TEST123</a></li>
             </ul>
         </nav>
     );
