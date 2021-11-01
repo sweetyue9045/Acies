@@ -1,8 +1,6 @@
 import './Footer.css';
 import FOOTER from "../assets/im/footer_right.svg";
 
-
-
 export default function Footer() {
     return (
         <footer>

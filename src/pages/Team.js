@@ -1,15 +1,15 @@
 import Nav from "../components/Nav"
-import HContent from "../components/HContent"
+import TContent from "../components/TContent"
 import Footer from "../components/Footer"
 
-function Home() {
+function Team() {
     return (
         <div>
             <Nav />
-            <HContent />
+            <TContent />
             <Footer />
         </div>
     );
 }
 
-export default Home;
+export default Team;

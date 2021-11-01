@@ -7,7 +7,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    user-select: none;
 }
 
 .logo {
@@ -22,11 +21,14 @@ nav {
 .menu li {
     list-style: none;
     text-shadow: 0 0 20px #fff;
-    color: #fff;
 }
 
 .menu li:first-child {
     margin-right: 16.455px;
+}
+
+.menu li:hover {
+    filter: drop-shadow(0 0 10px rgb(255, 255, 255));
 }
 
 .menu_link {
@@ -34,6 +36,7 @@ nav {
     justify-items: center;
     align-items: center;
     text-align: center;
+    color: #fff;
 }
 
 .menu_top {

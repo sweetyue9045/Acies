@@ -1,9 +1,7 @@
-import './News.css';
+import './HContent.css';
 import LOGO from "../assets/im/logo.svg";
-import { Link } from "react-router-dom"
 
-
-export default function News() {
+export default function HContent() {
     return (
         <div>
             <div className="feature">
