@@ -4,11 +4,13 @@
 * {
     margin: 0;
     padding: 0;
+    position: relative;
     box-sizing: border-box;
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 300;
     text-align: center;
     text-decoration: none;
+    user-select: none;
 }
 
 * ::-webkit-scrollbar {

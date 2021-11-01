@@ -1,15 +1,15 @@
 import Nav from "../components/Nav"
-import HContent from "../components/HContent"
+import GContent from "../components/GContent"
 import Footer from "../components/Footer"
 
-function Home() {
+function Game() {
     return (
         <div>
             <Nav />
-            <HContent />
+            <GContent />
             <Footer />
         </div>
     );
 }
 
-export default Home;
+export default Game;
