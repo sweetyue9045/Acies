@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 export default function Nav() {
     return (
-        <nav>
+        <nav>          
             <Link to={`/`}>
                 <div className="logo">
                     <img className="cl cl1" src={LOGO} />
