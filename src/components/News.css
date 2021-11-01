@@ -1,6 +1,6 @@
 .feature{
     width: 100%;
-    min-height: 910px;
+    min-height: 800px;
     background-image: url(../assets/im/bg.svg);
     background-size: cover;
     display: flex;
