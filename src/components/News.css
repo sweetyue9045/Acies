@@ -2,13 +2,13 @@
     width: 100%;
     min-height: 800px;
     background-image: url(../assets/im/bg.png);
-    background-size: cover;
+    background-position: center -30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-img{
+.feature img{
     filter:drop-shadow(0 0 10px #FFDE89);
 }
 .feature .content{
