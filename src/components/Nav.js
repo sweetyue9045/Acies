@@ -8,7 +8,7 @@ export default function Nav() {
         <nav>          
             <Link to={`/`}>
                 <div className="logo">
-                    <img className="cl cl1" src={LOGO} />
+                    <img src={LOGO} />
                 </div>
             </Link>
             <ul className="menu">
