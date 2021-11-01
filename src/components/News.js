@@ -1,6 +1,5 @@
 import './News.css';
 import LOGO from "../assets/im/logo.svg";
-import BG from "../assets/im/bg.svg";
 import { Link } from "react-router-dom"
 
 
