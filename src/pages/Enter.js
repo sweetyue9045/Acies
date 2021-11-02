@@ -1,6 +1,6 @@
 import '../components/Enter.css';
 import GIF from "../assets/im/start_gif.gif";
-import Parallax from "../assets/im/parallax.png";
+import PARALLAX from "../assets/im/parallax.png";
 import LOGO from "../assets/im/start_logo.svg";
 import LOGO_BG from "../assets/im/start_logo_bg.png";
 import BG_L from "../assets/im/start_bg_l.png";
@@ -11,18 +11,38 @@ import Arrow_R from "../assets/im/Arrow_R.svg";
 import Footer from "../components/Footer"
 
 import { Link } from "react-router-dom"
+import { Parallax} from "react-parallax";
 
 function Enter() {
     return (
         <div>
-            <img src={GIF} className="gif_bg" />
-            <div className="enter_top">
+            <Parallax renderLayer={percentage => (
+                <img src={GIF}
+                    style={{
+                        position: 'absolute',
+                        left: '0',
+                        top: percentage * 500 -500,
+                        width: '100%',
+                        height: 'auto',
+                    }}
+                />
+            )} >
+                <div className="enter_top">
+                    <div className="logo" >
+                        <img src={LOGO_BG} />
+                        <img src={LOGO} />
+                    </div>
+                    <img src={PARALLAX} className="parallax" />
+                </div>
+            </Parallax>
+
+            {/* <div className="enter_top">
                 <div className="logo" >
                     <img src={LOGO_BG} />
                     <img src={LOGO} />
                 </div>
-                <img src={Parallax} className="parallax" />
-            </div>
+                <img src={PARALLAX} className="parallax" />
+            </div> */}
             <div className="enter_bottom">
                 <img src={BG_L} />
                 <img src={BG_C} />
