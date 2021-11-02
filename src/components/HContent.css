@@ -1,7 +1,7 @@
 .feature{
     width: 100%;
     min-height: 800px;
-    background-image: url(../assets/im/bg.png);
+    background-image: url(../assets/im/home_bg.png);
     background-position: center -30px;
     display: flex;
     flex-direction: column;

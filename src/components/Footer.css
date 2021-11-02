@@ -5,6 +5,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #000;
+
 }
 
 .footer_left {
