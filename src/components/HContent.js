@@ -1,5 +1,5 @@
 import './HContent.css';
-import LOGO from "../assets/im/logo.svg";
+import LOGO from "../assets/im/home_logo.svg";
 
 export default function HContent() {
     return (

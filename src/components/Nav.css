@@ -7,9 +7,10 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #000;
 }
 
-.logo {
+nav .logo {
     display: flex;
     min-width: none;
 }
@@ -28,7 +29,7 @@ nav {
 }
 
 .menu li:hover {
-    filter: drop-shadow(0 0 10px rgb(255, 255, 255));
+    filter: drop-shadow(0 0 10px #fff);
 }
 
 .menu_link {
