@@ -21,7 +21,8 @@ nav .logo {
 
 .menu li {
     list-style: none;
-    text-shadow: 0 0 20px #fff;
+    transition: all .5s ease;
+
 }
 
 .menu li:first-child {
@@ -29,7 +30,7 @@ nav .logo {
 }
 
 .menu li:hover {
-    filter: drop-shadow(0 0 10px #fff);
+    filter: drop-shadow(0 0 5px #fff);
 }
 
 .menu_link {
@@ -45,6 +46,7 @@ nav .logo {
     font-size: var(--fz18);
     letter-spacing: 5px;
     margin-left: 3px;
+    filter: drop-shadow(0 0 5px #fff);
 }
 
 .menu_bottom {
@@ -52,6 +54,7 @@ nav .logo {
     letter-spacing: 3px;
     font-weight: 100;
     display: inline-block;
+    filter: drop-shadow(0 0 5px #fff);
 }
 
 .menu li:first-child .menu_bottom {

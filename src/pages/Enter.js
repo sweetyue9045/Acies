@@ -11,18 +11,23 @@ import Arrow_R from "../assets/im/Arrow_R.svg";
 import Footer from "../components/Footer"
 
 import { Link } from "react-router-dom"
-import { Parallax} from "react-parallax";
+import { Parallax } from "react-parallax";
 
 function Enter() {
+    const win = window.innerWidth;
+    const px = 1440 / win *100+'%';
+    console.log(px)
+
     return (
         <div>
             <Parallax renderLayer={percentage => (
                 <img src={GIF}
                     style={{
                         position: 'absolute',
-                        left: '0',
-                        top: percentage * 500 -500,
-                        width: '100%',
+                        left: '50%',
+                        top: percentage * 500 - 500,
+                        transform: 'translateX(-50%)',
+                        width: px,
                         height: 'auto',
                     }}
                 />
@@ -35,14 +40,6 @@ function Enter() {
                     <img src={PARALLAX} className="parallax" />
                 </div>
             </Parallax>
-
-            {/* <div className="enter_top">
-                <div className="logo" >
-                    <img src={LOGO_BG} />
-                    <img src={LOGO} />
-                </div>
-                <img src={PARALLAX} className="parallax" />
-            </div> */}
             <div className="enter_bottom">
                 <img src={BG_L} />
                 <img src={BG_C} />
