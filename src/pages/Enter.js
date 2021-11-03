@@ -14,9 +14,14 @@ import { Link } from "react-router-dom"
 import { Parallax } from "react-parallax";
 
 function Enter() {
-    const win = window.innerWidth;
-    const px = 1440 / win *100+'%';
-    console.log(px)
+    const win_wid = window.innerWidth;
+    const win_hei = window.innerHeight;
+    const percent = 1440 / win_wid;
+    let hh = '1350px';
+    if (win_wid > win_hei) {
+        hh = ((1041 * percent) + (309 * percent)) + 'px';
+    }
+    else { hh = '1350px'; }
 
     return (
         <div>
@@ -27,12 +32,16 @@ function Enter() {
                         left: '50%',
                         top: percentage * 500 - 500,
                         transform: 'translateX(-50%)',
-                        width: px,
+                        width: percent * 100 + '%',
                         height: 'auto',
                     }}
                 />
             )} >
-                <div className="enter_top">
+                <div className="enter_top"
+                    style={{
+                        width: percent * 100 + '%',
+                        height: hh,
+                    }}>
                     <div className="logo" >
                         <img src={LOGO_BG} />
                         <img src={LOGO} />
