@@ -75,8 +75,8 @@ hr {
 }
 
 .skill {
-    min-height: 1200px;
-    top: 140px;
+    min-height: 1000px;
+    margin-top: 140px;
 }
 
 .skill .content {
