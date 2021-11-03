@@ -1,4 +1,4 @@
-.feature{
+.feature {
     width: 100%;
     min-height: 800px;
     background-image: url(../assets/im/home_bg.png);
@@ -8,14 +8,104 @@
     align-items: center;
     justify-content: center;
 }
-.feature img{
-    filter:drop-shadow(0 0 5px #FFDE89);
+
+.feature img {
+    filter: drop-shadow(0 0 5px #FFDE89);
 }
-.feature .content{
-    filter:drop-shadow(0 0 5px #fff);
+
+.feature .content {
+    filter: drop-shadow(0 0 5px #fff);
     max-width: 820px;
     font-size: var(--fz30);
     letter-spacing: 5px;
     line-height: 60px;
     margin-top: 60px;
+}
+
+.sister {
+    min-height: 1000px;
+}
+
+.video {
+    min-height: 1990px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video_bg {
+    margin: 0 140px;
+    filter: drop-shadow(0 0 5px #fff);
+}
+
+.video .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.video_block {
+    margin-top: 100px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    filter: drop-shadow(0 0 5px #fff);
+    font-size: 38px;
+    letter-spacing: 20px;
+}
+
+.title_text {
+    margin: -8px 22px 0 42px;
+}
+
+hr {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 880px;
+    border: 0;
+    height: 3px;
+    background-image: url("../assets/im/dotted_line.svg");
+    overflow: hidden;
+}
+
+.skill {
+    min-height: 1200px;
+    top: 140px;
+}
+
+.skill .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 110px;
+}
+
+.skill_text {
+    margin-left: 65px;
+}
+
+.skill_text .title {
+    display: block;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.skill_text .explain {
+    width: 330px;
+    font-size: 28px;
+    line-height: 50px;
+    letter-spacing: 12px;
+    text-align: left;
+    filter: drop-shadow(0 0 5px #fff);
+}
+
+.game_btn {
+    top: 8px;
+    margin-right: 10px;
 }
