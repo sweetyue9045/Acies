@@ -24,6 +24,21 @@
 
 .sister {
     min-height: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.sister .name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    filter: drop-shadow(0 0 5px #fff);
+    font-size: 38px;
+    letter-spacing: 20px;
+}
+.page{
+    flex-direction: column;
 }
 
 .video {

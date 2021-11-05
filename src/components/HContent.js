@@ -8,6 +8,11 @@ import VIDEO from "../assets/im/video.png";
 import SKILL from "../assets/im/skill.png";
 import X_btn from "../assets/im/X_btn.svg";
 
+import sister_L from "../assets/im/sister_L.svg";
+import sister_R from "../assets/im/sister_R.svg";
+import grass_L from "../assets/im/grass_L.svg";
+import grass_R from "../assets/im/grass_R.svg";
+
 
 export default function HContent() {
     return (
@@ -22,7 +27,28 @@ export default function HContent() {
                 </div>
             </div>
             <div className="sister">
-
+                <div className="page">
+                    <div className="name">
+                        <img src={ARROW_L} />
+                        <div className="title_text">薇妲</div>
+                        <img src={ARROW_R} />
+                    </div>
+                    <div>
+                        <img src={sister_L} />
+                        <img src={grass_L} />
+                    </div>
+                </div>
+                <div className="page">
+                    <div className="name">
+                        <img src={ARROW_L} />
+                        <div className="title_text">莉妲</div>
+                        <img src={ARROW_R} />
+                    </div>
+                    <div>
+                        <img src={sister_R} />
+                        <img src={grass_R} />
+                    </div>
+                </div>
             </div>
             <div className="video">
                 <img src={VIDEO_L} className="video_bg" />
@@ -67,7 +93,7 @@ export default function HContent() {
                     <div className="skill_text">
                         <div className="title">凝聚之光</div>
                         <div className="explain">
-                            按下<img src={X_btn} className="game_btn"/>
+                            按下<img src={X_btn} className="game_btn" />
                             ，注視靈魂與法鈴啟動技能。
                         </div>
                     </div>
@@ -77,7 +103,7 @@ export default function HContent() {
                     <div className="skill_text">
                         <div className="title">凝聚之光</div>
                         <div className="explain">
-                            按下<img src={X_btn} className="game_btn"/>
+                            按下<img src={X_btn} className="game_btn" />
                             ，注視靈魂與法鈴啟動技能。
                         </div>
                     </div>
