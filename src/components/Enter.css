@@ -1,5 +1,7 @@
-body{
-    overflow: overlay;
+body {
+    overflow-y: overlay;
+    overflow-x: hidden;
+
 }
 
 .enter_top {
@@ -22,14 +24,15 @@ body{
     top: 50px;
     animation: fadein 3s linear;
 }
-.enter_top .logo img{
+
+.enter_top .logo img {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
-.enter_top .logo img:last-child{
+.enter_top .logo img:last-child {
     animation: flash 2s linear infinite;
 }
 
@@ -108,4 +111,11 @@ body{
     font-weight: 700;
     font-size: var(--fz14);
     letter-spacing: 13px;
+}
+
+.img_gif {
+    position: absolute;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
 }
