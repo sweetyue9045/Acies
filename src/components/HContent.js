@@ -35,7 +35,7 @@ export default function HContent() {
                     </div>
                     <div>
                         <img src={sister_L} />
-                        <img src={grass_L} />
+                        <img className="bg_grass" src={grass_L} />
                     </div>
                 </div>
                 <div className="page">
@@ -45,8 +45,8 @@ export default function HContent() {
                         <img src={ARROW_R} />
                     </div>
                     <div>
-                        <img src={sister_R} />
-                        <img src={grass_R} />
+                        <img classNam ="sisterimg_R"src={sister_R} />
+                        <img className="bg_grass" src={grass_R} />
                     </div>
                 </div>
             </div>

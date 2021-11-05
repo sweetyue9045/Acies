@@ -40,6 +40,10 @@
 .page{
     flex-direction: column;
 }
+.sisterimg{
+    width: auto;
+    height: 80%;
+}
 
 .video {
     min-height: 1990px;
