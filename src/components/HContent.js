@@ -8,13 +8,38 @@ import VIDEO from "../assets/im/video.png";
 import SKILL from "../assets/im/skill.png";
 import X_btn from "../assets/im/X_btn.svg";
 
-import sister_L from "../assets/im/sister_L.svg";
-import sister_R from "../assets/im/sister_R.svg";
-import grass_L from "../assets/im/grass_L.svg";
-import grass_R from "../assets/im/grass_R.svg";
+import SISTER_L from "../assets/im/sister_L.png";
+import SISTER_R from "../assets/im/sister_R.png";
 
+import SISTER_R2 from "../assets/im/sister_R2.png";
+import SISTER_L2 from "../assets/im/sister_L2.png";
 
 export default function HContent() {
+    var click =function(element) {
+       // console.log(document.getElementById(element.target.id).src);
+       // var srcc=document.getElementById(element.target.id).id;       
+       if (element.target.id === "SISTER_R"){
+       // document.getElementById(element.target.id).src=SISTER_R2;
+       document.getElementById(element.target.id).classList.add("flip");
+       var resetAnimation = function() {
+           document.getElementById(element.target.id).classList.add("flip-reverse");
+           document.getElementById(element.target.id).classList.remove("flip");
+           document.getElementById(element.target.id).src=SISTER_R2;
+         };
+       setTimeout(resetAnimation, 1000);
+       }
+       else if(element.target.id === "SISTER_L"){
+        document.getElementById(element.target.id).classList.add("flip");
+        var resetAnimation = function() {
+            document.getElementById(element.target.id).classList.add("flip-reverse");
+            document.getElementById(element.target.id).classList.remove("flip");
+            document.getElementById(element.target.id).src=SISTER_L2;
+          };
+        setTimeout(resetAnimation, 1000);
+        
+       }
+       
+    }
     return (
         <div>
             <div className="feature">
@@ -33,9 +58,8 @@ export default function HContent() {
                         <div className="title_text">薇妲</div>
                         <img src={ARROW_R} />
                     </div>
-                    <div>
-                        <img src={sister_L} />
-                        <img className="bg_grass" src={grass_L} />
+                    <div className="sisimg">
+                        <img id="SISTER_L"  onClick={click.bind(this)} src={SISTER_L} />
                     </div>
                 </div>
                 <div className="page">
@@ -44,9 +68,8 @@ export default function HContent() {
                         <div className="title_text">莉妲</div>
                         <img src={ARROW_R} />
                     </div>
-                    <div>
-                        <img classNam ="sisterimg_R"src={sister_R} />
-                        <img className="bg_grass" src={grass_R} />
+                    <div className="sisimg">
+                        <img id="SISTER_R" src={SISTER_R} onClick={click.bind(this)} />
                     </div>
                 </div>
             </div>

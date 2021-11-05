@@ -27,22 +27,41 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    background-image: url(../assets/im/bg_grass.png);
+    background-repeat: no-repeat;
+    background-position:center 80%;
 }
 .sister .name{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     filter: drop-shadow(0 0 5px #fff);
     font-size: 38px;
     letter-spacing: 20px;
 }
 .page{
     flex-direction: column;
+    margin-top: 88px;
 }
-.sisterimg{
-    width: auto;
-    height: 80%;
+.sisimg:hover{
+    transform:scale(1.03);
+    filter: drop-shadow(0 0 5px #fff);    
+}
+.flip{
+    transform-style: preserve-3d;
+    transition: transform 1000ms;
+    transform:rotateY(90deg);
+}
+.flip-reverse{
+    transform-style: preserve-3d;
+    transition: transform 1000ms;
+    transform:rotateY(0deg);
+}
+.bg_grass{
+    position: absolute;
+    margin:80px;
+    justify-content: space-between;
 }
 
 .video {
