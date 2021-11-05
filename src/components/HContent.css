@@ -29,7 +29,7 @@
     justify-content: space-evenly;
     background-image: url(../assets/im/bg_grass.png);
     background-repeat: no-repeat;
-    background-position:center 80%;
+    background-position:center 84%;
 }
 .sister .name{
     display: flex;
@@ -44,19 +44,123 @@
     flex-direction: column;
     margin-top: 88px;
 }
-.sisimg:hover{
+
+.sisimg .text{ 
+    display: none;
+    position: absolute;
+    width: 350px;
+    margin:100px 120px;
+    top: 0;
+
+    filter: drop-shadow(0 0 5px #fff);
+    max-width: 820px;
+    font-size: 28px;
+    letter-spacing: 5px;
+    line-height: 60px;
+}
+#cancelL{
+    position: absolute;
+    top: 0;
+    margin: -70px -90px;
+}
+#cancelR{
+    position: absolute;
+    top: 0;
+    margin: -70px 290px;
+}
+#textR{
+    margin:100px 80px;
+}
+#page2L{
+    display: none;
+}
+#page2R{
+    display: none;
+}
+.state:hover{
+    transition: transform 500ms;
     transform:scale(1.03);
     filter: drop-shadow(0 0 5px #fff);    
 }
-.flip{
-    transform-style: preserve-3d;
-    transition: transform 1000ms;
-    transform:rotateY(90deg);
+.rightfadeout{
+    animation: rightfadeout 800ms ease-in;
 }
-.flip-reverse{
-    transform-style: preserve-3d;
-    transition: transform 1000ms;
-    transform:rotateY(0deg);
+.rightfadein{
+    animation: rightfadein 800ms ease-in;
+    margin-top:80px;
+}
+@keyframes rightfadeout {
+    0% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(50px);
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes rightfadein {
+    0% {
+        transform: translateX(80px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+.leftfadeout{
+    animation: leftfadeout 800ms ease-in;
+}
+.leftfadein{
+    animation: leftfadein 800ms ease-in;
+    margin-top:80px;
+}
+@keyframes leftfadeout {
+    0% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50px);
+        opacity: 0;
+        display: none;
+    }
+}
+@keyframes leftfadein {
+    0% {
+        transform: translateX(-80px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.flip {
+    animation: fadeout 800ms ease-in;
+}
+
+.flip-reverse {
+    animation: fadein 800ms ease-out;
+}
+@keyframes fadeout {
+    0% {
+        transform: perspective(600px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(600px) rotateY(90deg);
+    }
+}
+@keyframes fadein {
+    0% {
+        transform: perspective(600px) rotateY(270deg);
+    }
+    100% {
+        transform: perspective(600px) rotateY(360deg);
+    }
 }
 .bg_grass{
     position: absolute;
@@ -146,4 +250,8 @@ hr {
 .game_btn {
     top: 8px;
     margin-right: 10px;
+}
+
+.displaynone{
+    display: none !important;
 }
