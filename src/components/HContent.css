@@ -478,7 +478,7 @@ hr {
     top: 50px;
     transform: translateX(-50%);
     filter: drop-shadow(0 0 5px #fff);
-
+    padding-top: 50px;
 }
 .year{
     font-size: 40px;

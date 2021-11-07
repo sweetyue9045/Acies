@@ -14,12 +14,12 @@ import BTN_CANCEL from "../assets/im/cancel.svg";
 
 import V_BG_L from "../assets/im/video_l.svg";
 import V_BG_R from "../assets/im/video_r.svg";
-// import V_AGENCY from "../assets/im/video_agency.mp4";
-// import V_GAME from "../assets/im/video_game.mp4";
-// import V_BOSS from "../assets/im/video_BOSS.mp4";
+import V_AGENCY from "../assets/im/video_agency.mp4";
+import V_GAME from "../assets/im/video_game.mp4";
+import V_BOSS from "../assets/im/video_BOSS.mp4";
 
-// import S_X from "../assets/im/skill_X_btn.mp4";
-// import S_Y from "../assets/im/skill_Y_btn.mp4";
+import S_X from "../assets/im/skill_X_btn.mp4";
+import S_Y from "../assets/im/skill_Y_btn.mp4";
 import X_btn from "../assets/im/skill_X_btn.svg";
 import Y_btn from "../assets/im/skill_Y_btn.svg";
 import A_btn from "../assets/im/skill_A_btn.svg";
@@ -282,7 +282,7 @@ export default function HContent() {
                             <img src={ARROW_R} />
                         </div>
                         <video width="800" controls>
-                            {/* <source src={V_AGENCY} type="video/mp4" /> */}
+                            <source src={V_AGENCY} type="video/mp4" />
                             您的瀏覽器不支援此 HTML5 影片標籤
                         </video>
                     </div>
@@ -293,7 +293,7 @@ export default function HContent() {
                             <img src={ARROW_R} />
                         </div>
                         <video width="800" controls>
-                            {/* <source src={V_GAME} type="video/mp4" /> */}
+                            <source src={V_GAME} type="video/mp4" />
                             您的瀏覽器不支援此 HTML5 影片標籤
                         </video>
                     </div>
@@ -304,7 +304,7 @@ export default function HContent() {
                             <img src={ARROW_R} />
                         </div>
                         <video width="800" controls>
-                            {/* <source src={V_BOSS} type="video/mp4" /> */}
+                            <source src={V_BOSS} type="video/mp4" />
                             您的瀏覽器不支援此 HTML5 影片標籤
                         </video>
                     </div>
@@ -320,7 +320,7 @@ export default function HContent() {
                 </div>
                 <div className="content">
                     <video width="570" controls>
-                        {/* <source src={S_X} type="video/mp4" /> */}
+                        <source src={S_X} type="video/mp4" />
                         您的瀏覽器不支援此 HTML5 影片標籤
                     </video>
                     <div className="skill_text">
@@ -332,7 +332,7 @@ export default function HContent() {
                 </div>
                 <div className="content">
                     <video width="570" controls>
-                        {/* <source src={S_Y} type="video/mp4" /> */}
+                        <source src={S_Y} type="video/mp4" />
                         您的瀏覽器不支援此 HTML5 影片標籤
                     </video>
                     <div className="skill_text">
