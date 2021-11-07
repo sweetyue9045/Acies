@@ -1,5 +1,7 @@
-body{
-    overflow: overlay;
+body {
+    overflow-y: overlay;
+    overflow-x: hidden;
+
 }
 
 .enter_top {
@@ -20,16 +22,17 @@ body{
     left: 50%;
     transform: translateX(-50%);
     top: 50px;
-    animation: fadein 3s linear;
+    animation: logo_fadein 3s linear;
 }
-.enter_top .logo img{
+
+.enter_top .logo img {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
-.enter_top .logo img:last-child{
+.enter_top .logo img:last-child {
     animation: flash 2s linear infinite;
 }
 
@@ -39,7 +42,7 @@ body{
     bottom: 0;
 }
 
-@keyframes fadein {
+@keyframes logo_fadein {
     0% {
         opacity: 0;
     }
@@ -70,7 +73,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: -100px;
     background-color: #000;
 }
 
@@ -108,4 +110,11 @@ body{
     font-weight: 700;
     font-size: var(--fz14);
     letter-spacing: 13px;
+}
+
+.img_gif {
+    position: absolute;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
 }
