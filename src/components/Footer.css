@@ -17,5 +17,9 @@ footer {
 }
 
 .footer_right{
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     filter:drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
