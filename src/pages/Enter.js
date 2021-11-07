@@ -16,15 +16,23 @@ import { useState, useEffect } from "react";
 function Enter() {
     const win_wid = document.body.clientWidth;
     const win_hei = document.body.clientHeight;
-    const percent = 1440 / win_wid;
+    let percent
     const [offsetY, setOffsetY] = useState(0);
     const handleScroll = () => setOffsetY(document.documentElement.scrollTop);
 
     let hh = '1350px';
     if (win_wid > win_hei) {
-        hh = ((1041 * percent) + (309 * percent)) + 'px';
+        if (win_wid <= 1440) {
+            percent = 1440 / win_wid;
+            hh = ((1041 * percent) + (309 * percent));
+
+        } else if (win_wid > 1440) {
+            percent = win_wid / 1440;
+            hh = ((1041 * percent) + (600 * percent));
+
+        }
     }
-    else { hh = '1350px'; }
+    else { hh = '1350'; }
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
@@ -43,8 +51,7 @@ function Enter() {
             />
             <div className="enter_top"
                 style={{
-                    width: percent * 100 + '%',
-                    height: hh,
+                    height: hh + 'px',
                 }}>
                 <div className="logo" >
                     <img src={LOGO_BG} />
@@ -52,7 +59,10 @@ function Enter() {
                 </div>
                 <img src={PARALLAX} className="parallax" />
             </div>
-            <div className="enter_bottom">
+            <div className="enter_bottom"
+                style={{
+                    margin: -hh / 10 + 'px 0 0 0'
+                }}>
                 <img src={BG_L} />
                 <img src={BG_C} />
                 <img src={BG_R} />
