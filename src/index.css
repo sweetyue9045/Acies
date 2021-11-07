@@ -1,6 +1,11 @@
 /* 設定共用品項 */
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+@font-face {
+    font-family: STHeiti;
+    src: url(assets/STHeiti_Light.ttc);
+  }
 * {
     margin: 0;
     padding: 0;
@@ -24,6 +29,7 @@
 
 
 :root {
+    --fz32: 32px;
     --fz30: 30px;
     --fz26: 26px;
     --fz22: 22px;
