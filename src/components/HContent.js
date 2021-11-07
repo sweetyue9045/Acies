@@ -19,75 +19,168 @@ import BG_TEXT2 from "../assets/im/bg_text2.png";
 
 import BTN_CANCEL from "../assets/im/cancel.svg";
 
+
+
 export default function HContent() {
 
-    var click = function (element) {
-        if (element.target.id === "sister_R") {
-            document.getElementById(element.target.id).classList.remove("state");
-            document.getElementById(element.target.id).classList.add("flip");
-            document.getElementById('sister_L').classList.add("leftfadeout");
-            document.getElementById('textL').classList.add("leftfadein");
+    var click = function (e) {
+        var targetR = document.getElementById('sister_R');
+        var targetpageR = document.getElementById('page2R');
+        var targettextR = document.getElementById('textR');
+        var targetnameR = document.getElementById('nameR');
 
-            document.getElementById('page2L').classList.add("leftfadein");
-            var flipAnimation = function () {
-                document.getElementById(element.target.id).classList.add("flip-reverse");
-                document.getElementById(element.target.id).classList.remove("flip");
-                document.getElementById(element.target.id).src = SISTER_R2;
-                document.getElementById('nameL').classList.add("displaynone");
-                document.getElementById('sister_L').classList.add("displaynone");
-               
-                //document.getElementById('nameL').style.display = "none";
-                document.getElementById('page2L').style.display = "block";
-                document.getElementById('textL').style.display = "block";
-            };
-            setTimeout(flipAnimation, 800);
-        }
-        else if (element.target.id === "sister_L") {
-            document.getElementById(element.target.id).classList.remove("state");
-            document.getElementById(element.target.id).classList.add("flip");
-            document.getElementById('sister_R').classList.add("rightfadeout");
-            document.getElementById('textR').classList.add("rightfadein");
+        var targetL = document.getElementById('sister_L');
+        var targetpageL = document.getElementById('page2L');
+        var targettextL = document.getElementById('textL');
+        var targetnameL = document.getElementById('nameL');
 
-            document.getElementById('page2R').classList.add("rightfadein");
-            var flipAnimation = function () {
-                document.getElementById(element.target.id).classList.add("flip-reverse");
-                document.getElementById(element.target.id).classList.remove("flip");
-                document.getElementById(element.target.id).src = SISTER_L2;
-                document.getElementById('sister_R').style.display = "none";
-                document.getElementById('nameR').style.display = "none";
-                document.getElementById('page2R').style.display = "block";
-                document.getElementById('textR').style.display = "block";
-            };
-            setTimeout(flipAnimation, 800);
-        }
 
-    }
-    
-    var animL = function () {
-        document.getElementById('nameL').classList.remove("displaynone");
+        if (e.target.id === 'sister_R') {
 
-       // document.getElementById('sister_R').classList.remove("flip-reverse");
-        document.getElementById('sister_R').classList.add("flip");
-       // document.getElementById('textL').classList.remove("leftfadein");
-        document.getElementById('textL').classList.add("leftfadeout");
-        document.getElementById('page2L').classList.add("leftfadeout");
-       // document.getElementById('page2L').classList.remove("leftfadein");
-        document.getElementById('sister_L').classList.add("flip-reverse");
-        document.getElementById('sister_L').src=SISTER_L;
         
+            targetR.classList.add('flip');
+            targetL.classList.add('leftfadeout');
+           
 
-        var flipAnimation = function () {
-            document.getElementById('sister_R').classList.add("flip-reverse");
-            document.getElementById('sister_R').src=SISTER_R;
-           document.getElementById('textL').style.display="none";
-           document.getElementById('page2L').style.display="none";
-           document.getElementById('sister_L').style.display="block";
-        };
-        setTimeout(flipAnimation, 800);
+            var animEnd = function () {
+                targetR.classList.add('flip2');
+                targetR.src = SISTER_R2;
+
+                targetL.classList.add('displaynone');
+                targetnameL.classList.add('displaynone');
+
+                targetpageL.classList.remove('displaynone');
+                targetpageL.classList.add('leftfadein');
+
+                targettextL.classList.remove('displaynone');
+                targettextL.classList.add('leftfadein');
+                setTimeout(reset,1000)
+            }
+            setTimeout(animEnd, 800);
+
+            var reset=function(){
+                targetL.classList.remove('leftfadeout');
+                targetL.classList.remove('leftfadein');  
+               
+            }
+        }
+        else if (e.target.id === "sister_L") {
+
+            targetL.classList.add('flip');
+            targetR.classList.add('rightfadeout');
+
+            var animEnd = function () {
+                targetL.classList.add('flip2');
+                targetL.src = SISTER_L2;
+
+                targetR.classList.add('displaynone');
+                targetnameR.classList.add('displaynone');
+
+                targetpageR.classList.remove('displaynone');
+                targetpageR.classList.add('rightfadein');
+
+                targettextR.classList.remove('displaynone');
+                targettextR.classList.add('rightfadein');
+                setTimeout(reset,1000)
+            }
+            setTimeout(animEnd, 800);
+
+            var reset=function(){
+                targetR.classList.remove('rightfadeout');
+                targetR.classList.remove('rightfadein'); 
+                targettextR.classList.remove('rightfadeout'); 
+               
+            }
+        }
     }
+
+    var animL = function () {
+        var targetR = document.getElementById('sister_R');
+
+        var targetL = document.getElementById('sister_L');
+        var targetpageL = document.getElementById('page2L');
+        var targettextL = document.getElementById('textL');
+        var targetnameL = document.getElementById('nameL');
+
+        targetR.classList.add('flip-reverse');
+
+        targetpageL.classList.remove('leftfadein');
+        targettextL.classList.remove('leftfadein');
+
+        targetpageL.classList.add('leftfadeout');
+        targettextL.classList.add('leftfadeout');
+
+        var animEnd = function () {
+
+            targetR.classList.add('flip2-reverse');
+            targetR.src = SISTER_R;
+
+            targetpageL.classList.add('displaynone');
+            targettextL.classList.add('displaynone');
+
+            targetnameL.classList.remove('displaynone');
+
+            targetL.classList.add('leftfadein');
+            targetL.classList.remove('displaynone');
+            setTimeout(reset, 1000);
+        }
+        setTimeout(animEnd, 800);
+
+        var reset = function () {
+            targetR.classList.remove('flip');
+            targetR.classList.remove('flip2');
+            targetR.classList.remove('flip-reverse');
+            targetR.classList.remove('flip2-reverse');
+            targetR.classList.remove('leftfadeout');
+            targetL.classList.remove('leftfadein'); 
+        }
+    }
+
     var animR = function () {
+        var targetL = document.getElementById('sister_L');
+
+        var targetR = document.getElementById('sister_R');
+        var targetpageR = document.getElementById('page2R');
+        var targettextR = document.getElementById('textR');
+        var targetnameR = document.getElementById('nameR');
+        
+        targetL.classList.add('flip-reverse');
+
+        targetpageR.classList.remove('rightfadein');
+        targettextR.classList.remove('rightfadein');
+
+        targetpageR.classList.add('rightfadeout');
+        targettextR.classList.add('rightfadeout');
+
+        var animEnd = function () {
+
+            targetL.classList.add('flip2-reverse');
+            targetL.src = SISTER_L;
+
+            targetpageR.classList.add('displaynone');
+            targettextR.classList.add('displaynone');
+
+            targetnameR.classList.remove('displaynone');
+
+            targetR.classList.add('rightfadein');
+            targetR.classList.remove('displaynone');
+            setTimeout(reset, 1000);
+        }
+        setTimeout(animEnd, 800);
+
+        var reset = function () {
+            targetL.classList.remove('flip');
+            targetL.classList.remove('flip2');
+            targetL.classList.remove('flip-reverse');
+            targetL.classList.remove('flip2-reverse');
+            targetL.classList.remove('rightfadeout');
+            targetR.classList.remove('rightfadein'); 
+        }
 
     }
+
+
+
     return (
         <div>
             <div className="feature">
@@ -108,9 +201,9 @@ export default function HContent() {
                     </div>
                     <div className="sisimg">
                         <img className="state" id="sister_L" onClick={click.bind(this)} src={SISTER_L} />
-                        <img id="page2L" className="page2" src={BG_TEXT} />
+                        <img id="page2L" className="page2 displaynone" src={BG_TEXT} />
 
-                        <div id="textL" className="text"> <img id="cancelL" onClick={animL} src={BTN_CANCEL} />雙胞胎中的姊姊<br />個性驕傲嚴謹，內心是個溫柔的人。因為總會管教妹妹，兩人之間發生不少爭執。<br /><br />冒險旅途中會披上祖傳披風，也會增加許多民俗感的小元素。</div>
+                        <div id="textL" className="text displaynone"> <img id="cancelL" onClick={animL} src={BTN_CANCEL} />雙胞胎中的姊姊<br />個性驕傲嚴謹，內心是個溫柔的人。因為總會管教妹妹，兩人之間發生不少爭執。<br /><br />冒險旅途中會披上祖傳披風，也會增加許多民俗感的小元素。</div>
                     </div>
                 </div>
 
@@ -124,8 +217,8 @@ export default function HContent() {
                     <div className="sisimg" >
                         <img id="sister_R" className="state" src={SISTER_R} onClick={click.bind(this)} />
 
-                        <img id="page2R" className="page2" src={BG_TEXT2} />
-                        <div id="textR" className="text"> <img id="cancelR" onClick={animR()} src={BTN_CANCEL} />雙胞胎中的妹妹<br />個性活潑開朗、 樂於助人，容易衝動 犯錯，內心渴望於他人的認可。<br /><br />冒險旅途中會變成靈魂型態，保有原本特色並且跟隨在姊姊身旁。</div>
+                        <img id="page2R" className="page2 displaynone" src={BG_TEXT2} />
+                        <div id="textR" className="text displaynone"> <img id="cancelR" onClick={animR} src={BTN_CANCEL} />雙胞胎中的妹妹<br />個性活潑開朗、 樂於助人，容易衝動 犯錯，內心渴望於他人的認可。<br /><br />冒險旅途中會變成靈魂型態，保有原本特色並且跟隨在姊姊身旁。</div>
                     </div>
                 </div>
             </div>
