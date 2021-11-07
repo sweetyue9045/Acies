@@ -1,5 +1,9 @@
 import './HContent.css';
 import LOGO from "../assets/im/home_logo.svg";
+
+import ARROW_L from "../assets/im/home_arrow_l.svg";
+import ARROW_R from "../assets/im/home_arrow_r.svg";
+
 import SISTER_L from "../assets/im/sister_L.png";
 import SISTER_R from "../assets/im/sister_R.png";
 import SISTER_L2 from "../assets/im/sister_L2.png";
@@ -7,21 +11,36 @@ import SISTER_R2 from "../assets/im/sister_R2.png";
 import BG_TEXT from "../assets/im/bg_text.png";
 import BG_TEXT2 from "../assets/im/bg_text2.png";
 import BTN_CANCEL from "../assets/im/cancel.svg";
-import VIDEO_L from "../assets/im/video_l.svg";
-import VIDEO_R from "../assets/im/video_r.svg";
-import ARROW_L from "../assets/im/home_arrow_l.svg";
-import ARROW_R from "../assets/im/home_arrow_r.svg";
-import VIDEO from "../assets/im/video.png";
-import SKILL from "../assets/im/skill.png";
-import X_btn from "../assets/im/X_btn.svg";
-import V_MOSSINA from "../assets/im/v_mossina.svg"
-import V_AFEITE from "../assets/im/v_afeite.svg"
-import V_SCALE from "../assets/im/v_scale.svg"
-import V_TAMA from "../assets/im/v_tama.svg"
-import V_MOSSINA_BG from "../assets/im/v_mossina_bg.png"
-import V_AFEITE_BG from "../assets/im/v_afeite_bg.png"
-import V_SCALE_BG from "../assets/im/v_scale_bg.png"
-import V_TAMA_BG from "../assets/im/v_tama_bg.png"
+
+import V_BG_L from "../assets/im/video_l.svg";
+import V_BG_R from "../assets/im/video_r.svg";
+// import V_AGENCY from "../assets/im/video_agency.mp4";
+// import V_GAME from "../assets/im/video_game.mp4";
+// import V_BOSS from "../assets/im/video_BOSS.mp4";
+
+// import S_X from "../assets/im/skill_X_btn.mp4";
+// import S_Y from "../assets/im/skill_Y_btn.mp4";
+import X_btn from "../assets/im/skill_X_btn.svg";
+import Y_btn from "../assets/im/skill_Y_btn.svg";
+import A_btn from "../assets/im/skill_A_btn.svg";
+
+import V_MOSSINA from "../assets/im/village_mossina.svg"
+import V_AFEITE from "../assets/im/village_afeite.svg"
+import V_SCALE from "../assets/im/village_scale.svg"
+import V_TAMA from "../assets/im/village_tama.svg"
+import V_MOSSINA_BG from "../assets/im/village_mossina_bg.png"
+import V_AFEITE_BG from "../assets/im/village_afeite_bg.png"
+import V_SCALE_BG from "../assets/im/village_scale_bg.png"
+import V_TAMA_BG from "../assets/im/village_tama_bg.png"
+
+import S_TOWN from "../assets/im/scene_town.png"
+import S_WATER from "../assets/im/scene_water_capital.png"
+import S_SHRINE from "../assets/im/scene_shrine.png"
+import S_MURAL from "../assets/im/scene_mural.png"
+
+import S_STEAM from "../assets/im/sale_steam.svg"
+import S_SWITCH from "../assets/im/sale_switch.svg"
+import S_PS4 from "../assets/im/sale_PS4.svg"
 
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom"
@@ -94,9 +113,9 @@ export default function HContent() {
 
                 targettextL.classList.remove('displaynone');
                 targettextL.classList.add('leftfadein');
-                setTimeout(reset, 1000)
+                setTimeout(reset, 500)
             }
-            setTimeout(animEnd, 800);
+            setTimeout(animEnd, 400);
 
             var reset = function () {
                 targetL.classList.remove('leftfadeout');
@@ -121,15 +140,13 @@ export default function HContent() {
 
                 targettextR.classList.remove('displaynone');
                 targettextR.classList.add('rightfadein');
-                setTimeout(reset, 1000)
+                setTimeout(reset, 500)
             }
-            setTimeout(animEnd, 800);
+            setTimeout(animEnd, 400);
 
             var reset = function () {
                 targetR.classList.remove('rightfadeout');
                 targetR.classList.remove('rightfadein');
-                targettextR.classList.remove('rightfadeout');
-
             }
         }
     }
@@ -162,9 +179,9 @@ export default function HContent() {
 
             targetL.classList.add('leftfadein');
             targetL.classList.remove('displaynone');
-            setTimeout(reset, 1000);
+            setTimeout(reset, 500);
         }
-        setTimeout(animEnd, 800);
+        setTimeout(animEnd, 400);
 
         var reset = function () {
             targetR.classList.remove('flip');
@@ -204,9 +221,9 @@ export default function HContent() {
 
             targetR.classList.add('rightfadein');
             targetR.classList.remove('displaynone');
-            setTimeout(reset, 1000);
+            setTimeout(reset, 500);
         }
-        setTimeout(animEnd, 800);
+        setTimeout(animEnd, 400);
 
         var reset = function () {
             targetL.classList.remove('flip');
@@ -239,13 +256,10 @@ export default function HContent() {
                     <div className="sisimg">
                         <img className="state" id="sister_L" onClick={click.bind(this)} src={SISTER_L} />
                         <img id="page2L" className="page2 displaynone" src={BG_TEXT} />
-
                         <div id="textL" className="text displaynone"> <img id="cancelL" onClick={animL} src={BTN_CANCEL} />雙胞胎中的姊姊<br />個性驕傲嚴謹，內心是個溫柔的人。因為總會管教妹妹，兩人之間發生不少爭執。<br /><br />冒險旅途中會披上祖傳披風，也會增加許多民俗感的小元素。</div>
                     </div>
                 </div>
-
                 <div className="page">
-
                     <div className="name" id="nameR">
                         <img src={ARROW_L} />
                         <div className="title_text">莉妲</div>
@@ -253,14 +267,13 @@ export default function HContent() {
                     </div>
                     <div className="sisimg" >
                         <img id="sister_R" className="state" src={SISTER_R} onClick={click.bind(this)} />
-
                         <img id="page2R" className="page2 displaynone" src={BG_TEXT2} />
                         <div id="textR" className="text displaynone"> <img id="cancelR" onClick={animR} src={BTN_CANCEL} />雙胞胎中的妹妹<br />個性活潑開朗、 樂於助人，容易衝動 犯錯，內心渴望於他人的認可。<br /><br />冒險旅途中會變成靈魂型態，保有原本特色並且跟隨在姊姊身旁。</div>
                     </div>
                 </div>
             </div>
             <div className="video">
-                <img src={VIDEO_L} className="video_bg" />
+                <img src={V_BG_L} className="video_bg" />
                 <div className="content">
                     <div className="video_block">
                         <div className="title">
@@ -268,7 +281,10 @@ export default function HContent() {
                             <div className="title_text">平台機關</div>
                             <img src={ARROW_R} />
                         </div>
-                        <img src={VIDEO} />
+                        <video width="800" controls>
+                            {/* <source src={V_AGENCY} type="video/mp4" /> */}
+                            您的瀏覽器不支援此 HTML5 影片標籤
+                        </video>
                     </div>
                     <div className="video_block">
                         <div className="title">
@@ -276,7 +292,10 @@ export default function HContent() {
                             <div className="title_text">專注力遊戲</div>
                             <img src={ARROW_R} />
                         </div>
-                        <img src={VIDEO} />
+                        <video width="800" controls>
+                            {/* <source src={V_GAME} type="video/mp4" /> */}
+                            您的瀏覽器不支援此 HTML5 影片標籤
+                        </video>
                     </div>
                     <div className="video_block">
                         <div className="title">
@@ -284,10 +303,13 @@ export default function HContent() {
                             <div className="title_text">BOSS戰</div>
                             <img src={ARROW_R} />
                         </div>
-                        <img src={VIDEO} />
+                        <video width="800" controls>
+                            {/* <source src={V_BOSS} type="video/mp4" /> */}
+                            您的瀏覽器不支援此 HTML5 影片標籤
+                        </video>
                     </div>
                 </div>
-                <img src={VIDEO_R} className="video_bg" />
+                <img src={V_BG_R} className="video_bg" />
             </div>
             <hr />
             <div className="skill">
@@ -297,22 +319,26 @@ export default function HContent() {
                     <img src={ARROW_R} />
                 </div>
                 <div className="content">
-                    <img src={SKILL} />
+                    <video width="570" controls>
+                        {/* <source src={S_X} type="video/mp4" /> */}
+                        您的瀏覽器不支援此 HTML5 影片標籤
+                    </video>
                     <div className="skill_text">
-                        <div className="title">凝聚之光</div>
+                        <div className="title">物體移動</div>
                         <div className="explain">
-                            按下<img src={X_btn} className="game_btn" />
-                            ，注視靈魂與法鈴啟動技能。
+                            按下<img src={X_btn} className="game_btn game_btn_X" />，注視靈魂與法鈴啟動技能。
                         </div>
                     </div>
                 </div>
                 <div className="content">
-                    <img src={SKILL} />
+                    <video width="570" controls>
+                        {/* <source src={S_Y} type="video/mp4" /> */}
+                        您的瀏覽器不支援此 HTML5 影片標籤
+                    </video>
                     <div className="skill_text">
                         <div className="title">凝聚之光</div>
                         <div className="explain">
-                            按下<img src={X_btn} className="game_btn" />
-                            ，注視靈魂與法鈴啟動技能。
+                            按下<img src={Y_btn} className="game_btn" />啟動技能。注視欲移動物品，按住<img src={A_btn} className="game_btn" />以視線拖曳至目標位置。
                         </div>
                     </div>
                 </div>
@@ -357,6 +383,35 @@ export default function HContent() {
                     </div>
                     <div className="v_ch v_tama">塔瑪</div>
                 </div>
+            </div>
+            <div className="scene">
+                <div className="title">
+                    <img src={ARROW_L} />
+                    <div className="title_text">遊戲場景</div>
+                    <img src={ARROW_R} />
+                </div>
+                <div className="content">
+                    <img src={S_TOWN} />
+                    <img src={S_WATER} />
+                    <img src={S_SHRINE} />
+                    <img src={S_MURAL} />
+                </div>
+            </div>
+            <div className="sale">
+                <div className="content">
+                    <div className="year">2021</div>
+                    <div className="date">11.12</div>
+                    <div className="s_ch">正式發售</div>
+                    <div className="s_en">RELEASE</div>
+                    <div className="platform">
+                        <img src={S_STEAM} />
+                        <img src={S_SWITCH} />
+                        <img src={S_PS4} />
+                    </div>
+
+
+                </div>
+
             </div>
         </div>
     );
