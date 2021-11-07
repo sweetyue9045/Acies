@@ -25,7 +25,6 @@ function Enter() {
         hh = ((1041 * percent) + (309 * percent)) + 'px';
     }
     else { hh = '1350px'; }
-    console.log(win_wid, win_hei)
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
