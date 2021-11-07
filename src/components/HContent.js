@@ -1,5 +1,12 @@
 import './HContent.css';
 import LOGO from "../assets/im/home_logo.svg";
+import SISTER_L from "../assets/im/sister_L.png";
+import SISTER_R from "../assets/im/sister_R.png";
+import SISTER_L2 from "../assets/im/sister_L2.png";
+import SISTER_R2 from "../assets/im/sister_R2.png";
+import BG_TEXT from "../assets/im/bg_text.png";
+import BG_TEXT2 from "../assets/im/bg_text2.png";
+import BTN_CANCEL from "../assets/im/cancel.svg";
 import VIDEO_L from "../assets/im/video_l.svg";
 import VIDEO_R from "../assets/im/video_r.svg";
 import ARROW_L from "../assets/im/home_arrow_l.svg";
@@ -16,50 +23,34 @@ import V_AFEITE_BG from "../assets/im/v_afeite_bg.png"
 import V_SCALE_BG from "../assets/im/v_scale_bg.png"
 import V_TAMA_BG from "../assets/im/v_tama_bg.png"
 
-import SISTER_L from "../assets/im/sister_L.png";
-import SISTER_R from "../assets/im/sister_R.png";
-
-import SISTER_R2 from "../assets/im/sister_R2.png";
-import SISTER_L2 from "../assets/im/sister_L2.png";
-
-import BG_TEXT from "../assets/im/bg_text.png";
-import BG_TEXT2 from "../assets/im/bg_text2.png";
-
-import BTN_CANCEL from "../assets/im/cancel.svg";
-
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom"
-
-
-
-
-
-
-
-
 
 export default function HContent() {
     const [offsetY, setOffsetY] = useState(0);
     const [flag, setflag] = useState(0);
-    var v_top = document.getElementById("village");
     const handleScroll = () => {
         setOffsetY(document.documentElement.scrollTop);
-
     }
+    const v_top = document.getElementById("village");
+    const hr_c = document.getElementsByClassName("hr_column");
 
+    // 監聽滾動
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
 
         return () => window.addEventListener("scroll", handleScroll, true);
-
     }, []);
+
+    // 抓取加動畫位置
     if (offsetY > 0 && flag == 0) {
         setflag(ReactDOM.findDOMNode(v_top).getBoundingClientRect().top);
     }
-    const e = document.getElementsByClassName("hr_column");
-    if (offsetY >= flag && flag != 0) {
-        for (let i = 0; i < e.length; i++) {
-            e[i].classList.add('v_fadein');
+
+    // 加動畫
+    if (offsetY >= flag - 300 && flag != 0) {
+        for (let i = 0; i < hr_c.length; i++) {
+            hr_c[i].classList.add('v_fadein');
         }
         setTimeout(function () {
             document.getElementById('v_mossina').classList.add('v_fadein');
@@ -74,19 +65,6 @@ export default function HContent() {
             document.getElementById('v_tama').classList.add('v_fadein');
         }, 2000);
     }
-    // else if (offsetY < flag-200 && flag != 0) {
-    //     console.log("我出去囉")
-    //     for (let i = 0; i < e.length; i++) {
-    //         e[i].classList.remove('v_fadein');
-    //     }
-    //     document.getElementById('v_mossina').classList.remove('v_fadein');
-    //     document.getElementById('v_scale').classList.remove('v_fadein');
-    //     document.getElementById('v_afeite').classList.remove('v_fadein');
-    //     document.getElementById('v_tama').classList.remove('v_fadein');
-
-    // }
-
-
 
     var click = function (e) {
         var targetR = document.getElementById('sister_R');
@@ -99,34 +77,31 @@ export default function HContent() {
         var targettextL = document.getElementById('textL');
         var targetnameL = document.getElementById('nameL');
 
-
         if (e.target.id === 'sister_R') {
 
-        
             targetR.classList.add('flip');
             targetL.classList.add('leftfadeout');
-           
 
             var animEnd = function () {
                 targetR.classList.add('flip2');
                 targetR.src = SISTER_R2;
 
                 targetL.classList.add('displaynone');
-                targetnameL.classList.add('displaynone');
+                targetnameL.classList.add('displaynone2');
 
                 targetpageL.classList.remove('displaynone');
                 targetpageL.classList.add('leftfadein');
 
                 targettextL.classList.remove('displaynone');
                 targettextL.classList.add('leftfadein');
-                setTimeout(reset,1000)
+                setTimeout(reset, 1000)
             }
             setTimeout(animEnd, 800);
 
-            var reset=function(){
+            var reset = function () {
                 targetL.classList.remove('leftfadeout');
-                targetL.classList.remove('leftfadein');  
-               
+                targetL.classList.remove('leftfadein');
+
             }
         }
         else if (e.target.id === "sister_L") {
@@ -139,22 +114,22 @@ export default function HContent() {
                 targetL.src = SISTER_L2;
 
                 targetR.classList.add('displaynone');
-                targetnameR.classList.add('displaynone');
+                targetnameR.classList.add('displaynone2');
 
                 targetpageR.classList.remove('displaynone');
                 targetpageR.classList.add('rightfadein');
 
                 targettextR.classList.remove('displaynone');
                 targettextR.classList.add('rightfadein');
-                setTimeout(reset,1000)
+                setTimeout(reset, 1000)
             }
             setTimeout(animEnd, 800);
 
-            var reset=function(){
+            var reset = function () {
                 targetR.classList.remove('rightfadeout');
-                targetR.classList.remove('rightfadein'); 
-                targettextR.classList.remove('rightfadeout'); 
-               
+                targetR.classList.remove('rightfadein');
+                targettextR.classList.remove('rightfadeout');
+
             }
         }
     }
@@ -183,7 +158,7 @@ export default function HContent() {
             targetpageL.classList.add('displaynone');
             targettextL.classList.add('displaynone');
 
-            targetnameL.classList.remove('displaynone');
+            targetnameL.classList.remove('displaynone2');
 
             targetL.classList.add('leftfadein');
             targetL.classList.remove('displaynone');
@@ -197,7 +172,7 @@ export default function HContent() {
             targetR.classList.remove('flip-reverse');
             targetR.classList.remove('flip2-reverse');
             targetR.classList.remove('leftfadeout');
-            targetL.classList.remove('leftfadein'); 
+            targetL.classList.remove('leftfadein');
         }
     }
 
@@ -208,7 +183,7 @@ export default function HContent() {
         var targetpageR = document.getElementById('page2R');
         var targettextR = document.getElementById('textR');
         var targetnameR = document.getElementById('nameR');
-        
+
         targetL.classList.add('flip-reverse');
 
         targetpageR.classList.remove('rightfadein');
@@ -225,7 +200,7 @@ export default function HContent() {
             targetpageR.classList.add('displaynone');
             targettextR.classList.add('displaynone');
 
-            targetnameR.classList.remove('displaynone');
+            targetnameR.classList.remove('displaynone2');
 
             targetR.classList.add('rightfadein');
             targetR.classList.remove('displaynone');
@@ -239,7 +214,7 @@ export default function HContent() {
             targetL.classList.remove('flip-reverse');
             targetL.classList.remove('flip2-reverse');
             targetL.classList.remove('rightfadeout');
-            targetR.classList.remove('rightfadein'); 
+            targetR.classList.remove('rightfadein');
         }
 
     }

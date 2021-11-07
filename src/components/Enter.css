@@ -22,7 +22,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     top: 50px;
-    animation: fadein 3s linear;
+    animation: logo_fadein 3s linear;
 }
 
 .enter_top .logo img {
@@ -42,7 +42,7 @@ body {
     bottom: 0;
 }
 
-@keyframes fadein {
+@keyframes logo_fadein {
     0% {
         opacity: 0;
     }
@@ -73,7 +73,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: -100px;
     background-color: #000;
 }
 
