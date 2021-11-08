@@ -45,13 +45,14 @@ import SALE_PS4 from "../assets/im/sale_PS4.svg"
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom"
 
+
 export default function HContent() {
     const [offsetY, setOffsetY] = useState(0);
-    const [flag, setflag] = useState(0);
+    const [flag, setflag] = useState([]);
     const handleScroll = () => {
         setOffsetY(document.documentElement.scrollTop);
     }
-    const v_top = document.getElementById("village");
+    const v_top = [document.getElementById("village"), document.getElementById("sale")];
     const hr_c = document.getElementsByClassName("hr_column");
 
     // 監聽滾動
@@ -62,12 +63,26 @@ export default function HContent() {
     }, []);
 
     // 抓取加動畫位置
-    if (offsetY > 0 && flag == 0) {
-        setflag(ReactDOM.findDOMNode(v_top).getBoundingClientRect().top);
+    if (offsetY > 0 && flag.length == 0) {
+        setflag(flag.push(ReactDOM.findDOMNode(v_top[0]).getBoundingClientRect().top));
+        setflag(flag.push(ReactDOM.findDOMNode(v_top[1]).getBoundingClientRect().top));
     }
-
-    // 加動畫
-    if (offsetY >= flag - 300 && flag != 0) {
+    // // 加動畫
+    if (offsetY >= flag[1] - 300 && offsetY <= flag[1] + 10 && flag.length != 0) {
+        console.log("0")
+        v_top[1].children[0].children[0].classList.add('v_fadein');
+        setTimeout(function () {
+            v_top[1].children[0].children[1].classList.add('v_fadein');
+        }, 500);
+        setTimeout(function () {
+            v_top[1].children[0].children[2].classList.add('v_fadein');
+            v_top[1].children[0].children[3].classList.add('v_fadein');
+        }, 1000);
+        setTimeout(function () {
+            v_top[1].children[0].children[4].classList.add('v_fadein');
+        }, 1500);
+    } else if (offsetY >= flag[0] - 300 && offsetY <= flag[0] + 10 && flag.length != 0) {
+        console.log("1")
         for (let i = 0; i < hr_c.length; i++) {
             hr_c[i].classList.add('v_fadein');
         }
@@ -87,9 +102,8 @@ export default function HContent() {
 
     var click_open = function (e) {
         var spstr = e.target.id.split("");
-        var open = "";
-        var close = "";
-        var my_src = "";
+        var open, close, my_src = "";
+
         if (spstr[spstr.length - 1] == "R") { open = "R"; close = "L"; my_src = SISTER_R2 }
         else if (spstr[spstr.length - 1] == "L") { open = "L"; close = "R"; my_src = SISTER_L2 }
 
@@ -100,35 +114,36 @@ export default function HContent() {
         var targetname_close = document.getElementById('name' + close);
 
         target_open.classList.add('flip');
-        target_close.classList.add(close+'_fadeout');
+        target_open.classList.remove('click_point');
+        target_close.classList.add(close + '_fadeout');
+        targetname_close.classList.add('displaynone2');
 
         var animEnd = function () {
-            target_open.classList.add('flip2');
             target_open.src = my_src;
+            target_open.classList.add('flip2');
 
             target_close.classList.add('displaynone');
-            targetname_close.classList.add('displaynone2');
 
             targetpage_close.classList.remove('displaynone');
-            targetpage_close.classList.add(close+'_fadein');
+            targetpage_close.classList.add(close + '_fadein');
 
             targettext_close.classList.remove('displaynone');
-            targettext_close.classList.add(close+'_fadein');
-            setTimeout(reset, 500)
+            targettext_close.classList.add(close + '_fadein');
+            setTimeout(reset, 400)
         }
+
         setTimeout(animEnd, 400);
 
         var reset = function () {
-            target_close.classList.remove(close+'_fadeout');
-            target_close.classList.remove(close+'_fadein');
+            target_close.classList.remove(close + '_fadeout');
+            target_close.classList.remove(close + '_fadein');
 
         }
+
     }
     var click_close = function (e) {
         var spstr = e.target.id.split("");
-        var open = "";
-        var close = "";
-        var my_src = "";
+        var open, close, my_src = "";
 
         if (spstr[spstr.length - 1] == "R") { open = "L"; close = "R"; my_src = SISTER_L }
         else if (spstr[spstr.length - 1] == "L") { open = "R"; close = "L"; my_src = SISTER_R }
@@ -141,24 +156,24 @@ export default function HContent() {
 
         target_open.classList.add('flip-reverse');
 
-        targetpage_close.classList.remove(close+'_fadein');
-        targettext_close.classList.remove(close+'_fadein');
+        targetpage_close.classList.remove(close + '_fadein');
+        targettext_close.classList.remove(close + '_fadein');
 
-        targetpage_close.classList.add(close+'_fadeout');
-        targettext_close.classList.add(close+'_fadeout');
+        targetpage_close.classList.add(close + '_fadeout');
+        targettext_close.classList.add(close + '_fadeout');
 
         var animEnd = function () {
-            target_open.classList.add('flip2-reverse');
             target_open.src = my_src;
+            target_open.classList.add('flip2-reverse');
 
             targetpage_close.classList.add('displaynone');
             targettext_close.classList.add('displaynone');
 
             targetname_close.classList.remove('displaynone2');
-
-            target_close.classList.add(close+'_fadein');
+            target_close.classList.add(close + '_fadein');
             target_close.classList.remove('displaynone');
-            setTimeout(reset, 500);
+            target_open.classList.add('click_point');
+            setTimeout(reset, 400);
         }
         setTimeout(animEnd, 400);
 
@@ -167,17 +182,16 @@ export default function HContent() {
             target_open.classList.remove('flip2');
             target_open.classList.remove('flip-reverse');
             target_open.classList.remove('flip2-reverse');
-            target_open.classList.remove(close+'_fadeout');
-            target_close.classList.remove(close+'_fadein');
+            target_open.classList.remove(close + '_fadeout');
+            target_close.classList.remove(close + '_fadein');
         }
     }
     return (
-        <div>
-            <div className="feature">
+        <>
+            <div className="feature" id="feature">
                 <img src={LOGO} />
-                <div className="content">
-                    眼動儀與手把結合<br />2D橫向卷軸動作解謎遊戲
-                </div>
+                <div className="content">眼動儀與手把結合</div>
+                <div className="content">2D橫向卷軸動作解謎遊戲</div>
                 <div className="content">
                     突如其然的一場意外造成妹妹薇妲失去身體，為了尋回妹妹的身體，玩家將扮演一對雙胞胎姊妹，前往三個神秘部落，展開一場冒險旅程。
                 </div>
@@ -190,9 +204,13 @@ export default function HContent() {
                         <img src={ARROW_R} />
                     </div>
                     <div className="sisimg">
-                        <img id="sister_L" className="state" onClick={click_open.bind(this)} src={SISTER_L} />
+                        <img id="sister_L" className="state click_point" onClick={click_open.bind(this)} src={SISTER_L} />
                         <img id="page2L" className="page2 displaynone" src={SISTER_TEXT_BG} />
-                        <div id="textL" className="text displaynone"> <img id="cancelL" onClick={click_close.bind(this)} src={SISTER_CANCEL} />雙胞胎中的姊姊<br />個性驕傲嚴謹，內心是個溫柔的人。因為總會管教妹妹，兩人之間發生不少爭執。<br /><br />冒險旅途中會披上祖傳披風，也會增加許多民俗感的小元素。</div>
+                        <div id="textL" className="text displaynone">
+                            <img id="cancelL" className="click_point" onClick={click_close.bind(this)} src={SISTER_CANCEL} />
+                            雙胞胎中的姊姊<br />個性驕傲嚴謹，內心是個溫柔的人。因為總會管教妹妹，兩人之間發生不少爭執。<br /><br />
+                            冒險旅途中會披上祖傳披風，也會增加許多民俗感的小元素。
+                        </div>
                     </div>
                 </div>
                 <div className="page">
@@ -202,9 +220,13 @@ export default function HContent() {
                         <img src={ARROW_R} />
                     </div>
                     <div className="sisimg" >
-                        <img id="sister_R" className="state" onClick={click_open.bind(this)} src={SISTER_R} />
+                        <img id="sister_R" className="state click_point" onClick={click_open.bind(this)} src={SISTER_R} />
                         <img id="page2R" className="page2 displaynone" src={SISTER_TEXT2_BG} />
-                        <div id="textR" className="text displaynone"> <img id="cancelR" onClick={click_close.bind(this)} src={SISTER_CANCEL} />雙胞胎中的妹妹<br />個性活潑開朗、樂於助人，容易衝動 犯錯，內心渴望於他人的認可。<br /><br />冒險旅途中會變成靈魂型態，保有原本特色並且跟隨在姊姊身旁。</div>
+                        <div id="textR" className="text displaynone">
+                            <img id="cancelR" className="click_point" onClick={click_close.bind(this)} src={SISTER_CANCEL} />
+                            雙胞胎中的妹妹<br />個性活潑開朗、樂於助人，容易衝動 犯錯，內心渴望於他人的認可。<br /><br />
+                            冒險旅途中會變成靈魂型態，保有原本特色並且跟隨在姊姊身旁。
+                        </div>
                     </div>
                 </div>
             </div>
@@ -333,7 +355,7 @@ export default function HContent() {
                     <img src={SCENE_MURAL} />
                 </div>
             </div>
-            <div className="sale">
+            <div className="sale" id="sale">
                 <div className="content">
                     <div className="year">2021</div>
                     <div className="date">11.12</div>
@@ -349,6 +371,6 @@ export default function HContent() {
                 </div>
 
             </div>
-        </div>
+        </>
     );
 }

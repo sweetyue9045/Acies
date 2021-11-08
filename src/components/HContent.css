@@ -12,6 +12,7 @@
 
 .feature img {
     filter: drop-shadow(0 0 5px #FFDE89);
+    opacity: 0;
 }
 
 .feature .content {
@@ -20,7 +21,40 @@
     font-size: var(--fz30);
     letter-spacing: 5px;
     line-height: 60px;
+    opacity: 0;
+}
+
+.feature :nth-child(2n) {
     margin-top: 60px;
+}
+
+.feature :nth-child(1) {
+    animation: title_fadein 500ms 100ms linear;
+    animation-fill-mode: forwards
+}
+
+.feature :nth-child(2) {
+    animation: title_fadein 500ms 600ms linear;
+    animation-fill-mode: forwards
+}
+
+.feature :nth-child(3) {
+    animation: title_fadein 500ms 1300ms linear;
+    animation-fill-mode: forwards
+}
+
+.feature :nth-child(4) {
+    animation: title_fadein 500ms 1900ms linear;
+    animation-fill-mode: forwards
+}
+
+@keyframes title_fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .sister {
@@ -89,18 +123,24 @@
     margin: 35px 80px;
 }
 
+.click_point {
+    cursor: pointer;
+}
+
 .state:hover {
-    transition: transform 500ms;
+    transition: all 500ms;
     transform: scale(1.03);
     filter: drop-shadow(0 0 5px #fff);
 }
 
 .R_fadeout {
-    animation: rightfadeout 500ms ease-out;
+    animation: rightfadeout 400ms ease-out;
+    animation-fill-mode: forwards
 }
 
 .R_fadein {
-    animation: rightfadein 500ms ease-in;
+    animation: rightfadein 400ms ease-in;
+    animation-fill-mode: forwards
 }
 
 @keyframes rightfadeout {
@@ -126,16 +166,14 @@
     }
 }
 
-.resetanimation {
-    animation: none;
-}
-
 .L_fadeout {
-    animation: leftfadeout 500ms ease-out;
+    animation: leftfadeout 400ms ease-out;
+    animation-fill-mode: forwards
 }
 
 .L_fadein {
-    animation: leftfadein 500ms ease-in;
+    animation: leftfadein 400ms ease-in;
+    animation-fill-mode: forwards
 }
 
 @keyframes leftfadeout {
@@ -160,24 +198,28 @@
     }
 }
 
-.state.flip {
+.flip {
     animation-name: fadeout;
     animation-duration: 400ms;
     animation-timing-function: ease-in;
+    animation-fill-mode: forwards
 }
 
-.state.flip2 {
+.flip2 {
     animation-name: fadein;
     animation-duration: 400ms;
+    animation-fill-mode: forwards
 }
 
-.state.flip-reverse {
+.flip-reverse {
     animation-name: fadein-reverse;
     animation-timing-function: ease-in;
+    animation-fill-mode: forwards
 }
 
-.state.flip2-reverse {
+.flip2-reverse {
     animation-name: fadeout-reverse;
+    animation-fill-mode: forwards
 }
 
 @keyframes fadeout {
@@ -214,10 +256,6 @@
     100% {
         transform: perspective(600px) rotateY(0deg);
     }
-}
-
-.displayblock {
-    display: block !important;
 }
 
 .displaynone {
@@ -334,6 +372,7 @@ hr {
     height: 260px;
     transform: translateY(-100px);
     opacity: 0;
+    cursor: pointer;
 }
 
 .v_fadein {
@@ -449,18 +488,20 @@ hr {
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.scene .content img{
+
+.scene .content img {
     margin-top: 50px;
 }
 
-.sale{
+.sale {
     width: 100%;
     height: 1100px;
     background-image: url("../assets/im/sale_bg.png");
     background-position: center bottom;
     background-repeat: no-repeat;
 }
-.sale .content{
+
+.sale .content {
     width: 570px;
     height: 500px;
     left: 50%;
@@ -469,32 +510,42 @@ hr {
     filter: drop-shadow(0 0 5px #fff);
     padding-top: 50px;
 }
-.year{
+
+.year {
     font-size: 40px;
     letter-spacing: 15px;
     margin-left: 10px;
     font-weight: 200;
+    opacity: 0;
 }
-.date{
+
+.date {
     font-size: 78px;
     letter-spacing: 25px;
     margin: 15px 0 25px 20px;
     font-weight: 200;
+    opacity: 0;
 }
-.s_ch{
+
+.s_ch {
     font-size: 40px;
     letter-spacing: 15px;
     margin-left: 10px;
     font-weight: 200;
+    opacity: 0;
 }
-.s_en{
+
+.s_en {
     font-size: 32px;
     letter-spacing: 12px;
     margin-left: 2px;
     font-weight: 200;
+    opacity: 0;
 }
-.platform{
+
+.platform {
     display: flex;
     justify-content: space-around;
     margin-top: 100px;
+    opacity: 0;
 }

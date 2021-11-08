@@ -4,11 +4,11 @@ import Footer from "../components/Footer"
 
 function News() {
     return (
-        <div>
+        <>
             <Nav />
             <NContent />
             <Footer />
-        </div>
+        </>
     );
 }
 

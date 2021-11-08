@@ -1,7 +1,9 @@
 /* 設定共用品項 */
+
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');* {
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+* {
     margin: 0;
     padding: 0;
     position: relative;
@@ -19,9 +21,8 @@
 
 * ::-webkit-scrollbar-thumb {
     background: rgb(255, 255, 255);
-    box-shadow:0px 0px 20px rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px rgb(255, 255, 255);
 }
-
 
 :root {
     --fz32: 32px;
@@ -48,13 +49,12 @@ button {
     text-decoration: none;
 }
 
-
 @media only screen and (min-width: 0px) and (max-width: 768px) {
-  :root {
-      --fz30: 28px;
-      --fz26: 24px;
-      --fz22: 20px;
-      --fz18: 16px;
-      --fz16: 14px;
-  }
+    :root {
+        --fz30: 28px;
+        --fz26: 24px;
+        --fz22: 20px;
+        --fz18: 16px;
+        --fz16: 14px;
+    }
 }

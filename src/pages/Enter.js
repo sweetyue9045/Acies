@@ -42,7 +42,7 @@ function Enter() {
     }, []);
 
     return (
-        <div>
+        <>
             <img src={GIF} className="img_gif"
                 style={{
                     width: percent * 100 + '%',
@@ -76,7 +76,7 @@ function Enter() {
                 </Link>
             </div>
             <Footer />
-        </div>
+        </>
     );
 }
 

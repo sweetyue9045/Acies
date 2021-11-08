@@ -6,18 +6,21 @@ import GAME from './pages/Game'
 import TEAM from './pages/Team'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import ScrollToTop from './pages/ScrollToTop';
+
+
 function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      <Switch>
-        <Route exact path="/" component={ENTER} />
-        <Route path="/home" component={HOME} />
-        <Route path="/news" component={NEWS} />
-        <Route path="/game" component={GAME} />
-        <Route path="/team" component={TEAM} />
-      </Switch>
+        <ScrollToTop />
+        <Switch>
+          <Route exact path="/" component={ENTER} />
+          <Route path="/home" component={HOME} />
+          <Route path="/news" component={NEWS} />
+          <Route path="/game" component={GAME} />
+          <Route path="/team" component={TEAM} />
+        </Switch>
     </BrowserRouter>
   );
 }
 export default App;
+
