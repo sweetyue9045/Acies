@@ -28,7 +28,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-image: url(../assets/im/bg_grass.png);
+    background-image: url(../assets/im/sister_bg.png);
     background-repeat: no-repeat;
     background-position: center 84%;
 }
@@ -95,13 +95,12 @@
     filter: drop-shadow(0 0 5px #fff);
 }
 
-.rightfadeout {
+.R_fadeout {
     animation: rightfadeout 500ms ease-out;
 }
 
-.rightfadein {
+.R_fadein {
     animation: rightfadein 500ms ease-in;
-    /* margin-top:80px; */
 }
 
 @keyframes rightfadeout {
@@ -131,14 +130,12 @@
     animation: none;
 }
 
-.leftfadeout {
+.L_fadeout {
     animation: leftfadeout 500ms ease-out;
 }
 
-.leftfadein {
-    animation-name: leftfadein;
+.L_fadein {
     animation: leftfadein 500ms ease-in;
-    /* margin-top:80px; */
 }
 
 @keyframes leftfadeout {
@@ -172,7 +169,6 @@
 .state.flip2 {
     animation-name: fadein;
     animation-duration: 400ms;
-    animation-timing-function: ease-out;
 }
 
 .state.flip-reverse {
@@ -182,7 +178,6 @@
 
 .state.flip2-reverse {
     animation-name: fadeout-reverse;
-    animation-timing-function: ease-out;
 }
 
 @keyframes fadeout {
@@ -219,12 +214,6 @@
     100% {
         transform: perspective(600px) rotateY(0deg);
     }
-}
-
-.bg_grass {
-    position: absolute;
-    margin: 80px;
-    justify-content: space-between;
 }
 
 .displayblock {

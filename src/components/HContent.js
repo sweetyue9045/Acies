@@ -8,39 +8,39 @@ import SISTER_L from "../assets/im/sister_L.png";
 import SISTER_R from "../assets/im/sister_R.png";
 import SISTER_L2 from "../assets/im/sister_L2.png";
 import SISTER_R2 from "../assets/im/sister_R2.png";
-import BG_TEXT from "../assets/im/bg_text.png";
-import BG_TEXT2 from "../assets/im/bg_text2.png";
-import BTN_CANCEL from "../assets/im/cancel.svg";
+import SISTER_TEXT_BG from "../assets/im/sister_text_bg.png";
+import SISTER_TEXT2_BG from "../assets/im/sister_text2_bg.png";
+import SISTER_CANCEL from "../assets/im/sister_cancel_btn.svg";
 
-import V_BG_L from "../assets/im/video_l.svg";
-import V_BG_R from "../assets/im/video_r.svg";
-import V_AGENCY from "../assets/im/video_agency.mp4";
-import V_GAME from "../assets/im/video_game.mp4";
-import V_BOSS from "../assets/im/video_BOSS.mp4";
+import VIDEO_BG_L from "../assets/im/video_l.svg";
+import VIDEO_BG_R from "../assets/im/video_r.svg";
+import VIDEO_AGENCY from "../assets/im/video_agency.mp4";
+import VIDEO_GAME from "../assets/im/video_game.mp4";
+import VIDEO_BOSS from "../assets/im/video_BOSS.mp4";
 
-import S_X from "../assets/im/skill_X_btn.mp4";
-import S_Y from "../assets/im/skill_Y_btn.mp4";
-import X_btn from "../assets/im/skill_X_btn.svg";
-import Y_btn from "../assets/im/skill_Y_btn.svg";
-import A_btn from "../assets/im/skill_A_btn.svg";
+import SKILL_X from "../assets/im/skill_X_btn.mp4";
+import SKILL_Y from "../assets/im/skill_Y_btn.mp4";
+import SKILL_X_btn from "../assets/im/skill_X_btn.svg";
+import SKILL_Y_btn from "../assets/im/skill_Y_btn.svg";
+import SKILL_A_btn from "../assets/im/skill_A_btn.svg";
 
-import V_MOSSINA from "../assets/im/village_mossina.svg"
-import V_AFEITE from "../assets/im/village_afeite.svg"
-import V_SCALE from "../assets/im/village_scale.svg"
-import V_TAMA from "../assets/im/village_tama.svg"
-import V_MOSSINA_BG from "../assets/im/village_mossina_bg.png"
-import V_AFEITE_BG from "../assets/im/village_afeite_bg.png"
-import V_SCALE_BG from "../assets/im/village_scale_bg.png"
-import V_TAMA_BG from "../assets/im/village_tama_bg.png"
+import VILLAGE_MOSSINA from "../assets/im/village_mossina.svg"
+import VILLAGE_AFEITE from "../assets/im/village_afeite.svg"
+import VILLAGE_SCALE from "../assets/im/village_scale.svg"
+import VILLAGE_TAMA from "../assets/im/village_tama.svg"
+import VILLAGE_MOSSINA_BG from "../assets/im/village_mossina_bg.png"
+import VILLAGE_AFEITE_BG from "../assets/im/village_afeite_bg.png"
+import VILLAGE_SCALE_BG from "../assets/im/village_scale_bg.png"
+import VILLAGE_TAMA_BG from "../assets/im/village_tama_bg.png"
 
-import S_TOWN from "../assets/im/scene_town.png"
-import S_WATER from "../assets/im/scene_water_capital.png"
-import S_SHRINE from "../assets/im/scene_shrine.png"
-import S_MURAL from "../assets/im/scene_mural.png"
+import SCENE_TOWN from "../assets/im/scene_town.png"
+import SCENE_WATER from "../assets/im/scene_water_capital.png"
+import SCENE_SHRINE from "../assets/im/scene_shrine.png"
+import SCENE_MURAL from "../assets/im/scene_mural.png"
 
-import S_STEAM from "../assets/im/sale_steam.svg"
-import S_SWITCH from "../assets/im/sale_switch.svg"
-import S_PS4 from "../assets/im/sale_PS4.svg"
+import SALE_STEAM from "../assets/im/sale_steam.svg"
+import SALE_SWITCH from "../assets/im/sale_switch.svg"
+import SALE_PS4 from "../assets/im/sale_PS4.svg"
 
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom"
@@ -85,155 +85,91 @@ export default function HContent() {
         }, 2000);
     }
 
-    var click = function (e) {
-        var targetR = document.getElementById('sister_R');
-        var targetpageR = document.getElementById('page2R');
-        var targettextR = document.getElementById('textR');
-        var targetnameR = document.getElementById('nameR');
+    var click_open = function (e) {
+        var spstr = e.target.id.split("");
+        var open = "";
+        var close = "";
+        var my_src = "";
+        if (spstr[spstr.length - 1] == "R") { open = "R"; close = "L"; my_src = SISTER_R2 }
+        else if (spstr[spstr.length - 1] == "L") { open = "L"; close = "R"; my_src = SISTER_L2 }
 
-        var targetL = document.getElementById('sister_L');
-        var targetpageL = document.getElementById('page2L');
-        var targettextL = document.getElementById('textL');
-        var targetnameL = document.getElementById('nameL');
+        var target_open = document.getElementById('sister_' + open);
+        var target_close = document.getElementById('sister_' + close);
+        var targetpage_close = document.getElementById('page2' + close);
+        var targettext_close = document.getElementById('text' + close);
+        var targetname_close = document.getElementById('name' + close);
 
-        if (e.target.id === 'sister_R') {
-
-            targetR.classList.add('flip');
-            targetL.classList.add('leftfadeout');
-
-            var animEnd = function () {
-                targetR.classList.add('flip2');
-                targetR.src = SISTER_R2;
-
-                targetL.classList.add('displaynone');
-                targetnameL.classList.add('displaynone2');
-
-                targetpageL.classList.remove('displaynone');
-                targetpageL.classList.add('leftfadein');
-
-                targettextL.classList.remove('displaynone');
-                targettextL.classList.add('leftfadein');
-                setTimeout(reset, 500)
-            }
-            setTimeout(animEnd, 400);
-
-            var reset = function () {
-                targetL.classList.remove('leftfadeout');
-                targetL.classList.remove('leftfadein');
-
-            }
-        }
-        else if (e.target.id === "sister_L") {
-
-            targetL.classList.add('flip');
-            targetR.classList.add('rightfadeout');
-
-            var animEnd = function () {
-                targetL.classList.add('flip2');
-                targetL.src = SISTER_L2;
-
-                targetR.classList.add('displaynone');
-                targetnameR.classList.add('displaynone2');
-
-                targetpageR.classList.remove('displaynone');
-                targetpageR.classList.add('rightfadein');
-
-                targettextR.classList.remove('displaynone');
-                targettextR.classList.add('rightfadein');
-                setTimeout(reset, 500)
-            }
-            setTimeout(animEnd, 400);
-
-            var reset = function () {
-                targetR.classList.remove('rightfadeout');
-                targetR.classList.remove('rightfadein');
-            }
-        }
-    }
-
-    var animL = function () {
-        var targetR = document.getElementById('sister_R');
-
-        var targetL = document.getElementById('sister_L');
-        var targetpageL = document.getElementById('page2L');
-        var targettextL = document.getElementById('textL');
-        var targetnameL = document.getElementById('nameL');
-
-        targetR.classList.add('flip-reverse');
-
-        targetpageL.classList.remove('leftfadein');
-        targettextL.classList.remove('leftfadein');
-
-        targetpageL.classList.add('leftfadeout');
-        targettextL.classList.add('leftfadeout');
+        target_open.classList.add('flip');
+        target_close.classList.add(close+'_fadeout');
 
         var animEnd = function () {
+            target_open.classList.add('flip2');
+            target_open.src = my_src;
 
-            targetR.classList.add('flip2-reverse');
-            targetR.src = SISTER_R;
+            target_close.classList.add('displaynone');
+            targetname_close.classList.add('displaynone2');
 
-            targetpageL.classList.add('displaynone');
-            targettextL.classList.add('displaynone');
+            targetpage_close.classList.remove('displaynone');
+            targetpage_close.classList.add(close+'_fadein');
 
-            targetnameL.classList.remove('displaynone2');
+            targettext_close.classList.remove('displaynone');
+            targettext_close.classList.add(close+'_fadein');
+            setTimeout(reset, 500)
+        }
+        setTimeout(animEnd, 400);
 
-            targetL.classList.add('leftfadein');
-            targetL.classList.remove('displaynone');
+        var reset = function () {
+            target_close.classList.remove(close+'_fadeout');
+            target_close.classList.remove(close+'_fadein');
+
+        }
+    }
+    var click_close = function (e) {
+        var spstr = e.target.id.split("");
+        var open = "";
+        var close = "";
+        var my_src = "";
+
+        if (spstr[spstr.length - 1] == "R") { open = "L"; close = "R"; my_src = SISTER_L }
+        else if (spstr[spstr.length - 1] == "L") { open = "R"; close = "L"; my_src = SISTER_R }
+
+        var target_open = document.getElementById('sister_' + open);
+        var target_close = document.getElementById('sister_' + close);
+        var targetpage_close = document.getElementById('page2' + close);
+        var targettext_close = document.getElementById('text' + close);
+        var targetname_close = document.getElementById('name' + close);
+
+        target_open.classList.add('flip-reverse');
+
+        targetpage_close.classList.remove(close+'_fadein');
+        targettext_close.classList.remove(close+'_fadein');
+
+        targetpage_close.classList.add(close+'_fadeout');
+        targettext_close.classList.add(close+'_fadeout');
+
+        var animEnd = function () {
+            target_open.classList.add('flip2-reverse');
+            target_open.src = my_src;
+
+            targetpage_close.classList.add('displaynone');
+            targettext_close.classList.add('displaynone');
+
+            targetname_close.classList.remove('displaynone2');
+
+            target_close.classList.add(close+'_fadein');
+            target_close.classList.remove('displaynone');
             setTimeout(reset, 500);
         }
         setTimeout(animEnd, 400);
 
         var reset = function () {
-            targetR.classList.remove('flip');
-            targetR.classList.remove('flip2');
-            targetR.classList.remove('flip-reverse');
-            targetR.classList.remove('flip2-reverse');
-            targetR.classList.remove('leftfadeout');
-            targetL.classList.remove('leftfadein');
+            target_open.classList.remove('flip');
+            target_open.classList.remove('flip2');
+            target_open.classList.remove('flip-reverse');
+            target_open.classList.remove('flip2-reverse');
+            target_open.classList.remove(close+'_fadeout');
+            target_close.classList.remove(close+'_fadein');
         }
-    }
-
-    var animR = function () {
-        var targetL = document.getElementById('sister_L');
-
-        var targetR = document.getElementById('sister_R');
-        var targetpageR = document.getElementById('page2R');
-        var targettextR = document.getElementById('textR');
-        var targetnameR = document.getElementById('nameR');
-
-        targetL.classList.add('flip-reverse');
-
-        targetpageR.classList.remove('rightfadein');
-        targettextR.classList.remove('rightfadein');
-
-        targetpageR.classList.add('rightfadeout');
-        targettextR.classList.add('rightfadeout');
-
-        var animEnd = function () {
-
-            targetL.classList.add('flip2-reverse');
-            targetL.src = SISTER_L;
-
-            targetpageR.classList.add('displaynone');
-            targettextR.classList.add('displaynone');
-
-            targetnameR.classList.remove('displaynone2');
-
-            targetR.classList.add('rightfadein');
-            targetR.classList.remove('displaynone');
-            setTimeout(reset, 500);
-        }
-        setTimeout(animEnd, 400);
-
-        var reset = function () {
-            targetL.classList.remove('flip');
-            targetL.classList.remove('flip2');
-            targetL.classList.remove('flip-reverse');
-            targetL.classList.remove('flip2-reverse');
-            targetL.classList.remove('rightfadeout');
-            targetR.classList.remove('rightfadein');
-        }
-
     }
     return (
         <div>
@@ -254,9 +190,9 @@ export default function HContent() {
                         <img src={ARROW_R} />
                     </div>
                     <div className="sisimg">
-                        <img className="state" id="sister_L" onClick={click.bind(this)} src={SISTER_L} />
-                        <img id="page2L" className="page2 displaynone" src={BG_TEXT} />
-                        <div id="textL" className="text displaynone"> <img id="cancelL" onClick={animL} src={BTN_CANCEL} />雙胞胎中的姊姊<br />個性驕傲嚴謹，內心是個溫柔的人。因為總會管教妹妹，兩人之間發生不少爭執。<br /><br />冒險旅途中會披上祖傳披風，也會增加許多民俗感的小元素。</div>
+                        <img id="sister_L" className="state" onClick={click_open.bind(this)} src={SISTER_L} />
+                        <img id="page2L" className="page2 displaynone" src={SISTER_TEXT_BG} />
+                        <div id="textL" className="text displaynone"> <img id="cancelL" onClick={click_close.bind(this)} src={SISTER_CANCEL} />雙胞胎中的姊姊<br />個性驕傲嚴謹，內心是個溫柔的人。因為總會管教妹妹，兩人之間發生不少爭執。<br /><br />冒險旅途中會披上祖傳披風，也會增加許多民俗感的小元素。</div>
                     </div>
                 </div>
                 <div className="page">
@@ -266,14 +202,14 @@ export default function HContent() {
                         <img src={ARROW_R} />
                     </div>
                     <div className="sisimg" >
-                        <img id="sister_R" className="state" src={SISTER_R} onClick={click.bind(this)} />
-                        <img id="page2R" className="page2 displaynone" src={BG_TEXT2} />
-                        <div id="textR" className="text displaynone"> <img id="cancelR" onClick={animR} src={BTN_CANCEL} />雙胞胎中的妹妹<br />個性活潑開朗、 樂於助人，容易衝動 犯錯，內心渴望於他人的認可。<br /><br />冒險旅途中會變成靈魂型態，保有原本特色並且跟隨在姊姊身旁。</div>
+                        <img id="sister_R" className="state" onClick={click_open.bind(this)} src={SISTER_R} />
+                        <img id="page2R" className="page2 displaynone" src={SISTER_TEXT2_BG} />
+                        <div id="textR" className="text displaynone"> <img id="cancelR" onClick={click_close.bind(this)} src={SISTER_CANCEL} />雙胞胎中的妹妹<br />個性活潑開朗、樂於助人，容易衝動 犯錯，內心渴望於他人的認可。<br /><br />冒險旅途中會變成靈魂型態，保有原本特色並且跟隨在姊姊身旁。</div>
                     </div>
                 </div>
             </div>
             <div className="video">
-                <img src={V_BG_L} className="video_bg" />
+                <img src={VIDEO_BG_L} className="video_bg" />
                 <div className="content">
                     <div className="video_block">
                         <div className="title">
@@ -282,7 +218,7 @@ export default function HContent() {
                             <img src={ARROW_R} />
                         </div>
                         <video width="800" controls>
-                            <source src={V_AGENCY} type="video/mp4" />
+                            <source src={VIDEO_AGENCY} type="video/mp4" />
                             您的瀏覽器不支援此 HTML5 影片標籤
                         </video>
                     </div>
@@ -293,7 +229,7 @@ export default function HContent() {
                             <img src={ARROW_R} />
                         </div>
                         <video width="800" controls>
-                            <source src={V_GAME} type="video/mp4" />
+                            <source src={VIDEO_GAME} type="video/mp4" />
                             您的瀏覽器不支援此 HTML5 影片標籤
                         </video>
                     </div>
@@ -304,12 +240,12 @@ export default function HContent() {
                             <img src={ARROW_R} />
                         </div>
                         <video width="800" controls>
-                            <source src={V_BOSS} type="video/mp4" />
+                            <source src={VIDEO_BOSS} type="video/mp4" />
                             您的瀏覽器不支援此 HTML5 影片標籤
                         </video>
                     </div>
                 </div>
-                <img src={V_BG_R} className="video_bg" />
+                <img src={VIDEO_BG_R} className="video_bg" />
             </div>
             <hr />
             <div className="skill">
@@ -320,33 +256,33 @@ export default function HContent() {
                 </div>
                 <div className="content">
                     <video width="570" controls>
-                        <source src={S_X} type="video/mp4" />
+                        <source src={SKILL_X} type="video/mp4" />
                         您的瀏覽器不支援此 HTML5 影片標籤
                     </video>
                     <div className="skill_text">
                         <div className="title">物體移動</div>
                         <div className="explain">
-                            按下<img src={X_btn} className="game_btn game_btn_X" />，注視靈魂與法鈴啟動技能。
+                            按下<img src={SKILL_X_btn} className="game_btn game_btn_X" />，注視靈魂與法鈴啟動技能。
                         </div>
                     </div>
                 </div>
                 <div className="content">
                     <video width="570" controls>
-                        <source src={S_Y} type="video/mp4" />
+                        <source src={SKILL_Y} type="video/mp4" />
                         您的瀏覽器不支援此 HTML5 影片標籤
                     </video>
                     <div className="skill_text">
                         <div className="title">凝聚之光</div>
                         <div className="explain">
-                            按下<img src={Y_btn} className="game_btn" />啟動技能。注視欲移動物品，按住<img src={A_btn} className="game_btn" />以視線拖曳至目標位置。
+                            按下<img src={SKILL_Y_btn} className="game_btn" />啟動技能。注視欲移動物品，按住<img src={SKILL_A_btn} className="game_btn" />以視線拖曳至目標位置。
                         </div>
                     </div>
                 </div>
             </div>
             <div className="village" id="village">
                 <div className="logo" id="v_mossina">
-                    <img src={V_MOSSINA_BG} className="v_bg" />
-                    <img src={V_MOSSINA} className="v_logo v_mossina" />
+                    <img src={VILLAGE_MOSSINA_BG} className="v_bg" />
+                    <img src={VILLAGE_MOSSINA} className="v_logo v_mossina" />
                     <div className="v_en v_mossina">MOSSINA</div>
                     <div className="v_in v_mossina">
                         被封印在神殿的神，陷入漫長的沉睡中，是所有信仰的起源。
@@ -355,18 +291,18 @@ export default function HContent() {
                 </div>
                 <hr className="hr_column" />
                 <div className="logo" id="v_scale">
-                    <img src={V_SCALE_BG} className="v_bg" />
-                    <img src={V_SCALE} className="v_logo v_scale" />
+                    <img src={VILLAGE_SCALE_BG} className="v_bg" />
+                    <img src={VILLAGE_SCALE} className="v_logo v_scale" />
                     <div className="v_en v_scale">SCALE</div>
                     <div className="v_in v_scale">
                         傳說中受到神龍眷顧的民族，藍白色圓頂神殿為其主要特色。
                     </div>
-                    <div className="v_ch v_scale">斯克爾</div>
+                    <div className="v_ch VILLAGE_SCALE">斯克爾</div>
                 </div>
                 <hr className="hr_column" />
                 <div className="logo" id="v_afeite">
-                    <img src={V_AFEITE_BG} className="v_bg" />
-                    <img src={V_AFEITE} className="v_logo v_afeite" />
+                    <img src={VILLAGE_AFEITE_BG} className="v_bg" />
+                    <img src={VILLAGE_AFEITE} className="v_logo v_afeite" />
                     <div className="v_en v_afeite">AFEITE</div>
                     <div className="v_in v_afeite">
                         居住在丘陵的特殊民族，體型高大魁武。大多為石製建築。
@@ -375,8 +311,8 @@ export default function HContent() {
                 </div>
                 <hr className="hr_column" />
                 <div className="logo" id="v_tama">
-                    <img src={V_TAMA_BG} className="v_bg" />
-                    <img src={V_TAMA} className="v_logo v_tama" />
+                    <img src={VILLAGE_TAMA_BG} className="v_bg" />
+                    <img src={VILLAGE_TAMA} className="v_logo v_tama" />
                     <div className="v_en v_tama">TAMA</div>
                     <div className="v_in v_tama">
                         藏身叢林的傳統民族，有特殊的靈紋裝飾。建築以草房為主。
@@ -391,10 +327,10 @@ export default function HContent() {
                     <img src={ARROW_R} />
                 </div>
                 <div className="content">
-                    <img src={S_TOWN} />
-                    <img src={S_WATER} />
-                    <img src={S_SHRINE} />
-                    <img src={S_MURAL} />
+                    <img src={SCENE_TOWN} />
+                    <img src={SCENE_WATER} />
+                    <img src={SCENE_SHRINE} />
+                    <img src={SCENE_MURAL} />
                 </div>
             </div>
             <div className="sale">
@@ -404,9 +340,9 @@ export default function HContent() {
                     <div className="s_ch">正式發售</div>
                     <div className="s_en">RELEASE</div>
                     <div className="platform">
-                        <img src={S_STEAM} />
-                        <img src={S_SWITCH} />
-                        <img src={S_PS4} />
+                        <img src={SALE_STEAM} />
+                        <img src={SALE_SWITCH} />
+                        <img src={SALE_PS4} />
                     </div>
 
 
