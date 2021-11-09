@@ -43,20 +43,20 @@ import SALE_SWITCH from "../assets/im/sale_switch.svg"
 import SALE_PS4 from "../assets/im/sale_PS4.svg"
 
 import { useState, useEffect } from "react";
-import ReactDOM from "react-dom"
 
-let v_top_ = new Array;
+var v_top = new Array;
+var hr_c = "";
 export default function HContent() {
     const [offsetY, setOffsetY] = useState(0);
-    const [flag, setflag] = useState([]);
     const handleScroll = () => {
         setOffsetY(document.documentElement.scrollTop);
+
     }
-    const v_top = [document.getElementById("village"), document.getElementById("sale")];
-    const hr_c = document.getElementsByClassName("hr_column");
-
-
-    // 監聽滾動
+    const scrolltop = () => {
+        v_top = [document.getElementById("village").offsetTop, document.getElementById("sale").offsetTop];
+        hr_c = document.getElementsByClassName("hr_column");
+    }
+      // 監聽滾動
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
 
@@ -64,30 +64,27 @@ export default function HContent() {
     }, []);
 
     // 抓取加動畫位置
-    if (offsetY > 0 && flag.length == 0) {
-        setflag(flag.push(ReactDOM.findDOMNode(v_top[0]).getBoundingClientRect().top));
-        setflag(flag.push(ReactDOM.findDOMNode(v_top[1]).getBoundingClientRect().top));
-        v_top_ = flag;
-    }
-    console.log(flag, offsetY, v_top_)
+    useEffect(() => {
+        console.log("監聽")
+        scrolltop();
+    }, []);
+ 
     // // 加動畫
-    if (offsetY >= v_top_[1] - 300 && offsetY <= v_top_[1] + 10 && v_top_.length != 0) {
-        console.log("0")
-        v_top[1].children[0].children[0].classList.add('v_fadein');
+    if (offsetY >= v_top[1] - 300 && offsetY <= v_top[1] + 10) {
+        document.getElementById('s_year').classList.add('v_fadein');
         setTimeout(function () {
-            v_top[1].children[0].children[1].classList.add('v_fadein');
+            document.getElementById('s_date').classList.add('v_fadein');
         }, 500);
         setTimeout(function () {
-            v_top[1].children[0].children[2].classList.add('v_fadein');
-            v_top[1].children[0].children[3].classList.add('v_fadein');
+            document.getElementById('s_ch').classList.add('v_fadein');
+            document.getElementById('s_en').classList.add('v_fadein');
         }, 1000);
         setTimeout(function () {
-            v_top[1].children[0].children[4].classList.add('v_fadein');
+            document.getElementById('s_platform').classList.add('v_fadein');
         }, 1500);
-    } else if (offsetY >= v_top_[0] - 300 && offsetY <= v_top_[0] + 10 && v_top_.length != 0) {
-        console.log("1")
+    } else if (offsetY >= v_top[0] - 300 && offsetY <= v_top[0] + 10) {
         for (let i = 0; i < hr_c.length; i++) {
-            hr_c[i].classList.add('v_fadein');
+            document.getElementById("v_hr" + i).classList.add('v_fadein');
         }
         setTimeout(function () {
             document.getElementById('v_mossina').classList.add('v_fadein');
@@ -103,6 +100,7 @@ export default function HContent() {
         }, 2000);
     }
 
+    // 姊妹打開介紹
     var click_open = function (e) {
         var spstr = e.target.id.split("");
         var open, close, my_src = "";
@@ -134,16 +132,15 @@ export default function HContent() {
             targettext_close.classList.add(close + '_fadein');
             setTimeout(reset, 400)
         }
-
         setTimeout(animEnd, 400);
 
         var reset = function () {
             target_close.classList.remove(close + '_fadeout');
             target_close.classList.remove(close + '_fadein');
-
         }
-
     }
+
+    // 姊妹關閉介紹
     var click_close = function (e) {
         var spstr = e.target.id.split("");
         var open, close, my_src = "";
@@ -320,7 +317,7 @@ export default function HContent() {
                         </div>
                         <div className="v_ch v_mossina">魔森納</div>
                     </div>
-                    <hr className="hr_column" />
+                    <hr className="hr_column" id="v_hr0" />
                     <div className="logo" id="v_scale">
                         <img src={VILLAGE_SCALE_BG} className="v_bg" />
                         <img src={VILLAGE_SCALE} className="v_logo v_scale" />
@@ -330,7 +327,7 @@ export default function HContent() {
                         </div>
                         <div className="v_ch VILLAGE_SCALE">斯克爾</div>
                     </div>
-                    <hr className="hr_column" />
+                    <hr className="hr_column" id="v_hr1" />
                     <div className="logo" id="v_afeite">
                         <img src={VILLAGE_AFEITE_BG} className="v_bg" />
                         <img src={VILLAGE_AFEITE} className="v_logo v_afeite" />
@@ -340,7 +337,7 @@ export default function HContent() {
                         </div>
                         <div className="v_ch v_afeite">亞斐特</div>
                     </div>
-                    <hr className="hr_column" />
+                    <hr className="hr_column" id="v_hr2" />
                     <div className="logo" id="v_tama">
                         <img src={VILLAGE_TAMA_BG} className="v_bg" />
                         <img src={VILLAGE_TAMA} className="v_logo v_tama" />
@@ -367,11 +364,11 @@ export default function HContent() {
             </div>
             <div className="sale" id="sale">
                 <div className="content">
-                    <div className="year">2021</div>
-                    <div className="date">11.12</div>
-                    <div className="s_ch">正式發售</div>
-                    <div className="s_en">RELEASE</div>
-                    <div className="platform">
+                    <div className="year" id="s_year">2021</div>
+                    <div className="date" id="s_date">11.12</div>
+                    <div className="s_ch" id="s_ch">正式發售</div>
+                    <div className="s_en" id="s_en">RELEASE</div>
+                    <div className="platform" id="s_platform">
                         <img src={SALE_STEAM} />
                         <img src={SALE_SWITCH} />
                         <img src={SALE_PS4} />
