@@ -61,12 +61,13 @@ export default function HContent() {
 
         return () => window.addEventListener("scroll", handleScroll, true);
     }, []);
-
+    
     // 抓取加動畫位置
     if (offsetY > 0 && flag.length == 0) {
         setflag(flag.push(ReactDOM.findDOMNode(v_top[0]).getBoundingClientRect().top));
         setflag(flag.push(ReactDOM.findDOMNode(v_top[1]).getBoundingClientRect().top));
     }
+    console.log(flag,offsetY)
     // // 加動畫
     if (offsetY >= flag[1] - 300 && offsetY <= flag[1] + 10 && flag.length != 0) {
         console.log("0")
