@@ -81,7 +81,8 @@ export default function HContent() {
         setTimeout(function () {
             v_top[1].children[0].children[4].classList.add('v_fadein');
         }, 1500);
-    } else if (offsetY >= flag[0] - 300 && offsetY <= flag[0] + 10 && flag.length != 0) {
+    } 
+    if (offsetY >= flag[0] - 300 && offsetY <= flag[0] + 10 && flag.length != 0) {
         console.log("1")
         for (let i = 0; i < hr_c.length; i++) {
             hr_c[i].classList.add('v_fadein');
