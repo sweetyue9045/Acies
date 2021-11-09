@@ -45,7 +45,7 @@ import SALE_PS4 from "../assets/im/sale_PS4.svg"
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom"
 
-
+let v_top_ = new Array;
 export default function HContent() {
     const [offsetY, setOffsetY] = useState(0);
     const [flag, setflag] = useState([]);
@@ -55,21 +55,23 @@ export default function HContent() {
     const v_top = [document.getElementById("village"), document.getElementById("sale")];
     const hr_c = document.getElementsByClassName("hr_column");
 
+
     // 監聽滾動
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
 
         return () => window.addEventListener("scroll", handleScroll, true);
     }, []);
-    
+
     // 抓取加動畫位置
     if (offsetY > 0 && flag.length == 0) {
         setflag(flag.push(ReactDOM.findDOMNode(v_top[0]).getBoundingClientRect().top));
         setflag(flag.push(ReactDOM.findDOMNode(v_top[1]).getBoundingClientRect().top));
+        v_top_ = flag;
     }
-    console.log(flag,offsetY)
+    console.log(flag, offsetY, v_top_)
     // // 加動畫
-    if (offsetY >= flag[1] - 300 && offsetY <= flag[1] + 10 && flag.length != 0) {
+    if (offsetY >= v_top_[1] - 300 && offsetY <= v_top_[1] + 10 && v_top_.length != 0) {
         console.log("0")
         v_top[1].children[0].children[0].classList.add('v_fadein');
         setTimeout(function () {
@@ -82,8 +84,7 @@ export default function HContent() {
         setTimeout(function () {
             v_top[1].children[0].children[4].classList.add('v_fadein');
         }, 1500);
-    } 
-    if (offsetY >= flag[0] - 300 && offsetY <= flag[0] + 10 && flag.length != 0) {
+    } else if (offsetY >= v_top_[0] - 300 && offsetY <= v_top_[0] + 10 && v_top_.length != 0) {
         console.log("1")
         for (let i = 0; i < hr_c.length; i++) {
             hr_c[i].classList.add('v_fadein');
