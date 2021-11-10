@@ -1,10 +1,12 @@
 import SALE_STEAM from "../../assets/im/sale_steam.svg"
 import SALE_SWITCH from "../../assets/im/sale_switch.svg"
 import SALE_PS4 from "../../assets/im/sale_PS4.svg"
+import SALE_BOTTOM from "../../assets/im/sale_bottom.png"
 
 export default function Sale() {
     return (
         <div className="sale" id="sale">
+            <img src={SALE_BOTTOM} className="s_bottom" />
             <div className="content">
                 <div className="year" id="s_year">2021</div>
                 <div className="date" id="s_date">11.12</div>
@@ -16,6 +18,7 @@ export default function Sale() {
                     <img src={SALE_PS4} />
                 </div>
             </div>
+            
         </div>
     );
 }

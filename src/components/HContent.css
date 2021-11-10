@@ -320,6 +320,7 @@ hr {
     background-image: url("../assets/im/skill_bg.png");
     background-position: center;
     background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .skill .content {
@@ -563,4 +564,11 @@ hr {
     justify-content: space-around;
     margin-top: 100px;
     opacity: 0;
+}
+
+.s_bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
