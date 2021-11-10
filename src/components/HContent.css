@@ -495,7 +495,7 @@ hr {
 }
 
 .scene .content {
-    max-width: 1440px;
+    max-width: 1150px;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 10px;
