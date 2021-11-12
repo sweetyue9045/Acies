@@ -1,4 +1,4 @@
-import Title from "../Title";
+import Title from "./H_Title";
 
 import SCENE_TOWN from "../../assets/im/scene_town.png"
 import SCENE_WATER from "../../assets/im/scene_water_capital.png"

@@ -1,0 +1,133 @@
+/* title / other */
+
+.Board .title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 0;
+    filter: drop-shadow(0 0 5px #fff);
+}
+
+.Board .title_top {
+    font-weight: 300;
+    font-size: 40px;
+    letter-spacing: 15px;
+    font-weight: 400;
+}
+
+.Board .title_bottom {
+    font-size: 12px;
+    letter-spacing: 9.3px;
+    font-weight: 100;
+}
+
+/* news */
+
+.news {
+    width: 1075px;
+    height: 550px;
+    margin: 150px auto 0;
+    display: grid;
+    grid-template-columns: 26.5% 73.5%;
+}
+
+.n_left {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.n_left .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    filter: drop-shadow(0 0 5px #fff);
+    bottom: 12%;
+}
+
+.n_left .text {
+    letter-spacing: 5px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.n_left .text:first-child {
+    font-size: var(--fz24);
+}
+
+.n_left .text:nth-child(2) {
+    margin-top: -4px;
+    font-size: var(--fz20);
+}
+
+.n_left img {
+    margin-left: 3px;
+}
+
+.n_right {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.n_right .carousel_img {
+    height: 480px;
+    display: none;
+}
+
+.n_right .mask {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1));
+}
+
+.n_right .content {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    filter: drop-shadow(0 0 5px #fff);
+}
+
+.n_right .content_title {
+    font-size: var(--fz30);
+    letter-spacing: 7px;
+    line-height: 60px;
+    font-weight: 400;
+    margin: 0 0 0 40px;
+}
+
+.n_right .content_text {
+    max-width: 400px;
+    text-align: left;
+    font-size: var(--fz16);
+    letter-spacing: 5px;
+    line-height: 30px;
+    margin: 0 0 50px 40px;
+}
+
+.n_right .dot_block {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.n_right .carousel_dot {
+    width: 18px;
+    height: 18px;
+    border: #fff 2px solid;
+    border-radius: 50%;
+    margin: 0 12.5px;
+}
+
+.n_right .showbox {
+    display: block;
+    transition: all .4s ease-in-out;
+}
+
+.n_right .choose {
+    background-color: #fff;
+}

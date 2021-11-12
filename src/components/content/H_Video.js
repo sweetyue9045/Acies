@@ -1,4 +1,4 @@
-import Title from "../Title";
+import Title from "./H_Title";
 
 import VIDEO_BG_L from "../../assets/im/video_l.svg";
 import VIDEO_BG_R from "../../assets/im/video_r.svg";

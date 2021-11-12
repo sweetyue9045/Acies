@@ -30,7 +30,7 @@ nav .logo {
 }
 
 .menu li:hover {
-    filter: drop-shadow(0 0 5px #fff);
+    filter: drop-shadow(0 0 1px #fff);
 }
 
 .menu_link {
@@ -58,7 +58,7 @@ nav .logo {
 }
 
 .menu li:first-child .menu_bottom {
-    transform: scale(0.68);
+    transform: scale(0.47);
 }
 
 .menu li:nth-child(2) .menu_bottom {

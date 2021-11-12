@@ -64,7 +64,7 @@ export default function HContent() {
     }
 
     return (
-        <>
+        <div className="Home">
             <Feature />
             <Sister />
             <Video />
@@ -73,6 +73,6 @@ export default function HContent() {
             <Village />
             <Scene />
             <Sale />
-        </>
+        </div>
     );
 }

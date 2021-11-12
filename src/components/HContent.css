@@ -1,6 +1,6 @@
 /* title / other */
 
-.title {
+.Home .title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,7 +12,7 @@
     transition: all .5s ease;
 }
 
-.title_text {
+.Home .title_text {
     margin: -8px 22px 0 42px;
 }
 
