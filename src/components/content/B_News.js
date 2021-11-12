@@ -2,8 +2,8 @@ import Title from "./B_Title";
 
 import NEWS_BOTTOM from "../../assets/im/news_bottom.svg"
 
-import B_Carousel from "./B_Carousel";
-import B_Carousel_dot from "./B_Carousel_dot";
+import Carousel from "./B_Carousel";
+import Carousel_dot from "./B_Carousel_dot";
 import news from "../../assets/json/news.json"
 import { useState, useEffect } from 'react';
 
@@ -25,29 +25,31 @@ export default function News() {
         clearInterval();
     }
     return (
-        <div className="news">
-            <div className="n_left">
-                <Title Title_top="最新消息" Title_bottom="BREAKING NEWS" />
-                <div className="logo">
-                    <div className="text">ACIES</div>
-                    <div className="text">TWIN JOURNEY</div>
-                    <img src={NEWS_BOTTOM} />
+        <>
+            <div className="news">
+                <div className="n_left">
+                    <Title Title_top="最新消息" Title_bottom="BREAKING NEWS" ls="9.5px"/>
+                    <div className="logo">
+                        <div className="text">ACIES</div>
+                        <div className="text">TWIN JOURNEY</div>
+                        <img src={NEWS_BOTTOM} />
+                    </div>
                 </div>
-            </div>
-            <div className="n_right">
-                {news.map((news, index) => (
-                    <B_Carousel key={news.key} news={news} isActive={tab === index} />
-                ))}
-                <div className="dot_block">
+                <div className="n_right">
                     {news.map((news, index) => (
-                        <B_Carousel_dot key={news.key} news={news} isActive={tab === index}
-                            indexPlus={() => {
-                                settab(index); click(index);
-                            }}
-                        />
+                        <Carousel key={news.key} news={news} isActive={tab === index} />
                     ))}
+                    <div className="dot_block">
+                        {news.map((news, index) => (
+                            <Carousel_dot key={news.key} news={news} isActive={tab === index}
+                                indexPlus={() => {
+                                    settab(index); click(index);
+                                }}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
