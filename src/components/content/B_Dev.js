@@ -1,7 +1,5 @@
 import Title from "./B_Title";
 
-import Tab from "./B_Dev_Tab";
-
 import dev from "../../assets/json/dev.json"
 
 import DEV_RIGHT from "../../assets/im/dev_right.svg"
@@ -85,21 +83,27 @@ export default function Dev() {
         nowpage++;
         setpage(nowpage);
         flag = 1;
+        window.scrollTo(0, document.getElementById('dev').offsetTop+900);
     }
 
     const pre = () => {
         nowpage = page;
         nowpage--;
         setpage(nowpage);
+        window.scrollTo(0, document.getElementById('dev').offsetTop+900);
     }
 
 
     return (
-        <div className="dev">
+        <div className="dev" id="dev">
             <Title Title_top="開發日誌" Title_bottom="DEV JOURNAL" ls="13px" />
             <div className="dev_tab">
                 {dev.map((dev, index) => (
-                    <Tab key={dev.key} dev={dev} isActive={tab === index} indexPlus={() => { settab(index); }} />
+                    <li>
+                        <a key={dev.key} className={tab === index ? 'tab_title choose' : 'tab_title'} onClick={() => { settab(index) }}>
+                            {dev.name}
+                        </a>
+                    </li>
                 ))}
             </div>
             {Devtop.map((dev) => (
