@@ -13,6 +13,17 @@ nav {
 nav .logo {
     display: flex;
     min-width: none;
+    transition: all .5s ease;
+
+}
+
+nav .logo:hover{
+    filter: drop-shadow(0 0 5px #FFFEF3);
+
+}
+
+nav img {
+    filter: drop-shadow(0 0 3px #FFFEF3);
 }
 
 .menu {
