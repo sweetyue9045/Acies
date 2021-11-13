@@ -13,7 +13,7 @@ footer {
     font-size: var(--fz14);
     font-weight: 700;
     letter-spacing: 3px;
-    filter: drop-shadow(0 0 5px #fff);
+    filter: drop-shadow(0 0 5px #FFFEF3);
 }
 
 .footer_right{

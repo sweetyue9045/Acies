@@ -1,4 +1,4 @@
-import Title from "../Title";
+import Title from "./H_Title";
 
 import VILLAGE_MOSSINA from "../../assets/im/village_mossina.svg"
 import VILLAGE_AFEITE from "../../assets/im/village_afeite.svg"

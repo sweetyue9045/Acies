@@ -12,9 +12,9 @@ export default function Nav() {
                 </div>
             </Link>
             <ul className="menu">
-                <li><Link to="/news" className="menu_link">
-                    <div className="menu_top">最新消息</div>
-                    <div className="menu_bottom">BREAKING NEWS</div>
+                <li><Link to="/board" className="menu_link">
+                    <div className="menu_top">佈告欄</div>
+                    <div className="menu_bottom">BULLETIN BOARD</div>
                 </Link></li>
                 <li><Link to="/game" className="menu_link">
                     <div className="menu_top">專注力遊戲</div>
