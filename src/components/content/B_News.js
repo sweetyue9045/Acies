@@ -22,13 +22,12 @@ export default function News() {
 
     var click = (index) => {
         n = index;
-        clearInterval();
     }
     return (
         <>
             <div className="news">
                 <div className="n_left">
-                    <Title Title_top="最新消息" Title_bottom="BREAKING NEWS" ls="9.5px"/>
+                    <Title Title_top="最新消息" Title_bottom="BREAKING NEWS" ls="9.5px" />
                     <div className="logo">
                         <div className="text">ACIES</div>
                         <div className="text">TWIN JOURNEY</div>
@@ -41,11 +40,11 @@ export default function News() {
                     ))}
                     <div className="dot_block">
                         {news.map((news, index) => (
-                            <Carousel_dot key={news.key} news={news} isActive={tab === index}
-                                indexPlus={() => {
+                            <div key={news.key} className={tab === index ? 'carousel_dot choose' : 'carousel_dot'}
+                                onClick={() => {
                                     settab(index); click(index);
-                                }}
-                            />
+                                }}>
+                            </div>
                         ))}
                     </div>
                 </div>

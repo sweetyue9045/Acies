@@ -52,7 +52,6 @@
     margin: 0 0 50px 40px;
 }
 
-
 /* news */
 
 .news {
@@ -132,6 +131,8 @@
     background-color: #fff;
 }
 
+/* dev */
+
 .dev {
     width: 1075px;
     min-height: 1953px;
@@ -140,7 +141,7 @@
 
 .dev_tab {
     font-weight: bolder;
-    text-decoration: none; 
+    text-decoration: none;
     display: flex;
     min-height: 60px;
     margin-top: 50px;
@@ -157,7 +158,6 @@
     font-weight: 700;
     border-bottom: solid 4px rgba(255, 255, 255, 0);
     cursor: pointer;
-   
     transition: all .4s ease-in-out;
 }
 
@@ -168,8 +168,54 @@
     transition: all .4s ease-in-out;
 }
 
-.dev .dev_box{
+.dev .top_box {
     width: 100%;
+    height: 360px;
+    margin-top: 80px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dev .top_content {
+    width: 340px;
+    height: 100%;
+    padding: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    filter: drop-shadow(0 0 5px #fff);
+}
+
+.top_box .content_title {
+    margin: 0;
+}
+
+.top_box .content_text {
+    margin: 0;
+    width: 100%;
+}
+
+.top_box .top_link {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    border: #fff 2px solid;
+    border-radius: 100px;
+    padding: 7px 20px;
+    transition: all .5s ease-in-out;
+}
+
+.top_box .top_link:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+.dev .dev_box {
+    width: 100%;
+    min-height: 1050px;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     grid-column-gap: 100px;
@@ -177,12 +223,47 @@
     display: none;
     margin-top: 80px;
 }
-.dev .content_box{
-   width: 444px;
-   height: 494px;
+
+.dev_box .content_box {
+    width: 450px;
+    height: 500px;
+}
+
+.dev_box .content_text {
+    width: 320px;
 }
 
 .dev .showbox {
     display: grid;
     transition: all .4s ease-in-out;
+}
+
+.page_btn {
+    display: flex;
+    justify-content: center;
+    filter: drop-shadow(0 0 5px #fff);
+}
+
+.page_pre, .page_next {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fz30);
+    font-weight: 400;
+    letter-spacing: 10px;
+    margin: 0 30px;
+    cursor: pointer;
+}
+
+.page_pre:hover, .page_next:hover {
+    filter: drop-shadow(0 0 1px #fff);
+}
+
+.page_pre.showbox, .page_next.showbox {
+    display: flex;
+}
+
+.page_next img {
+    margin-left: 5px;
+    margin-top: 5px;
 }
