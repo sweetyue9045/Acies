@@ -43,7 +43,7 @@ function Enter() {
 
     return (
         <>
-            <img src={GIF} className="img_gif"
+            <img src={GIF} className="img_gif" alt="GIF"
                 style={{
                     width: percent * 100 + '%',
                     top: offsetY * 0.3 + 'px',
@@ -54,25 +54,25 @@ function Enter() {
                     height: hh + 'px',
                 }}>
                 <div className="logo" >
-                    <img src={LOGO_BG} />
-                    <img src={LOGO} />
+                    <img src={LOGO_BG} alt="LOGO_BG" />
+                    <img src={LOGO} alt="LOGO" />
                 </div>
-                <img src={PARALLAX} className="parallax" />
+                <img src={PARALLAX} className="parallax" alt="PARALLAX" />
             </div>
             <div className="enter_bottom"
                 style={{
                     margin: -hh / 10 + 'px 0 0 0'
                 }}>
-                <img src={BG_L} />
-                <img src={BG_C} />
-                <img src={BG_R} />
+                <img src={BG_L} alt="BG_L" />
+                <img src={BG_C} alt="BG_C" />
+                <img src={BG_R} alt="BG_R" />
                 <Link to="/home" className="start">
-                    <img src={Arrow_L} />
+                    <img src={Arrow_L} alt="Arrow_L" />
                     <div className="start_btn">
                         <div className="start_top">進入官網</div>
                         <div className="start_bottom">OFFICIAL WEBSITE</div>
                     </div>
-                    <img src={Arrow_R} />
+                    <img src={Arrow_R} alt="Arrow_R" />
                 </Link>
             </div>
             <Footer />

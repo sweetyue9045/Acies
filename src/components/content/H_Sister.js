@@ -14,8 +14,8 @@ export default function Sister() {
         var spstr = e.target.id.split("");
         var open, close, my_src = "";
 
-        if (spstr[spstr.length - 1] == "R") { open = "R"; close = "L"; my_src = SISTER_R2 }
-        else if (spstr[spstr.length - 1] == "L") { open = "L"; close = "R"; my_src = SISTER_L2 }
+        if (spstr[spstr.length - 1] === "R") { open = "R"; close = "L"; my_src = SISTER_R2 }
+        else if (spstr[spstr.length - 1] === "L") { open = "L"; close = "R"; my_src = SISTER_L2 }
 
         var target_open = document.getElementById('sister_' + open);
         var target_close = document.getElementById('sister_' + close);
@@ -54,8 +54,8 @@ export default function Sister() {
         var spstr = e.target.id.split("");
         var open, close, my_src = "";
 
-        if (spstr[spstr.length - 1] == "R") { open = "L"; close = "R"; my_src = SISTER_L }
-        else if (spstr[spstr.length - 1] == "L") { open = "R"; close = "L"; my_src = SISTER_R }
+        if (spstr[spstr.length - 1] === "R") { open = "L"; close = "R"; my_src = SISTER_L }
+        else if (spstr[spstr.length - 1] === "L") { open = "R"; close = "L"; my_src = SISTER_R }
 
         var target_open = document.getElementById('sister_' + open);
         var target_close = document.getElementById('sister_' + close);
@@ -100,10 +100,10 @@ export default function Sister() {
             <div className="page">
                 <Title Title="薇妲" Id="nameL" />
                 <div className="sisimg">
-                    <img id="sister_L" className="state click_point" onClick={click_open.bind(this)} src={SISTER_L} />
-                    <img id="page2L" className="page2 displaynone" src={SISTER_TEXT_BG} />
+                    <img id="sister_L" className="state click_point" onClick={click_open.bind(this)} src={SISTER_L} alt="SISTER_L" />
+                    <img id="page2L" className="page2 displaynone" src={SISTER_TEXT_BG} alt="SISTER_TEXT_BG" />
                     <div id="textL" className="text displaynone">
-                        <img id="cancelL" className="click_point" onClick={click_close.bind(this)} src={SISTER_CANCEL} />
+                        <img id="cancelL" className="click_point" onClick={click_close.bind(this)} src={SISTER_CANCEL} alt="SISTER_CANCEL" />
                         雙胞胎中的姊姊<br />個性驕傲嚴謹，內心是個溫柔的人。因為總會管教妹妹，兩人之間發生不少爭執。<br /><br />
                         冒險旅途中會披上祖傳披風，也會增加許多民俗感的小元素。
                     </div>
@@ -112,10 +112,10 @@ export default function Sister() {
             <div className="page">
                 <Title Title="莉妲" Id="nameR" />
                 <div className="sisimg" >
-                    <img id="sister_R" className="state click_point" onClick={click_open.bind(this)} src={SISTER_R} />
-                    <img id="page2R" className="page2 displaynone" src={SISTER_TEXT2_BG} />
+                    <img id="sister_R" className="state click_point" onClick={click_open.bind(this)} src={SISTER_R} alt="SISTER_R" />
+                    <img id="page2R" className="page2 displaynone" src={SISTER_TEXT2_BG} alt="SISTER_TEXT2_BG" />
                     <div id="textR" className="text displaynone">
-                        <img id="cancelR" className="click_point" onClick={click_close.bind(this)} src={SISTER_CANCEL} />
+                        <img id="cancelR" className="click_point" onClick={click_close.bind(this)} src={SISTER_CANCEL} alt="SISTER_CANCEL" />
                         雙胞胎中的妹妹<br />個性活潑開朗、樂於助人，容易衝動 犯錯，內心渴望於他人的認可。<br /><br />
                         冒險旅途中會變成靈魂型態，保有原本特色並且跟隨在姊姊身旁。
                     </div>

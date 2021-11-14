@@ -10,7 +10,7 @@ import Sale from './content/H_Sale';
 
 import { useState, useEffect } from "react";
 
-var v_top = new Array;
+var v_top = [];
 export default function HContent() {
     const [offsetY, setOffsetY] = useState(0);
     const handleScroll = () => {

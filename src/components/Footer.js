@@ -9,8 +9,8 @@ export default function Footer() {
                 ＡＣＩＥＳ - TWIN JOURNEY
             </div>
             <div className="footer_right">
-                <img src={YPDA} />
-                <img src={KT} />
+                <img src={YPDA} alt="YPDA"/>
+                <img src={KT} alt="KT" />
             </div>
         </footer>
     );

@@ -56,11 +56,11 @@
 /* news */
 
 .news {
-    width: 1075px;
+    width: 1125px;
     height: 550px;
     margin: 150px auto 0;
     display: grid;
-    grid-template-columns: 26.5% 73.5%;
+    grid-template-columns: 30% 70%;
 }
 
 .n_left {
@@ -136,8 +136,7 @@
 /* dev */
 
 .dev {
-    width: 1075px;
-    /* min-height: 1953px; */
+    width: 1125px;
     margin: 200px auto 0;
 }
 

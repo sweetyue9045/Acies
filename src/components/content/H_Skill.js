@@ -12,25 +12,25 @@ export default function Skill() {
             <Title Title="技能介紹" />
             <div className="content">
                 <video width="570" controls>
-                    <source src={SKILL_X} type="video/mp4" />
+                    <source src={SKILL_X} type="video/mp4" alt="SKILL_X" />
                     您的瀏覽器不支援此 HTML5 影片標籤
                 </video>
                 <div className="skill_text">
                     <div className="title">物體移動</div>
                     <div className="explain">
-                        按下<img src={SKILL_X_btn} className="game_btn game_btn_X" />，注視靈魂與法鈴啟動技能。
+                        按下<img src={SKILL_X_btn} className="game_btn game_btn_X" alt="SKILL_X_btn" />，注視靈魂與法鈴啟動技能。
                     </div>
                 </div>
             </div>
             <div className="content">
                 <video width="570" controls>
-                    <source src={SKILL_Y} type="video/mp4" />
+                    <source src={SKILL_Y} type="video/mp4" alt="SKILL_Y" />
                     您的瀏覽器不支援此 HTML5 影片標籤
                 </video>
                 <div className="skill_text">
                     <div className="title">凝聚之光</div>
                     <div className="explain">
-                        按下<img src={SKILL_Y_btn} className="game_btn" />啟動技能。注視欲移動物品，按住<img src={SKILL_A_btn} className="game_btn" />以視線拖曳至目標位置。
+                        按下<img src={SKILL_Y_btn} className="game_btn" alt="SKILL_Y_btn" />啟動技能。注視欲移動物品，按住<img src={SKILL_A_btn} className="game_btn" alt="SKILL_A_btn" />以視線拖曳至目標位置。
                     </div>
                 </div>
             </div>

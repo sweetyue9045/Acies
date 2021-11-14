@@ -8,7 +8,7 @@ export default function Nav() {
         <nav>          
             <Link to="/home">
                 <div className="logo">
-                    <img src={LOGO} />
+                    <img src={LOGO} alt="LOGO"/>
                 </div>
             </Link>
             <ul className="menu">

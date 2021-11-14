@@ -4,7 +4,7 @@ import FEATURE_LOGO from "../../assets/im/feature_logo.svg";
 export default function Feature() {
     return (
         <div className="feature" id="feature">
-            <img src={FEATURE_LOGO} />
+            <img src={FEATURE_LOGO} alt="FEATURE_LOGO" />
             <div className="content">眼動儀與手把結合</div>
             <div className="content">2D橫向卷軸動作解謎遊戲</div>
             <div className="content">

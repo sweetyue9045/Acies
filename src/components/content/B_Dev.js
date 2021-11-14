@@ -9,18 +9,16 @@ import DEV_PREV from "../../assets/im/dev_prev.svg"
 import { useState } from 'react';
 
 var flag = 0;
-
 export default function Dev() {
     const [tab, settab] = useState(0);
     const [page, setpage] = useState(1);
-    const Devs = new Array;
-    const DevTs = new Array;
-    const Devtop = new Array;
-    const Devs_page = new Array;
+    const Devs = [];
+    const DevTs = [];
+    const Devtop = [];
+    const Devs_page = [];
     var nowpage = "";
 
-
-    if (dev[tab].name == "ALL") {
+    if (dev[tab].name === "ALL") {
         //Top
         const DevT = dev.map(
             (devs) => devs.top
@@ -61,14 +59,14 @@ export default function Dev() {
         // 當前頁數，對應現在當前頁數
         let currentPage = nowPage;
 
-        if (currentPage == pageTotal) {
+        if (currentPage === pageTotal) {
             document.getElementById('page_next').classList.remove("showbox")
         }
         else if (currentPage > pageTotal) {
             setpage(currentPage - 1)
             currentPage = pageTotal;
         }
-        else if (flag == 1 && currentPage < pageTotal) {
+        else if (flag === 1 && currentPage < pageTotal) {
             document.getElementById('page_next').classList.add("showbox")
         }
         //顯示數量
@@ -100,8 +98,8 @@ export default function Dev() {
             <Title Title_top="開發日誌" Title_bottom="DEV JOURNAL" ls="13px" />
             <div className="dev_tab">
                 {dev.map((dev, index) => (
-                    <li>
-                        <a key={dev.key} className={tab === index ? 'tab_title choose' : 'tab_title'} onClick={() => { settab(index) }}>
+                    <li key={dev.key}>
+                        <a className={tab === index ? 'tab_title choose' : 'tab_title'} href={dev.a} target="_blank" onClick={() => { settab(index) }}>
                             {dev.name}
                         </a>
                     </li>
@@ -109,19 +107,19 @@ export default function Dev() {
             </div>
             {Devtop.map((dev) => (
                 <div key={dev.id} className="top_box">
-                    <img src={dev.im} />
+                    <img src={dev.im} alt={dev.im}/>
                     <div className="top_content">
                         <div className="content_title">{dev.title}</div>
                         <div className="content_text">{dev.content}</div>
-                        <a className="top_link" src={dev.a}>READ MORE</a>
+                        <a className="top_link" href={dev.a} target="_blank">READ MORE</a>
                     </div>
-                    <img src={DEV_RIGHT} />
+                    <img src={DEV_RIGHT} alt="DEV_RIGHT" />
                 </div>
             ))}
             {dev.map((dev, index) => (
                 <div key={dev.key} className={tab === index ? 'dev_box showbox' : 'dev_box'}>
                     {Devs_page.map(devs => (
-                        <a key={devs.id} className="content_box" style={{ background: "url(" + devs.im + ") no-repeat center top" }}>
+                        <a key={devs.id} className="content_box" href={devs.a} target="_blank" style={{ background: "url(" + devs.im + ") no-repeat center top" }}>
                             <div className="mask"></div>
                             <div className="content">
                                 <div className="content_title">{devs.title}</div>
@@ -133,12 +131,12 @@ export default function Dev() {
             ))}
             <div className="page_btn">
                 <div id="page_prev" className={page > 1 ? 'page_prev showbox' : 'page_prev'} onClick={pre}>
-                    <img src={DEV_PREV} />
+                    <img src={DEV_PREV} alt="DEV_PREV" />
                     <p>PREV</p>
                 </div>
                 <div id="page_next" className="page_next showbox" onClick={next}>
                     <p>NEXT</p>
-                    <img src={DEV_NEXT} />
+                    <img src={DEV_NEXT} alt="DEV_NEXT" />
                 </div>
             </div>
         </div>

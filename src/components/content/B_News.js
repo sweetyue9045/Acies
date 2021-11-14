@@ -31,7 +31,7 @@ export default function News() {
                 <div className="logo">
                     <div className="text">ACIES</div>
                     <div className="text">TWIN JOURNEY</div>
-                    <img src={NEWS_BOTTOM} />
+                    <img src={NEWS_BOTTOM} alt="NEWS_BOTTOM" />
                 </div>
             </div>
             <div className="n_right">
@@ -40,7 +40,7 @@ export default function News() {
                         <div className="mask"></div>
                         <div className="content">
                             <div className="content_title">{news.title}</div>
-                            <div className="content_text">{news.content}</div>
+                            <div className="content_text" dangerouslySetInnerHTML={{ __html: news.content }}></div>
                         </div>
                     </div>
                 ))}

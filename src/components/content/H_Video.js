@@ -9,7 +9,7 @@ import VIDEO_BOSS from "../../assets/im/video_BOSS.mp4";
 export default function Video() {
     return (
         <div className="video">
-            <img src={VIDEO_BG_L} className="video_bg" />
+            <img src={VIDEO_BG_L} className="video_bg" alt="VIDEO_BG_L" />
             <div className="content">
                 <div className="video_block">
                     <Title Title="平台機關" />
@@ -33,7 +33,7 @@ export default function Video() {
                     </video>
                 </div>
             </div>
-            <img src={VIDEO_BG_R} className="video_bg" />
+            <img src={VIDEO_BG_R} className="video_bg" alt="VIDEO_BG_R" />
         </div>
     );
 }

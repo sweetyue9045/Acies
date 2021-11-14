@@ -10,10 +10,10 @@ export default function Scene() {
         <div className="scene">
             <Title Title="遊戲場景" />
             <div className="content">
-                <img src={SCENE_TOWN} />
-                <img src={SCENE_WATER} />
-                <img src={SCENE_SHRINE} />
-                <img src={SCENE_MURAL} />
+                <img src={SCENE_TOWN} alt="SCENE_TOWN" />
+                <img src={SCENE_WATER} alt="SCENE_WATER" />
+                <img src={SCENE_SHRINE} alt="SCENE_SHRINE" />
+                <img src={SCENE_MURAL} alt="SCENE_MURAL" />
             </div>
         </div>
     );
