@@ -4,11 +4,11 @@ import Footer from "../components/Footer"
 
 function Game() {
     return (
-        <div>
+        <>
             <Nav />
             <GContent />
             <Footer />
-        </div>
+        </>
     );
 }
 

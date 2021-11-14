@@ -1,13 +1,13 @@
 import '../components/Enter.css';
 import GIF from "../assets/im/start_gif.gif";
-import PARALLAX from "../assets/im/parallax.png";
+import PARALLAX from "../assets/im/start_parallax.png";
 import LOGO from "../assets/im/start_logo.svg";
 import LOGO_BG from "../assets/im/start_logo_bg.png";
 import BG_L from "../assets/im/start_bg_l.png";
 import BG_C from "../assets/im/start_bg_c.png";
 import BG_R from "../assets/im/start_bg_r.png";
-import Arrow_L from "../assets/im/Arrow_L.svg";
-import Arrow_R from "../assets/im/Arrow_R.svg";
+import Arrow_L from "../assets/im/start_arrow_L.svg";
+import Arrow_R from "../assets/im/start_arrow_R.svg";
 import Footer from "../components/Footer"
 
 import { Link } from "react-router-dom"
@@ -24,7 +24,7 @@ function Enter() {
     if (win_wid > win_hei) {
         if (win_wid <= 1440) {
             percent = 1440 / win_wid;
-            hh = ((1041 * percent) + (309 * percent));
+            hh = ((1041 * percent) + (290 * percent));
 
         } else if (win_wid > 1440) {
             percent = win_wid / 1440;
@@ -42,7 +42,7 @@ function Enter() {
     }, []);
 
     return (
-        <div>
+        <>
             <img src={GIF} className="img_gif"
                 style={{
                     width: percent * 100 + '%',
@@ -76,7 +76,7 @@ function Enter() {
                 </Link>
             </div>
             <Footer />
-        </div>
+        </>
     );
 }
 

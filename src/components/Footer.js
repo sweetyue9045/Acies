@@ -1,5 +1,6 @@
 import './Footer.css';
-import FOOTER from "../assets/im/footer_right.svg";
+import YPDA from "../assets/im/footer_YPDA.svg";
+import KT from "../assets/im/footer_KT.svg";
 
 export default function Footer() {
     return (
@@ -8,7 +9,8 @@ export default function Footer() {
                 ＡＣＩＥＳ - TWIN JOURNEY
             </div>
             <div className="footer_right">
-                <img src={FOOTER} />
+                <img src={YPDA} />
+                <img src={KT} />
             </div>
         </footer>
     );

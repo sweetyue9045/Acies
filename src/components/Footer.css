@@ -13,9 +13,14 @@ footer {
     font-size: var(--fz14);
     font-weight: 700;
     letter-spacing: 3px;
-    filter: drop-shadow(0 0 5px #fff);
+    margin-right: -1px;
+    filter: drop-shadow(0 0 5px #FFFEF3);
 }
 
 .footer_right{
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     filter:drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }

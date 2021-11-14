@@ -13,6 +13,17 @@ nav {
 nav .logo {
     display: flex;
     min-width: none;
+    transition: all .5s ease;
+
+}
+
+nav .logo:hover{
+    filter: drop-shadow(0 0 5px #FFFEF3);
+
+}
+
+nav img {
+    filter: drop-shadow(0 0 3px #FFFEF3);
 }
 
 .menu {
@@ -22,7 +33,6 @@ nav .logo {
 .menu li {
     list-style: none;
     transition: all .5s ease;
-
 }
 
 .menu li:first-child {
@@ -30,7 +40,7 @@ nav .logo {
 }
 
 .menu li:hover {
-    filter: drop-shadow(0 0 5px #fff);
+    filter: drop-shadow(0 0 1px #FFFEF3);
 }
 
 .menu_link {
@@ -45,20 +55,21 @@ nav .logo {
     font-weight: 300;
     font-size: var(--fz18);
     letter-spacing: 5px;
-    margin-left: 3px;
-    filter: drop-shadow(0 0 5px #fff);
+    margin-right: -3px;
+    filter: drop-shadow(0 0 5px #FFFEF3);
 }
 
 .menu_bottom {
     font-size: 12px;
     letter-spacing: 3px;
+    margin-right: -1px;
     font-weight: 100;
     display: inline-block;
-    filter: drop-shadow(0 0 5px #fff);
+    filter: drop-shadow(0 0 5px #FFFEF3);
 }
 
 .menu li:first-child .menu_bottom {
-    transform: scale(0.68);
+    transform: scale(0.47);
 }
 
 .menu li:nth-child(2) .menu_bottom {
