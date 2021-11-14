@@ -3,7 +3,7 @@ import './GContent.css';
 export default function GContent() {
     return (
         <div className="GC">
-            TO BE CONTINUED
+           <p>TO BE CONTINUED</p>
         </div>
     );
 }

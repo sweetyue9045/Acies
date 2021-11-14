@@ -1,0 +1,52 @@
+.team{
+    width:1125px;
+    margin: 150px auto;
+}
+.team .title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 0;
+    filter: drop-shadow(0 0 5px #FFFEF3);
+}
+
+.team .title_top {
+    font-weight: 300;
+    font-size: 40px;
+    letter-spacing: 15px;
+    margin-right: -13px;
+    font-weight: 400;
+}
+
+.team .title_bottom {
+    font-size: 12px;
+    font-weight: 100;
+}
+
+.bgphoto{
+    outline: 1px #fff;
+    background-image: url(../assets/im//bg_text.png);
+    background-repeat: no-repeat;
+    background-position:-10% 10%;
+}
+.team .photo {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+    margin: 40px;
+}
+.photo_img{
+    filter: drop-shadow(0 0 5px #FFFEF3);
+}
+.photo_img p{
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin-right: -3px;
+}
+.photo_img :nth-child(2){
+    padding: 20px 0 10px;
+    font-size: 26px;
+}
+.photo_img :nth-child(3){
+    font-size: 22px;
+}
