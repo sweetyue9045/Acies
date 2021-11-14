@@ -4,6 +4,7 @@ import dev from "../../assets/json/dev.json"
 
 import DEV_RIGHT from "../../assets/im/dev_right.svg"
 import DEV_NEXT from "../../assets/im/dev_next.svg"
+import DEV_PREV from "../../assets/im/dev_prev.svg"
 
 import { useState } from 'react';
 
@@ -83,14 +84,14 @@ export default function Dev() {
         nowpage++;
         setpage(nowpage);
         flag = 1;
-        window.scrollTo(0, document.getElementById('dev').offsetTop+900);
+        window.scrollTo(0, document.getElementById('dev').offsetTop + 900);
     }
 
     const pre = () => {
         nowpage = page;
         nowpage--;
         setpage(nowpage);
-        window.scrollTo(0, document.getElementById('dev').offsetTop+900);
+        window.scrollTo(0, document.getElementById('dev').offsetTop + 900);
     }
 
 
@@ -131,9 +132,12 @@ export default function Dev() {
                 </div>
             ))}
             <div className="page_btn">
-                <div id="page_pre" className={page > 1 ? 'page_pre showbox' : 'page_pre'} onClick={pre}>PRE</div>
+                <div id="page_prev" className={page > 1 ? 'page_prev showbox' : 'page_prev'} onClick={pre}>
+                    <img src={DEV_PREV} />
+                    <p>PREV</p>
+                </div>
                 <div id="page_next" className="page_next showbox" onClick={next}>
-                    NEXT
+                    <p>NEXT</p>
                     <img src={DEV_NEXT} />
                 </div>
             </div>
