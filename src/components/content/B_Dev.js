@@ -6,9 +6,9 @@ import DEV_RIGHT from "../../assets/im/dev_right.svg"
 import DEV_NEXT from "../../assets/im/dev_next.svg"
 import DEV_PREV from "../../assets/im/dev_prev.svg"
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-var flag = 0;
+let PAGE_NEXT;
 export default function Dev() {
     const [tab, settab] = useState(0);
     const [page, setpage] = useState(1);
@@ -18,23 +18,28 @@ export default function Dev() {
     const Devs_page = [];
     var nowpage = "";
 
+    useEffect(() => {
+        console.log("成功加載")
+        PAGE_NEXT = document.getElementById('page_next');
+    }, []);
+
     if (dev[tab].name === "ALL") {
         //Top
-        const DevT = dev.map(
-            (devs) => devs.top
+
+        // for (let indexs = 0; indexs < dev.length; indexs++) {
+        //     dev[indexs].top.map(
+        //         (devs) => DevTs.push(devs)
+        //     )
+        // }
+        // Devtop.push(DevTs[0])
+
+        dev[tab].top.map(
+            (devs) => Devtop.push(devs)
         )
-        for (let indexs = 0; indexs < DevT.length; indexs++) {
-            DevT[indexs].map(
-                (devs) => DevTs.push(devs)
-            )
-        }
-        Devtop.push(DevTs[0])
+
         //content
-        const Dev = dev.map(
-            (devs) => devs.contents
-        )
-        for (let indexs = 0; indexs < Dev.length; indexs++) {
-            Dev[indexs].map(
+        for (let indexs = 0; indexs < dev.length; indexs++) {
+            dev[indexs].contents.map(
                 (devs) => Devs.push(devs)
             )
         }
@@ -58,16 +63,17 @@ export default function Dev() {
         const pageTotal = Math.ceil(dataTotal / perpage);
         // 當前頁數，對應現在當前頁數
         let currentPage = nowPage;
-
-        if (currentPage === pageTotal) {
-            document.getElementById('page_next').classList.remove("showbox")
-        }
-        else if (currentPage > pageTotal) {
-            setpage(currentPage - 1)
-            currentPage = pageTotal;
-        }
-        else if (flag === 1 && currentPage < pageTotal) {
-            document.getElementById('page_next').classList.add("showbox")
+        if (PAGE_NEXT != null) {
+            if (currentPage === pageTotal) {
+                PAGE_NEXT.classList.remove("showbox")
+            }
+            else if (currentPage > pageTotal) {
+                setpage(currentPage - 1)
+                currentPage = pageTotal;
+            }
+            else if (currentPage < pageTotal) {
+                PAGE_NEXT.classList.add("showbox")
+            }
         }
         //顯示數量
         var minData = (currentPage * perpage) - perpage;
@@ -81,7 +87,6 @@ export default function Dev() {
         nowpage = page;
         nowpage++;
         setpage(nowpage);
-        flag = 1;
         window.scrollTo(0, document.getElementById('dev').offsetTop + 900);
     }
 
@@ -107,7 +112,7 @@ export default function Dev() {
             </div>
             {Devtop.map((dev) => (
                 <div key={dev.id} className="top_box">
-                    <img src={dev.im} alt={dev.im}/>
+                    <img src={dev.im} alt={dev.im} />
                     <div className="top_content">
                         <div className="content_title">{dev.title}</div>
                         <div className="content_text">{dev.content}</div>

@@ -32,7 +32,7 @@ export default function HContent() {
         scrolltop();
     }, []);
 
-    // // 加動畫
+    // 加動畫
     if (offsetY >= v_top[1] - 300 && offsetY <= v_top[1] + 10) {
         document.getElementById('s_year').classList.add('fadein');
         setTimeout(function () {
