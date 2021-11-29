@@ -33,6 +33,7 @@ hr {
     opacity: 1 !important;
     transition: all .5s ease;
 }
+
 /* feature */
 
 .feature {
@@ -90,6 +91,7 @@ hr {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -156,8 +158,12 @@ hr {
     cursor: pointer;
 }
 
+.state {
+    transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) 0s;
+}
+
 .state:hover {
-    transition: all 500ms;
+    /* transition: all 500ms; */
     transform: scale(1.03);
     filter: drop-shadow(0 0 5px #FFFEF3);
 }
@@ -177,6 +183,7 @@ hr {
         transform: translateX(0px);
         opacity: 1;
     }
+
     100% {
         transform: translateX(80px);
         opacity: 0;
@@ -189,6 +196,7 @@ hr {
         transform: translateX(80px);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0px);
         opacity: 1;
@@ -210,6 +218,7 @@ hr {
         transform: translateX(0px);
         opacity: 1;
     }
+
     100% {
         transform: translateX(-80px);
         opacity: 0;
@@ -221,6 +230,7 @@ hr {
         transform: translateX(-80px);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0px);
         opacity: 1;
@@ -255,6 +265,7 @@ hr {
     0% {
         transform: perspective(600px) rotateY(0deg);
     }
+
     100% {
         transform: perspective(600px) rotateY(90deg);
     }
@@ -264,6 +275,7 @@ hr {
     0% {
         transform: perspective(600px) rotateY(270deg);
     }
+
     100% {
         transform: perspective(600px) rotateY(360deg);
     }
@@ -273,6 +285,7 @@ hr {
     0% {
         transform: perspective(600px) rotateY(360deg);
     }
+
     100% {
         transform: perspective(600px) rotateY(270deg);
     }
@@ -282,6 +295,7 @@ hr {
     0% {
         transform: perspective(600px) rotateY(90deg);
     }
+
     100% {
         transform: perspective(600px) rotateY(0deg);
     }
