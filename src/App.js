@@ -1,5 +1,4 @@
 import './App.css';
-import ENTER from './pages/Enter'
 import HOME from './pages/Home'
 import BOARD from './pages/Board'
 import GAME from './pages/Game'
@@ -13,8 +12,7 @@ function App() {
     <BrowserRouter>
         <ScrollToTop />
         <Switch>
-          <Route exact path="/" component={ENTER} />
-          <Route path="/home" component={HOME} />
+          <Route exact path="/" component={HOME} />
           <Route path="/board" component={BOARD} />
           <Route path="/game" component={GAME} />
           <Route path="/team" component={TEAM} />

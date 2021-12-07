@@ -1,51 +1,40 @@
 import './HContent.css';
+import { useContext, useEffect } from "react";
 
+import Enter from './content/H_Enter';
 import Feature from './content/H_Feature';
-import Sister from './content/H_Sister';
-import Video from './content/H_Video';
-import Skill from './content/H_Skill';
+import Story from './content/H_Story';
+import Tobbi from './content/H_Tobbi';
 import Village from './content/H_Village';
-import Scene from './content/H_Scene';
 import Sale from './content/H_Sale';
 
-import { useState, useEffect } from "react";
+import { ScrollY } from '../pages/Home';;
 
 var v_top = [];
 export default function HContent() {
-    const [offsetY, setOffsetY] = useState(0);
-    const handleScroll = () => {
-        setOffsetY(document.documentElement.scrollTop);
-    }
+    const offsetY = useContext(ScrollY)
     const scrolltop = () => {
-        v_top = [document.getElementById("village").offsetTop, document.getElementById("sale").offsetTop];
+        v_top = [
+            document.getElementById("feature").offsetTop,
+            document.getElementById("village").offsetTop,
+            document.getElementById("sale").offsetTop
+        ];
     }
-    // 監聽滾動
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-
-        return () => window.addEventListener("scroll", handleScroll, true);
-    }, []);
-
+    console.log(offsetY)
     // 抓取加動畫位置
     useEffect(() => {
-        console.log("成功加載")
         scrolltop();
     }, []);
 
     // 加動畫
-    if (offsetY >= v_top[1] - 300 && offsetY <= v_top[1] + 10) {
-        document.getElementById('s_year').classList.add('fadein');
-        setTimeout(function () {
-            document.getElementById('s_date').classList.add('fadein');
-        }, 500);
-        setTimeout(function () {
-            document.getElementById('s_ch').classList.add('fadein');
-            document.getElementById('s_en').classList.add('fadein');
-        }, 1000);
-        setTimeout(function () {
-            document.getElementById('s_platform').classList.add('fadein');
-        }, 1500);
-    } else if (offsetY >= v_top[0] - 300 && offsetY <= v_top[0] + 10) {
+    if (offsetY >= v_top[2] - 300 && offsetY <= v_top[2] + 10) {
+        for (let i = 0; i < 5; i++) {
+            setTimeout(function () {
+                document.getElementById("sale").children[1].children[i].classList.add('fadein');
+            }, 100+i*500);
+        }
+    }
+    else if (offsetY >= v_top[1] - 300 && offsetY <= v_top[1] + 10) {
         for (let i = 0; i < 3; i++) {
             document.getElementById("v_hr" + i).classList.add('fadein');
         }
@@ -62,16 +51,20 @@ export default function HContent() {
             document.getElementById('v_tama').classList.add('fadein');
         }, 2000);
     }
-
+    else if (offsetY >= v_top[0] - 300 && offsetY <= v_top[0] + 10) {
+        for (let i = 0; i < 4; i++) {
+            setTimeout(function () {
+                document.getElementById("feature").children[i].classList.add('fadein');
+            }, 100+i*500);
+        }
+    }
     return (
         <div className="Home">
+            <Enter />
             <Feature />
-            <Sister />
-            <Video />
-            <hr />
-            <Skill />
+            <Story />
+            <Tobbi />
             <Village />
-            <Scene />
             <Sale />
         </div>
     );

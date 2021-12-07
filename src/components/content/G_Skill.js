@@ -1,4 +1,4 @@
-import Title from "./H_Title";
+import Title from "./G_Title";
 
 import SKILL_X from "../../assets/im/skill_X_btn.mp4";
 import SKILL_Y from "../../assets/im/skill_Y_btn.mp4";

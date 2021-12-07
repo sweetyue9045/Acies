@@ -1,4 +1,4 @@
-import Title from "./H_Title";
+import Title from "./G_Title";
 
 import SISTER_L from "../../assets/im/sister_L.png";
 import SISTER_R from "../../assets/im/sister_R.png";
