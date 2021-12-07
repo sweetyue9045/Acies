@@ -155,9 +155,13 @@ body {
 .story .text:first-child {
     margin-top: -30px;
 }
+.story .text .title{
+    opacity: 0;
+}
 
 .story img {
     filter: drop-shadow(0 0 10px #FFFEF3);
+    opacity: 0;
 }
 
 .story .content {
@@ -167,6 +171,7 @@ body {
     line-height: 50px;
     margin-top: 40px;
     filter: drop-shadow(0 0 5px #FFFEF3);
+    opacity: 0;
 }
 
 .story .content p {
@@ -194,15 +199,20 @@ body {
     letter-spacing: 8px;
     line-height: 50px;
     filter: drop-shadow(0 0 5px #FFFEF3);
+    opacity: 0;
 }
 
 .tobbi img {
     margin: 110px 0;
     filter: drop-shadow(0 0 5px #FFFEF3);
-
+    opacity: 0;
 }
 
-.tobbi_link {
+.tobbi_link{
+    opacity: 0;
+}
+
+.tobbi_link a{
     font-size: var(--fz28);
     letter-spacing: 8px;
     border: #fff 2px solid;
@@ -213,14 +223,185 @@ body {
     filter: drop-shadow(0 0 5px #FFFEF3);
 }
 
-.tobbi_link:hover {
+.tobbi_link a:hover {
     color: #000;
     background-color: #fff;
 }
 
-/* concentration */
+/* magic */
+.magic {
+    min-height: 870px;
+    background-image: url("../assets/im/magic_bg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 100px 160px;
+    display: grid;
+    grid-template-columns: 64% 36%;
+    align-items: center;
+}
+
+.Home .introduce .title{
+    opacity: 0;
+}
+.magic .block_title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.BLOCK {
+    margin: 35px 0;
+    width: 100%;
+}
+
+.magic .left, .magic .right {
+    display: flex;
+}
+
+.magic .num {
+    font-size: var(--fz24);
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-right: -1px;
+    line-height: 25px;
+    background-color: white;
+    color: #000;
+    padding: 2px 7px 3px 9px;
+}
 
 
+.magic .text {
+    font-size: var(--fz24);
+    letter-spacing: 2px;
+    margin: -2px -1px 0 25px;
+}
+
+.magic .r_prev {
+    width: 22px;
+    height: 26px;
+    background-color: rgba(255, 255, 255, 0.35);
+    mask-image: url("../assets/im/magic_prev.svg");
+    margin-right: 32px;
+}
+
+.magic .r_next {
+    width: 22px;
+    height: 26px;
+    background-color: rgba(255, 255, 255, 1);
+    mask-image: url("../assets/im/magic_next.svg");
+}
+
+.magic_sis {
+    margin-left: 30px;
+    filter: drop-shadow(0 0 10px #FFFEF3);
+    opacity: 0;
+}
+
+/* ordeal */
+
+.ordeal {
+    min-height: 870px;
+    background-image: url("../assets/im/ordeal_bg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 100px 160px;
+    display: grid;
+    grid-template-columns: 36% 64%;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.ordeal .content {
+    margin-top: 30px;
+    font-size: var(--fz28);
+    letter-spacing: 8px;
+    margin-right: -6px;
+    text-align: left;
+    opacity: 0;
+}
+
+.ordeal .left_img {
+    width: 525px;
+    height: 685px;
+    opacity: 0;
+}
+
+.left_img :first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    filter: drop-shadow(0 0 10px #FFFEF3);
+    z-index: 100;
+}
+
+.left_img :last-child {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+/* crisis */
+.crisis {
+    min-height: 870px;
+    background-image: url("../assets/im/crisis_bg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 100px 160px;
+    display: grid;
+    grid-template-columns: 64% 36%;
+    align-items: end;
+    margin-top: 150px;
+}
+
+.crisis .content {
+    margin-top: 30px;
+    font-size: var(--fz28);
+    letter-spacing: 8px;
+    margin-right: -6px;
+    text-align: left;
+    opacity: 0;
+}
+
+.crisis_bear {
+    margin-left: -215px;
+    filter: drop-shadow(0 0 10px #FFFEF3);
+    opacity: 0;
+}
+
+/* awards */
+
+.awards {
+    min-height: 1050px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 200px;
+    filter: drop-shadow(0 0 10px #FFFEF3);
+
+}
+
+.award {
+    width: 450px;
+    height: 250px;
+    background-image: url("../assets/im/awards_bg.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: var(--fz24);
+    letter-spacing: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.award p {
+    margin: 10px -1px 10px 0;
+}
+
+.award :last-child {
+    font-size: 40px;
+    font-weight: 700;
+}
 
 /* village */
 
