@@ -38,7 +38,7 @@
 }
 
 html, body {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background-color: #000;
     color: #fff;
@@ -56,12 +56,10 @@ a {
     color: #fff;
 }
 
-@media only screen and (min-width: 0px) and (max-width: 768px) {
+@media only screen and (min-width: 0px) and (max-width: 834px) {
     :root {
-        --fz30: 28px;
-        --fz26: 24px;
-        --fz22: 20px;
-        --fz18: 16px;
-        --fz16: 14px;
+        --fz30: 20px;
+        --fz28: 16px;
+        --fz24: 14px;
     }
 }

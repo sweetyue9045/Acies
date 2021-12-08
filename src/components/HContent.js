@@ -31,12 +31,11 @@ export default function HContent() {
 
         ];
     }
-    console.log(offsetY)
     // 抓取加動畫位置
     useEffect(() => {
         scrolltop();
     }, []);
-
+    // console.log(offsetY)
     // 加動畫
     if (offsetY >= v_top[7] - 300 && offsetY <= v_top[7] + 10) {
         for (let i = 0; i < 5; i++) {
@@ -48,42 +47,42 @@ export default function HContent() {
     else if (offsetY >= v_top[6] - 300 && offsetY <= v_top[6] + 10) {
         for (let i = 0; i < 2; i++) {
             setTimeout(function () {
-                document.getElementById("awards").children[i].classList.add('fadein');
+                document.getElementById("awards").children[0].children[i].classList.add('fadein');
             }, 100+i*500);
         }
     }
     else if (offsetY >= v_top[5] - 300 && offsetY <= v_top[5] + 10) {
         for (let i = 0; i < 2; i++) {
             setTimeout(function () {
-                document.getElementById("crisis").children[0].children[i].classList.add('fadein');
+                document.getElementById("crisis").children[0].children[0].children[i].classList.add('fadein');
             }, 100+i*500);
         }
         setTimeout(function () {
-            document.getElementById("crisis").children[1].classList.add('fadein');
+            document.getElementById("crisis").children[0].children[1].classList.add('fadein');
         }, 1300);
     }
     else if (offsetY >= v_top[4] - 300 && offsetY <= v_top[4] + 10) {
         setTimeout(function () {
-            document.getElementById("ordeal").children[0].classList.add('fadein');
+            document.getElementById("ordeal").children[0].children[0].classList.add('fadein');
         }, 100);
         for (let i = 0; i < 2; i++) {
             setTimeout(function () {
-                document.getElementById("ordeal").children[1].children[i].classList.add('fadein');
+                document.getElementById("ordeal").children[0].children[1].children[i].classList.add('fadein');
             }, 100+(i+1)*500);
         }
     }
     else if (offsetY >= v_top[3] - 300 && offsetY <= v_top[3] + 10) {
         for (let i = 0; i < 2; i++) {
             setTimeout(function () {
-                document.getElementById("magic").children[0].children[i].classList.add('fadein');
+                document.getElementById("magic").children[0].children[0].children[i].classList.add('fadein');
             }, 100+i*500);
         }
         setTimeout(function () {
-            document.getElementById("magic").children[1].classList.add('fadein');
+            document.getElementById("magic").children[0].children[1].classList.add('fadein');
         }, 1300);
     }
     else if (offsetY >= v_top[2] - 300 && offsetY <= v_top[2] + 10) {
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 4; i++) {
             setTimeout(function () {
                 document.getElementById("tobbi").children[i].classList.add('fadein');
             }, 100+i*500);
@@ -92,11 +91,11 @@ export default function HContent() {
     else if (offsetY >= v_top[1] - 300 && offsetY <= v_top[1] + 10) {
         for (let i = 0; i < 3; i++) {
             setTimeout(function () {
-                document.getElementById("story").children[0].children[i].classList.add('fadein');
+                document.getElementById("story").children[0].children[0].children[i].classList.add('fadein');
             }, 100+i*500);
         }
         setTimeout(function () {
-            document.getElementById("story").children[1].classList.add('fadein');
+            document.getElementById("story").children[0].children[1].classList.add('fadein');
         }, 1600);
     }
     else if (offsetY >= v_top[0] - 300 && offsetY <= v_top[0] + 10) {
