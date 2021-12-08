@@ -163,7 +163,7 @@ body {
 }
 
 .story .content {
-    max-width: 1120px;
+    max-width: 77.78vw;
     display: grid;
     grid-template-columns: 60% 40%;
     align-items: center;
@@ -180,13 +180,20 @@ body {
 .story img {
     filter: drop-shadow(0 0 10px #FFFEF3);
     opacity: 0;
-    width: 29.1vw;
+}
+
+.story .story_img1{
+    display: none;
+}
+.story .story_img2{
+    display: block;
 }
 
 .story .t_content {
     text-align: left;
     font-size: var(--fz28);
-    letter-spacing: 8px;
+    letter-spacing: 5px;
+    margin-right: -3px;
     line-height: 50px;
     margin-top: 40px;
     filter: drop-shadow(0 0 5px #FFFEF3);
@@ -203,7 +210,7 @@ body {
     bottom: -2px;
     left: 0;
     height: 2px;
-    width: 102px;
+    width: 96px;
     background-color: white;
 }
 
@@ -662,6 +669,32 @@ body {
     .feature :nth-child(2n) {
         margin-top: 45px;
     }
+    .story .title{
+        justify-content: center;
+    }
+    .story .content {
+        max-width: 57.79vw;
+        grid-template-columns: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .story .story_img1{
+        display: block;
+        margin: 0 auto;
+    }
+    .story .story_img2{
+        display: none;
+    }
+    .story .t_content {
+        letter-spacing: 4px;
+        margin-right: -2px;
+        line-height: 30px;
+        margin-top: 40px;
+    }
+    
+    .story .content p::after {
+        display: none;
+    }
     .tobbi{
         min-height: 82.13vw;
     }
@@ -680,5 +713,8 @@ body {
     }
     .award :last-child {
         font-size: 25px;
+    }
+    .feature img ,.feature .content,.story .text .title,.story img,.story .t_content,.tobbi .content,.tobbi img,.tobbi_link,.Home .introduce .title,.magic_sis,.Home .i_content,.ordeal .left_img,.crisis_bear,.award,.sale .year,.sale .date,.sale .s_ch,.sale .s_en,.sale .platform{
+        opacity: 1;
     }
 }

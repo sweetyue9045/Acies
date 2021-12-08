@@ -17,7 +17,7 @@ export default function Enter() {
                     top: offsetY * 0.3 + 'px',
                 }}
             />
-            <div className="enter_top">
+            <div className="enter_top" id="enter">
                 <div className="logo" >
                     <img src={LOGO_BG} alt="LOGO_BG" />
                     <img src={LOGO} alt="LOGO" />
