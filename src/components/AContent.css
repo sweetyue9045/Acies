@@ -1,0 +1,152 @@
+.Edit {
+    background-color: #fff;
+    padding: 25px 6.5vw 100px;
+}
+
+/* title / other */
+
+.Edit .title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    color: #000;
+    transition: all .5s ease;
+    font-size: 45px;
+    text-align: left;
+}
+
+.Edit .title_text {
+    letter-spacing: 8px;
+    margin-right: -6px;
+    font-weight: 500;
+}
+
+.Edit {
+    overflow-x: hidden;
+}
+
+
+/* 內容 */
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #9E9E9E !important;
+}
+
+#articlelist {
+    text-align: left;
+}
+
+#title {
+    margin-top: 40px;
+    padding: 10px 30px 14px;
+    font-size: var(--fz28);
+    letter-spacing: 5px;
+    font-weight: normal;
+    outline: none;
+    border: none;
+    background-color: #F5F5F5;
+    color: #000;
+    border-radius: 8px;
+    width: 100%;
+}
+
+#img {
+    color: #000;
+    background-color: #fff;
+    font-size: var(--fz28);
+    letter-spacing: 5px;
+    width: 320px;
+    cursor: pointer;
+}
+
+input[type=file] {
+    display: none;
+}
+
+.img_btn {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.imgsvg {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+#img:hover .imgsvg {
+    background-color: #BFBFBF;
+}
+
+.imgtext {
+    font-weight: normal;
+    margin-left: 15px;
+    margin-top: -4px;
+}
+
+#content {
+    margin-top: 40px;
+    padding: 25px 30px;
+    font-size: var(--fz18);
+    letter-spacing: 3px;
+    font-weight: normal;
+    outline: none;
+    border: none;
+    background-color: #F5F5F5;
+    color: #000;
+    border-radius: 8px;
+    width: 100%;
+    text-align: left;
+    min-height: 605px;
+}
+
+.form_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+#category {
+    color: #fff;
+    text-align: left;
+}
+
+#category input {
+    display: none;
+}
+
+.categorytext {
+    background-color: #BFBFBF;
+    margin-right: 30px;
+    font-size: var(--fz18);
+    letter-spacing: 3px;
+    font-weight: normal;
+    padding: 4px 25px 6px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#category input:checked+.categorytext {
+    background-color: #000;
+}
+
+.sub_btn {
+    background-color: #000;
+    font-size: var(--fz18);
+    letter-spacing: 3px;
+    font-weight: normal;
+    padding: 4px 25px 6px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.sub_btn:hover {
+    background-color: #BFBFBF;
+}
