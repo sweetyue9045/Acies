@@ -1,7 +1,7 @@
 /* nav */
 
 nav {
-    min-height: 101px;
+    min-height: 145px;
     width: 100vw;
     position: fixed;
     top: 0;
@@ -17,10 +17,9 @@ nav .logo {
     display: flex;
     min-width: none;
     transition: all .5s ease;
-
 }
 
-nav .logo:hover{
+nav .logo:hover {
     filter: drop-shadow(0 0 5px #FFFEF3);
 
 }
