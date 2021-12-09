@@ -8,14 +8,16 @@ import LOGO_BG from "../../assets/im/start_logo_bg.png";
 
 import { ScrollY } from '../../pages/Home';
 
+
 export default function Enter() {
-    const offsetY = useContext(ScrollY)
+    const offsetY = useContext(ScrollY);
+    const style = {}
+    if (document.body.clientWidth <= 834) style.top = 0
+    else style.top = offsetY * 0.3 + 'px'
     return (
         <>
             <img src={GIF} className="img_gif" alt="GIF"
-                style={{
-                    top: offsetY * 0.3 + 'px',
-                }}
+                style={style}
             />
             <div className="enter_top" id="enter">
                 <div className="logo" >
