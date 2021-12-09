@@ -624,13 +624,15 @@ body {
     font-weight: 200;
     opacity: 0;
 }
+.sale .saleform{
+    opacity: 0;
+}
 
 .sale .s_ch {
     font-size: 40px;
     letter-spacing: 15px;
     margin-right: -13px;
     font-weight: 200;
-    opacity: 0;
 }
 
 .sale .s_en {
@@ -638,7 +640,6 @@ body {
     letter-spacing: 12px;
     margin-right: -6px;
     font-weight: 200;
-    opacity: 0;
 }
 
 .sale .platform {
@@ -702,7 +703,7 @@ body {
         margin-bottom: 5px;
     }
     .magic .text {
-        margin: 0.4vw -0.07vw 0 1.73vw;
+        margin: 0.4vw 0vw 0 1.73vw;
     }
     .magic .r_prev,.magic .r_next {
         transform: scale(0.6);
@@ -714,7 +715,7 @@ body {
     .award :last-child {
         font-size: 25px;
     }
-    .feature img ,.feature .content,.story .text .title,.story img,.story .t_content,.tobbi .content,.tobbi img,.tobbi_link,.Home .introduce .title,.magic_sis,.Home .i_content,.ordeal .left_img,.crisis_bear,.award,.sale .year,.sale .date,.sale .s_ch,.sale .s_en,.sale .platform{
+    .feature img ,.feature .content,.story .text .title,.story img,.story .t_content,.tobbi .content,.tobbi img,.tobbi_link,.Home .introduce .title,.magic_sis,.Home .i_content,.ordeal .left_img,.crisis_bear,.award,.sale .year,.sale .date,.sale .saleform,.sale .platform{
         opacity: 1;
     }
 }

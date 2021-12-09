@@ -19,15 +19,15 @@ export default function HContent() {
     const offsetY = useContext(ScrollY)
     const scrolltop = () => {
         v_top = [
-            document.getElementById("feature").offsetTop+1305,
-            document.getElementById("story").offsetTop+1305,
-            document.getElementById("tobbi").offsetTop+1305,
-            document.getElementById("magic").offsetTop+1305,
-            document.getElementById("ordeal").offsetTop+1305,
-            document.getElementById("crisis").offsetTop+1305,
-            document.getElementById("awards").offsetTop+1305,
+            document.getElementById("feature").offsetTop + 1305,
+            document.getElementById("story").offsetTop + 1305,
+            document.getElementById("tobbi").offsetTop + 1305,
+            document.getElementById("magic").offsetTop + 1305,
+            document.getElementById("ordeal").offsetTop + 1305,
+            document.getElementById("crisis").offsetTop + 1305,
+            document.getElementById("awards").offsetTop + 1305,
             // document.getElementById("village").offsetTop,
-            document.getElementById("sale").offsetTop+1305,
+            document.getElementById("sale").offsetTop + 1305,
 
         ];
     }
@@ -38,7 +38,7 @@ export default function HContent() {
     console.log(document.body.clientWidth)
     // 加動畫
     if (offsetY >= v_top[7] - 300 && offsetY <= v_top[7] + 10) {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 4; i++) {
             setTimeout(function () {
                 document.getElementById("sale").children[1].children[i].classList.add('fadein');
             }, 100 + i * 500);
@@ -52,54 +52,59 @@ export default function HContent() {
         }
     }
     else if (offsetY >= v_top[5] - 300 && offsetY <= v_top[5] + 10) {
-        for (let i = 0; i < 2; i++) {
-            setTimeout(function () {
+        setTimeout(function () {
+            for (let i = 0; i < 2; i++) {
                 document.getElementById("crisis").children[0].children[0].children[i].classList.add('fadein');
-            }, 100 + i * 500);
-        }
+            }
+        }, 100);
         setTimeout(function () {
             document.getElementById("crisis").children[0].children[1].classList.add('fadein');
-        }, 1300);
+        }, 600);
     }
     else if (offsetY >= v_top[4] - 300 && offsetY <= v_top[4] + 10) {
         setTimeout(function () {
             document.getElementById("ordeal").children[0].children[0].classList.add('fadein');
         }, 100);
-        for (let i = 0; i < 2; i++) {
-            setTimeout(function () {
+        setTimeout(function () {
+            for (let i = 0; i < 2; i++) {
                 document.getElementById("ordeal").children[0].children[1].children[i].classList.add('fadein');
-            }, 100 + (i + 1) * 500);
-        }
+            }
+        }, 600);
     }
     else if (offsetY >= v_top[3] - 300 && offsetY <= v_top[3] + 10) {
-        for (let i = 0; i < 2; i++) {
-            setTimeout(function () {
+        setTimeout(function () {
+            for (let i = 0; i < 2; i++) {
                 document.getElementById("magic").children[0].children[0].children[i].classList.add('fadein');
-            }, 100 + i * 500);
-        }
+            }
+        }, 100);
         setTimeout(function () {
             document.getElementById("magic").children[0].children[1].classList.add('fadein');
-        }, 1300);
+        }, 600);
     }
     else if (offsetY >= v_top[2] - 300 && offsetY <= v_top[2] + 10) {
-        for (let i = 0; i < 4; i++) {
+        setTimeout(function () {
+            for (let i = 0; i < 2; i++) {
+                document.getElementById("tobbi").children[i].classList.add('fadein');
+            }
+        }, 100);
+        for (let i = 2; i < 4; i++) {
             setTimeout(function () {
                 document.getElementById("tobbi").children[i].classList.add('fadein');
-            }, 100 + i * 500);
+            }, 100 + (i - 1) * 500);
         }
     }
     else if (offsetY >= v_top[1] - 300 && offsetY <= v_top[1] + 10) {
+        setTimeout(function () {
             for (let i = 0; i < 2; i++) {
-                setTimeout(function () {
-                    document.getElementById("story").children[0].children[0].children[i].classList.add('fadein');
-                }, 100 + i * 500);
+                document.getElementById("story").children[0].children[0].children[i].classList.add('fadein');
             }
-            setTimeout(function () {
-                document.getElementById("story").children[0].children[0].children[3].classList.add('fadein');
-            }, 1100);
-            setTimeout(function () {
-                document.getElementById("story").children[0].children[1].classList.add('fadein');
-            }, 1600);
+        }, 100);
+        setTimeout(function () {
+            document.getElementById("story").children[0].children[0].children[3].classList.add('fadein');
+        }, 500);
+        setTimeout(function () {
+            document.getElementById("story").children[0].children[1].classList.add('fadein');
+        }, 1100);
     }
     else if (offsetY >= v_top[0] - 300 && offsetY <= v_top[0] + 10) {
         for (let i = 0; i < 4; i++) {
