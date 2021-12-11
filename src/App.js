@@ -7,10 +7,12 @@ import LOGIN from './pages/Login'
 import ADMIN from './pages/Admin'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import ScrollToTop from './pages/ScrollToTop';
+import { StoreProvider } from "./store";
 
 
 function App() {
   return (
+    <StoreProvider>
     <BrowserRouter>
         <ScrollToTop />
         <Switch>
@@ -22,6 +24,7 @@ function App() {
           <Route path="/admin" component={ADMIN} />
         </Switch>
     </BrowserRouter>
+    </StoreProvider>
   );
 }
 export default App;
