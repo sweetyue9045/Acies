@@ -1,4 +1,4 @@
-.bg{
+.Login{
     background-image: url(../assets//im/bg_login.png);
     background-size: cover;
     height: 120vh;
@@ -20,7 +20,7 @@
     align-items: center;
     padding: 50px;
 }
-.input{
+.Login .input{
     height: 50px;
     width: 442px;
     border-radius: 12px;
@@ -31,7 +31,7 @@
     color: #A1A1A1;
 }
 
-.text{
+.Login .text{
   
     font-size: var(--fz28);
     margin-top: 60px;

@@ -17,35 +17,34 @@ const URL = "https://test-1129.herokuapp.com/api/v1/article";
 export const API = createContext();
 
 function App() {
-  const [APIs, setAPIs] = useState([]);
-  const fetchMessages = () => {
-    fetch(`${URL}/all`)
-      .then((res) => res.json())
-      .then((data) => setAPIs(data.reverse()))
-  }
-  useEffect(() => {
-    fetchMessages()
-  }, []);
-  return (
-
-    <StoreProvider>
-    <BrowserRouter>
-        <ScrollToTop />
-        <Switch>
-        <API.Provider value={APIs}>
-          <Route exact path="/" component={HOME} />
-          <Route path="/board" component={BOARD} />
-          <Route path="/game" component={GAME} />
-          <Route path="/team" component={TEAM} />
-          <Route path="/admin" component={LOGIN} />
-          <Route path="/list" component={LIST} />
-          <Route path="/add" component={ADD} />
-          <Route path="/article/:articleId" component={EDIT} />
-        </API.Provider>
-      </Switch>
-    </BrowserRouter>
-    </StoreProvider>
-  );
+    const [APIs, setAPIs] = useState([]);
+    const fetchMessages = () => {
+        fetch(`${URL}/all`)
+            .then((res) => res.json())
+            .then((data) => setAPIs(data.reverse()))
+    }
+    useEffect(() => {
+        fetchMessages()
+    }, []);
+    return (
+        <StoreProvider>
+            <BrowserRouter>
+                <ScrollToTop />
+                <Switch>
+                    <API.Provider value={APIs}>
+                        <Route exact path="/" component={HOME} />
+                        <Route path="/board" component={BOARD} />
+                        <Route path="/game" component={GAME} />
+                        <Route path="/team" component={TEAM} />
+                        <Route path="/admin" component={LOGIN} />
+                        <Route path="/list" component={LIST} />
+                        <Route path="/add" component={ADD} />
+                        <Route path="/article/:articleId" component={EDIT} />
+                    </API.Provider>
+                </Switch>
+            </BrowserRouter>
+        </StoreProvider>
+    );
 }
 export default App;
 

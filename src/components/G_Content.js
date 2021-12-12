@@ -24,7 +24,7 @@ export default function G_Content({ redirect }) {
     //     history.push("/login?redirect=shopping")
     //   }
     return (
-        <div className="bg">
+        <div className="Login">
             <div className="login_card">
                 <form id="login"
                     initialValues={{

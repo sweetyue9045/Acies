@@ -14,8 +14,8 @@ export default function Add() {
     const [imgwidth, setimgwidth] = useState(240)
     const [content, setcontent] = useState("")
     const [category, setcategory] = useState("")
-    const [APIs, setAPIs] = useState([]);
-    const [Edit, setEdit] = useState([])
+    // const [APIs, setAPIs] = useState([]);
+    // const [Edit, setEdit] = useState([])
     const style = {}
     var Today = new Date();
 

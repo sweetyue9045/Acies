@@ -1,4 +1,4 @@
-import Title from "./H_Title";
+import Title from "./G_Title";
 
 import VILLAGE_MOSSINA from "../../assets/im/village_mossina.svg"
 import VILLAGE_AFEITE from "../../assets/im/village_afeite.svg"
@@ -12,7 +12,7 @@ import VILLAGE_TAMA_BG from "../../assets/im/village_tama_bg.png"
 export default function Village() {
     return (
         <div className="village" id="village">
-            <Title Title="部落介紹" />
+            <Title Title_top="部落與信仰介紹" Title_bottom="INTRODUCTION" ls="26" lss="13"/>
             <div className="content">
                 <div className="logo" id="v_mossina">
                     <img src={VILLAGE_MOSSINA_BG} className="v_bg" alt="VILLAGE_MOSSINA_BG" />

@@ -2,6 +2,28 @@
 
 .Game .title {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 0;
+    filter: drop-shadow(0 0 5px #FFFEF3);
+}
+
+.Game .title_top {
+    font-weight: 300;
+    font-size: 45px;
+    letter-spacing: 15px;
+    margin-right: -13px;
+    font-weight: 400;
+}
+
+.Game .title_bottom {
+    font-size: 16px;
+    font-weight: 100;
+    margin-top: 5px;
+}
+
+.Game .sis_title {
+    display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 40px;
@@ -12,11 +34,14 @@
     letter-spacing: 20px;
 }
 
-.Game .title_text {
+.Game .sis_title_text {
     letter-spacing: 20px;
     margin: -8px 24px 0 42px;
 }
 
+.Game .sis_title img{
+    width: 2.36vw;
+}
 hr {
     left: 50%;
     transform: translateX(-50%);
@@ -34,21 +59,191 @@ hr {
     transition: all .5s ease;
 }
 
-/* sister */
+.Game{
+    overflow-x: hidden;
+}
 
+/* world */
+
+.world {
+    width: 100%;
+    height: 60.76vw;
+    margin: 150px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.world img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.world .title {
+    opacity: 0;
+}
+
+.world .content {
+    width: 54.86vw;
+    font-size: var(--fz28);
+    letter-spacing: 5px;
+    margin-right: -3px;
+    line-height: 55px;
+    margin-top: 50px;
+    filter: drop-shadow(0 0 5px #FFFEF3);
+    opacity: 0;
+}
+
+/* village */
+
+.village {
+    width: 100%;
+    height: 55.56vw;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.village .content {
+    width: 100%;
+    height: 48.61vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 5%;
+}
+
+.village .logo {
+    width: 18.06vw;
+    height: 18.06vw;
+    transform: translateY(-100px);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.village .v_mossina {
+    filter: drop-shadow(0 0 5px #FFFEF3);
+}
+
+.village .v_scale {
+    filter: drop-shadow(0 0 5px #64C7FF);
+}
+
+.village .v_afeite {
+    filter: drop-shadow(0 0 5px #FFCA42);
+}
+
+.village .v_tama {
+    filter: drop-shadow(0 0 5px #FF645A);
+}
+
+.village .hr_column {
+    left: 0;
+    width: 2px;
+    height: 10.07vw;
+    background-image: none;
+    border-left: solid 2px #fff;
+    opacity: 0;
+    transition: all .5s ease;
+}
+
+.village .v_bg {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all .5s ease;
+    width: 130%;
+}
+
+.village .v_logo {
+    height: 8.47vw;
+    transition: all .5s ease;
+    margin-bottom: 50px;
+}
+
+.village .v_en {
+    font-size: var(--fz32);
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    transition: all .3s .5s ease;
+    letter-spacing: 3px;
+    margin-right: -1px;
+}
+
+.village .v_in {
+    width: 15.63vw;
+    height: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: var(--fz18);
+    letter-spacing: 3px;
+    margin-right: -1px;
+    line-height: 30px;
+    opacity: 0;
+    transition: all .2s ease;
+}
+
+.village .v_ch {
+    font-size: var(--fz14);
+    margin-top: 0px;
+    transition: all .3s .5s ease;
+    letter-spacing: 3px;
+    margin-right: -1px;
+}
+
+.village .logo:hover .v_bg {
+    opacity: 1;
+}
+
+.village .logo:hover .v_logo {
+    height: 4.24vw;
+    margin-bottom: 30px;
+}
+
+.village .logo:hover .v_en {
+    transition: all .3s .5s ease;
+}
+
+.village .logo:hover .v_in {
+    opacity: 1;
+    transition: all .5s .5s ease;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.village .logo:hover .v_ch {
+    transition: all .3s .5s ease;
+}
+
+/* sister */
 .sister {
-    min-height: 1000px;
+    margin-top: 400px;
+}
+
+.sisters {
+    min-height: 69.44vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-image: url("../assets/im/sister_bg.png");
     background-repeat: no-repeat;
     background-position: center 84%;
+    margin-top: 200px;
 }
 
 .page {
     flex-direction: column;
     margin-top: 80px;
+    transform: translateY(-100px);
+    opacity: 0;
 }
 
 .sisimg {
@@ -340,4 +535,63 @@ hr {
 
 .scene .content img {
     margin-top: 50px;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 834px) {
+    .Game .title_top {
+        font-size: 26px;
+        letter-spacing: 8px;
+        margin-right: -6px;
+    }
+    
+    .Game .title_bottom {
+        font-size: 12px;
+    }
+
+    .Game .sis_title {
+        font-size: var(--fz20);
+    }
+    
+    .Game .sis_title_text {
+        letter-spacing: 15px;
+        margin: -4px 10px 0 23px;
+    }
+
+    .world .content {
+        width: 61.66vw;
+        font-size: var(--fz20);
+        letter-spacing: 5px;
+        margin-right: -3px;
+        line-height: 40px;
+    }
+    .village .v_logo{
+        margin-bottom: 30px;
+    }
+    .village .v_en {
+        font-size: var(--fz18);
+        letter-spacing: 3px;
+        margin-right: -1px;
+    }
+    .village .v_ch{
+        font-size: 12px;
+    }
+    .village .v_in{
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .village .logo:hover .v_logo {
+        height: 4.24vw;
+        margin-bottom: 10px;
+        margin-top: -40px;
+    }
+    
+    .village .logo:hover .v_in {
+        margin-top: 20px;
+        margin-bottom: 120px;
+    }
+    
+    .world .title, .world .content, .village .logo, .village .hr_column, .page {
+        transform: translateY(0px) ;
+        opacity: 1;
+    }
 }

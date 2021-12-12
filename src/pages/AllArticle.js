@@ -5,29 +5,30 @@ import { useState, useEffect, useContext } from "react";
 import { API } from "../App";
 const URL = "https://test-1129.herokuapp.com/api/v1/article";
 
-function AllArticle({ props }) {
-    const APIs = useContext(API)
-
+function AllArticle() {
     const [confirm, setConfirm] = useState(false);
     const [ID, setID] = useState();
 
     const Confirm = (open, id) => {
         setConfirm(open)
         setID(id)
+        document.body.classList.add('show-open')
     }
 
     const confirm_yes = () => {
-        console.log(ID)
         fetch(`${URL}/id/${ID}/delete`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" }
         })
             .then((res) => res.json())
-            .then(() => window.location.reload())
+            .then(() => {
+                window.location.reload();
+                document.body.classList.add('show-open');
+            })
             .catch((err) => {
                 console.log(err);
             });
-        
+
     }
     return (
         <>

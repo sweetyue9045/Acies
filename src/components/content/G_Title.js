@@ -1,12 +1,17 @@
-import ARROW_L from "../../assets/im/home_arrow_l.svg";
-import ARROW_R from "../../assets/im/home_arrow_r.svg";
-
-export default function Title({Title,Id}) {
+export default function Title({Title_top,Title_bottom,Id,ls,lss}) {
+    const style={}
+    if(document.body.clientWidth<=834) {
+        style.letterSpacing=`${lss}px`
+        style.marginRight=`-${(lss-2)}px`
+    }
+    else {
+        style.letterSpacing=`${ls}px`
+        style.marginRight=`-${(ls-2)}px`
+    }
     return (
         <div className="title" id={Id}>
-            <img src={ARROW_L} alt="ARROW_L" />
-            <div className="title_text">{Title}</div>
-            <img src={ARROW_R} alt="ARROW_R" />
+            <div className="title_top">{Title_top}</div>
+            <div className="title_bottom" style={style}>{Title_bottom}</div>
         </div>
     );
 }

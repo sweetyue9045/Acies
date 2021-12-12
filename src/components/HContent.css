@@ -32,7 +32,6 @@
 body {
     overflow-y: overlay;
     overflow-x: hidden;
-
 }
 
 .enter_top {
@@ -460,129 +459,6 @@ body {
 .award :last-child {
     font-size: 40px;
     font-weight: 700;
-}
-
-/* village */
-
-.village {
-    width: 100%;
-    height: 800px;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.village .content {
-    width: 100%;
-    height: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 0 5%;
-}
-
-.village .logo {
-    width: 260px;
-    height: 260px;
-    transform: translateY(-100px);
-    opacity: 0;
-    cursor: pointer;
-}
-
-.village .v_mossina {
-    filter: drop-shadow(0 0 5px #FFFEF3);
-}
-
-.village .v_scale {
-    filter: drop-shadow(0 0 5px #64C7FF);
-}
-
-.village .v_afeite {
-    filter: drop-shadow(0 0 5px #FFCA42);
-}
-
-.village .v_tama {
-    filter: drop-shadow(0 0 5px #FF645A);
-}
-
-.village .hr_column {
-    left: 0;
-    width: 2px;
-    height: 145px;
-    background-image: none;
-    border-left: solid 2px #fff;
-    opacity: 0;
-    transition: all .5s ease;
-}
-
-.village .v_bg {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: all .5s ease;
-}
-
-.village .v_logo {
-    height: 122px;
-    transition: all .5s ease;
-    margin-bottom: 50px;
-}
-
-.village .v_en {
-    font-size: var(--fz32);
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    transition: all .3s .5s ease;
-    letter-spacing: 3px;
-    margin-right: -1px;
-}
-
-.village .v_in {
-    width: 225px;
-    height: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: var(--fz18);
-    letter-spacing: 3px;
-    margin-right: -1px;
-    line-height: 30px;
-    opacity: 0;
-    transition: all .2s ease;
-}
-
-.village .v_ch {
-    font-size: var(--fz14);
-    margin-top: 0px;
-    transition: all .3s .5s ease;
-    letter-spacing: 3px;
-    margin-right: -1px;
-}
-
-.village .logo:hover .v_bg {
-    opacity: 1;
-}
-
-.village .logo:hover .v_logo {
-    height: 61px;
-    margin-bottom: 30px;
-}
-
-.village .logo:hover .v_en {
-    transition: all .3s .5s ease;
-}
-
-.village .logo:hover .v_in {
-    opacity: 1;
-    transition: all .5s .5s ease;
-    margin-top: 20px;
-    margin-bottom: 100px;
-}
-
-.village .logo:hover .v_ch {
-    transition: all .3s .5s ease;
 }
 
 

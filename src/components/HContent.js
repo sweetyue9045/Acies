@@ -9,10 +9,9 @@ import Magic from './content/H_Magic';
 import Ordeal from './content/H_Ordeal';
 import Crisis from './content/H_Crisis';
 import Awards from './content/H_Awards';
-import Village from './content/H_Village';
 import Sale from './content/H_Sale';
 
-import { ScrollY } from '../pages/Home';;
+import { ScrollY } from '../pages/Home';
 
 var v_top = [];
 export default function HContent() {
@@ -26,7 +25,6 @@ export default function HContent() {
             document.getElementById("ordeal").offsetTop + 1305,
             document.getElementById("crisis").offsetTop + 1305,
             document.getElementById("awards").offsetTop + 1305,
-            // document.getElementById("village").offsetTop,
             document.getElementById("sale").offsetTop + 1305,
 
         ];
@@ -35,7 +33,6 @@ export default function HContent() {
     useEffect(() => {
         scrolltop();
     }, []);
-    console.log(document.body.clientWidth)
     // 加動畫
     if (offsetY >= v_top[7] - 300 && offsetY <= v_top[7] + 10) {
         for (let i = 0; i < 4; i++) {
@@ -113,23 +110,6 @@ export default function HContent() {
             }, 100 + i * 500);
         }
     }
-    // else if (offsetY >= v_top[1] - 300 && offsetY <= v_top[1] + 10) {
-    //     for (let i = 0; i < 3; i++) {
-    //         document.getElementById("v_hr" + i).classList.add('fadein');
-    //     }
-    //     setTimeout(function () {
-    //         document.getElementById('v_mossina').classList.add('fadein');
-    //     }, 500);
-    //     setTimeout(function () {
-    //         document.getElementById('v_scale').classList.add('fadein');
-    //     }, 1000);
-    //     setTimeout(function () {
-    //         document.getElementById('v_afeite').classList.add('fadein');
-    //     }, 1500);
-    //     setTimeout(function () {
-    //         document.getElementById('v_tama').classList.add('fadein');
-    //     }, 2000);
-    // }
     return (
         <div className="Home">
             <Enter />
@@ -140,7 +120,6 @@ export default function HContent() {
             <Ordeal />
             <Crisis />
             <Awards />
-            {/* <Village /> */}
             <Sale />
         </div>
     );
