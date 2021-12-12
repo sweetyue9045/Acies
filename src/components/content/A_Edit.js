@@ -81,8 +81,6 @@ export default function Edit({ article }) {
             content: content,
             editer: "欣",
             edit_time: Today.getFullYear() + "." + (Today.getMonth() + 1) + "." + Today.getDate(),
-            ispublish: article.ispublish,
-            ispin: article.ispublish,
             id: id
         };
         fetch(`${URL}/id/${id}/update`, {
