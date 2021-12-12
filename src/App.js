@@ -38,9 +38,9 @@ function App() {
           <Route path="/game" component={GAME} />
           <Route path="/team" component={TEAM} />
           <Route path="/admin" component={LOGIN} />
-          <Route path="/admin/list" component={LIST} />
-          <Route path="/admin/add" component={ADD} />
-          <Route path="/admin/article/:articleId" component={EDIT} />
+          <Route path="/list" component={LIST} />
+          <Route path="/add" component={ADD} />
+          <Route path="/article/:articleId" component={EDIT} />
         </API.Provider>
       </Switch>
     </BrowserRouter>

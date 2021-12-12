@@ -22,7 +22,7 @@ export default function Add() {
     if (img == "新增封面圖片") style.WebkitMaskImage = style.maskImage = `url(${IMG_PLUS})`
     else style.WebkitMaskImage = style.maskImage = `url(${IMG_CROSS})`
 
-    const handlePostMessage = ()=> {
+    const handlePostMessage = () => {
         if (title == "") {
             window.scrollTo(0, document.getElementById("title").offsetTop + 200);
             setTimeout(function () {
@@ -42,7 +42,7 @@ export default function Add() {
             }, 100);
         }
         else if (category == "") {
-            window.scrollTo(0, document.getElementById("form_bottom").offsetTop+200);
+            window.scrollTo(0, document.getElementById("form_bottom").offsetTop + 200);
             setTimeout(function () {
                 alert("請選擇分類")
             }, 100);
@@ -60,13 +60,16 @@ export default function Add() {
             ispublish: false,
             ispin: false
         };
-        fetch(`${URL}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(articles)
-        })
-            .then((res) => res.json())
-            .then(()=>window.location="/admin/list")
+
+        if (title != "" && img != "新增封面圖片" && content != "" && category != "") {
+            fetch(`${URL}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(articles)
+            })
+                .then((res) => res.json())
+                .then(() => window.location = "/list")
+        }
     };
     return (
         <div className="Add">

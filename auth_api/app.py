@@ -2,6 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from router import user
+from router import article
 from db import models
 from db.database import engine
 
@@ -13,6 +14,7 @@ app = FastAPI(
     terms_of_service="http://localhost:5000",
 )
 app.include_router(user.router)
+app.include_router(article.router)
 
 
 if __name__ == "__main__":

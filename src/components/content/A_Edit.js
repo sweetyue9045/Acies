@@ -83,16 +83,18 @@ export default function Edit({ article }) {
             edit_time: Today.getFullYear() + "." + (Today.getMonth() + 1) + "." + Today.getDate(),
             id: id
         };
-        fetch(`${URL}/id/${id}/update`, {
-            method: 'PUT',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(articles)
-        })
-            .then((res) => res.json())
-            .then(()=>window.location="/admin/list")
-            .catch((err) => {
-                console.log(err);
-            });
+        if (title != "" && img != "新增封面圖片" && content != "" && category != "") {
+            fetch(`${URL}/id/${id}/update`, {
+                method: 'PUT',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(articles)
+            })
+                .then((res) => res.json())
+                .then(() => window.location = "/list")
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
     };
     return (
         <div className="Edit">

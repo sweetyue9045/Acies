@@ -29,3 +29,41 @@ class UserResponseSchema(UserBase):
 
     class Config:
         orm_mode = True
+
+
+class ArticleRequestSchema(BaseModel):
+    category: str
+    img: str
+    title: str
+    content: str
+    writer: str
+    write_time: str
+    editer: str
+    edit_time: str
+    ispin = False
+    ispublish = False
+
+class ArticleResponseSchema(ArticleRequestSchema):
+    id: int
+    category: str
+
+    class Config:
+        orm_mode = True
+
+class OnlyArticleResponseSchema(ArticleRequestSchema):
+    pass
+
+    class Config:
+        orm_mode = True
+
+class UpdateRequestSchema(BaseModel):
+    category: str
+    img: str
+    title: str
+    content: str
+    editer: str
+    edit_time: str
+
+
+class UpdateResponseSchema(UpdateRequestSchema):
+    id = int

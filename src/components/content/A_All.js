@@ -16,7 +16,7 @@ export default function All({ props }) {
     };
     return (
         <div className="All">
-            <Link to="/admin/add">
+            <Link to="/add">
                 <div className="add_btn">
                     <span className="imgsvg"></span>
                     <span className="imgtext">新增文章</span>
@@ -24,7 +24,7 @@ export default function All({ props }) {
             </Link>
             <div className="article">
                 {APIs.map((data, index) => (
-                    <Link to={`/admin/article/${data.id}`} key={data.id}>
+                    <Link to={`/article/${data.id}`} key={data.id}>
                         <div className="indi_arti">
                             <div className="indi_left">
                                 <div className="indi_title">{data.title}</div>
