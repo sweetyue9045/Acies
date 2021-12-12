@@ -1,11 +1,6 @@
-.Edit {
-    background-color: #fff;
-    padding: 25px 6.5vw 100px;
-}
-
 /* title / other */
 
-.Edit .title {
+.Add .title, .Edit .title{
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -16,18 +11,180 @@
     text-align: left;
 }
 
-.Edit .title_text {
+.Add .title_text, .Edit .title_text{
     letter-spacing: 8px;
     margin-right: -6px;
     font-weight: 500;
 }
 
-.Edit {
+.Add, .Edit {
     overflow-x: hidden;
 }
 
+/* all */
+.All {
+    background-color: #fff;
+    padding: 25px 13.89vw 100px;
+}
 
-/* 內容 */
+.add_btn {
+    width: 146px;
+    margin: 40px 0px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    color: #000
+}
+
+.add_btn .imgsvg {
+    width: 34px;
+    height: 34px;
+    background-color: rgba(0, 0, 0, 1);
+    mask-image: url("../assets/im/all_plus.svg");
+}
+
+.add_btn:hover .imgsvg {
+    background-color: #BFBFBF;
+}
+
+.add_btn .imgtext {
+    font-weight: normal;
+    font-size: var(--fz20);
+    letter-spacing: 5px;
+    margin: -2px -3px 0 15px;
+}
+
+.indi_arti {
+    height: 75px;
+    background-color: #F5F5F5;
+    padding: 0 30px;
+    margin-top: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    color: #000;
+}
+
+.indi_left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.indi_title {
+    font-size: var(--fz28);
+    letter-spacing: 5px;
+    font-weight: normal;
+    margin-top: -3px;
+}
+
+.indi_category {
+    background-color: #000;
+    font-size: var(--fz18);
+    letter-spacing: 3px;
+    padding: 4px 23px 7px 25px;
+    border-radius: 20px;
+    color: #fff;
+    margin: 1px 0 0 20px;
+}
+
+.indi_pin {
+    width: 40px;
+    height: 40px;
+    mask-image: url("../assets/im/all_pin.svg");
+    margin: 1px 0 0 20px;
+}
+
+.indi_del {
+    width: 40px;
+    height: 40px;
+    mask-image: url("../assets/im/all_del.svg");
+    margin: 1px 0 0 20px;
+    background-color: #9E9E9E;
+    display: none;
+}
+
+.indi_del:hover {
+    background-color: #000;
+}
+
+.indi_arti:hover .indi_del {
+    display: block;
+}
+
+.indi_publish {
+    background-color: #000;
+    font-size: 12px;
+    letter-spacing: 3px;
+    padding: 4px 16px 7px 18px;
+    border-radius: 20px;
+    color: #fff;
+    margin-top: 1px;
+}
+
+.confirm {
+    width: 100vw;
+    height: 100vh;
+    z-index: 110;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm_box {
+    width: 570px;
+    height: 360px;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+
+.confirm_title {
+    font-size: 45px;
+    letter-spacing: 8px;
+    margin-right: -6px;
+    font-weight: normal;
+
+}
+
+.btn_group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    font-size: var(--fz24);
+    letter-spacing: 3px;
+    font-weight: 700;
+    padding: 4px 25px 7px 27px;
+    border-radius: 40px;
+    margin: 0 25px;
+    color: #000;
+}
+
+.btn_no {
+    background-color: #9F9F9F;
+}
+
+.btn_yes {
+    background-color: #fff;
+}
+
+/* add */
+.Add, .Edit {
+    background-color: #fff;
+    padding: 25px 6.5vw 100px;
+    color: #000;
+}
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     color: #9E9E9E !important;
@@ -35,10 +192,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 #articlelist {
     text-align: left;
+    margin-top: 40px;
 }
 
 #title {
-    margin-top: 40px;
     padding: 10px 30px 14px;
     font-size: var(--fz28);
     letter-spacing: 5px;
@@ -46,32 +203,25 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     outline: none;
     border: none;
     background-color: #F5F5F5;
-    color: #000;
     border-radius: 8px;
     width: 100%;
 }
 
-#img {
-    color: #000;
-    background-color: #fff;
-    font-size: var(--fz28);
-    letter-spacing: 5px;
-    width: 320px;
-    cursor: pointer;
-}
-
 input[type=file] {
-    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-.img_btn {
+#img {
     margin-top: 40px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    cursor: pointer;
 }
 
-.imgsvg {
+#img .imgsvg {
     width: 30px;
     height: 30px;
     background-color: rgba(0, 0, 0, 1);
@@ -81,10 +231,11 @@ input[type=file] {
     background-color: #BFBFBF;
 }
 
-.imgtext {
+#img .imgtext {
     font-weight: normal;
-    margin-left: 15px;
-    margin-top: -4px;
+    font-size: var(--fz28);
+    letter-spacing: 5px;
+    margin: -4px -3px 0 15px;
 }
 
 #content {
@@ -96,11 +247,11 @@ input[type=file] {
     outline: none;
     border: none;
     background-color: #F5F5F5;
-    color: #000;
     border-radius: 8px;
     width: 100%;
     text-align: left;
     min-height: 605px;
+    resize: none;
 }
 
 .form_bottom {
@@ -116,7 +267,9 @@ input[type=file] {
 }
 
 #category input {
-    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .categorytext {
@@ -125,7 +278,7 @@ input[type=file] {
     font-size: var(--fz18);
     letter-spacing: 3px;
     font-weight: normal;
-    padding: 4px 25px 6px;
+    padding: 4px 23px 6px 25px;
     border-radius: 20px;
     cursor: pointer;
 }
@@ -139,7 +292,7 @@ input[type=file] {
     font-size: var(--fz18);
     letter-spacing: 3px;
     font-weight: normal;
-    padding: 4px 25px 6px;
+    padding: 4px 23px 6px 25px;
     border-radius: 20px;
     border: none;
     outline: none;

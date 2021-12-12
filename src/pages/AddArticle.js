@@ -1,15 +1,15 @@
 import Nav from "../components/A_Nav"
-import EDIT from "../components/content/A_Edit"
+import Add from "../components/content/A_Add"
 import Footer from "../components/Footer"
 
-function Admin() {
+function AddArticle() {
     return (
         <>
             <Nav />
-            <EDIT />
+            <Add />
             <Footer />
         </>
     );
 }
 
-export default Admin;
+export default AddArticle;
