@@ -24,8 +24,8 @@
 /* group */
 
 .group {
-    width: 1125px;
-    margin: 150px auto;
+    width: 78.13vw;
+    margin: 10.42vw auto 0;
 }
 
 .group .g_member {
@@ -58,4 +58,33 @@
 
 .group .photo_img :nth-child(3) {
     font-size: 22px;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 834px) {
+
+    .Team .title_top {
+        font-size: 26px;
+        letter-spacing: 15px;
+    }
+
+    .Team .title_bottom {
+        font-size: 12px;
+    }
+
+    .g_member {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .photo_img {
+        flex: 0 0 30%;
+        margin: -30px 2px 120px 0;
+    }
+
+    .group:first-child .g_member {
+        background-image: url(../assets/im//bg_text2.png);
+        background-repeat: no-repeat;
+        background-position: 50% 45%;
+    }
+
 }

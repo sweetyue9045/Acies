@@ -11,7 +11,7 @@ export default function Group() {
     return (
         <>
             <div className="group">
-                <Title Title_top='遊戲開發團隊' Title_bottom='GAME DEVELOPER' ls='16px' />
+                <Title Title_top='遊戲開發團隊' Title_bottom='GAME DEVELOPER' ls='16px' lss='10.5px'/>
                 <div className="g_member">
                     <div className="photo_img">
                         <img src={PHOTO_01} alt='PHOTO_01' />
@@ -36,7 +36,7 @@ export default function Group() {
                 </div>
             </div>
             <div className="group">
-                <Title Title_top='網站開發團隊' Title_bottom='WEB DEVELOPER' ls='18px' />
+                <Title Title_top='網站開發團隊' Title_bottom='WEB DEVELOPER' ls='18px' lss='12px' />
                 <div className="g_member">
                     <div className="photo_img">
                         <img src={PHOTO_05} alt='PHOTO_05' />
