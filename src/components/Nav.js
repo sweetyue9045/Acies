@@ -2,7 +2,7 @@ import './Nav.css';
 
 import LOGO from "../assets/im/nav_logo.svg";
 
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export default function Nav({ posi }) {
     return (

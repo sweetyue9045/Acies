@@ -80,18 +80,20 @@
 }
 
 .login_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000000;
+    color: #000;
     font-weight: normal;
     font-size: var(--fz18);
     letter-spacing: 5px;
-    width: 100px;
-    height: 40px;
-    background: #FFFFFF;
+    padding: 5px 27px 7px 30px;
+    background: #fff;
     border-radius: 50px;
     border: 0;
+    cursor: pointer;
+}
+
+.login_btn:hover{
+    background-color: #2C2C2C;
+    color: #fff;
 }
 
 /* all */
