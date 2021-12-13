@@ -11,16 +11,14 @@ import {
 } from "../utils/constants";
 
 export const StoreContext = createContext();
-// let cartItems = localStorage.getItem("cartItems")
-//   ? JSON.parse(localStorage.getItem("cartItems"))
-//   : [];
 
 const initialState = {
   userSignin: {
     loading: false,
-    userInfo: localStorage.getItem("userInfo")
-      ? JSON.parse(localStorage.getItem("userInfo"))
-      : null,
+    userInfo:(localStorage.getItem("userInfo") && localStorage.getItem("userInfo")!=='undefined')
+    ? JSON.parse(localStorage.getItem("userInfo"))
+    : null,
+    
     remember: true,
     error: "",
   },
@@ -86,7 +84,6 @@ function reducer(state, action) {
         },
       };
     case LOGOUT_REQUEST:
-    //   cartItems = [];
       return {
         ...state,
         userSignin: {
@@ -102,8 +99,7 @@ function reducer(state, action) {
 export function StoreProvider(props) {
   const [state, dispatch] = useReducerWithThunk(
     reducer,
-    initialState,
-    "example"
+    initialState
   );
   const value = { state, dispatch };
 
