@@ -47,9 +47,11 @@ html, body {
 button {
     background-color: transparent;
     border: none;
+    outline: none;
     padding: 0;
     text-align: center;
     text-decoration: none;
+    color: #fff;
 }
 
 a {
@@ -58,6 +60,8 @@ a {
 
 input{
     text-align: left;
+    border: none;
+    outline: none;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 834px) {

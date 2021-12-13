@@ -1,19 +1,19 @@
 import * as QueryString from "query-string";
 import Footer from "../components/Footer";
-import G_Content from "../components/G_Content"
+import Login from "../components/content/A_Login"
 import A_Nav from "../components/A_Nav"
 
-function Login(props) {
+function LoginAdmin(props) {
 
     const {redirect} = QueryString.parse(props.location.search);
 
     return (
         <>
-            <A_Nav bg="transparent" posi="fixed" />
-            <G_Content redirect={redirect}/>
+            <A_Nav bg="transparent" posi="absolute" />
+            <Login redirect={redirect}/>
             <Footer />
         </>
     );
 }
 
-export default Login;
+export default LoginAdmin;

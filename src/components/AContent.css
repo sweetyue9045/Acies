@@ -25,15 +25,85 @@
     overflow: hidden
 }
 
+/* login */
+.Login {
+    background-image: url(../assets//im/bg_login.png);
+    background-size: contain;
+    height: 62.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_card {
+    width: 676px;
+    height: 530px;
+    background-color: #000000;
+    border-radius: 10px;
+    opacity: 0.75;
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 442px;
+    height: 314px;
+}
+
+.Login .input {
+    height: 50px;
+    width: 442px;
+    border-radius: 12px;
+    padding-left: 20px;
+    font-size: var(--fz18);
+    letter-spacing: 5px;
+    color: #000;
+    border: 0;
+}
+
+.Login input:-ms-input-placeholder, .Login textarea:-ms-input-placeholder {
+    color: #A1A1A1 !important;
+}
+
+.Login .title {
+    font-size: var(--fz28);
+    letter-spacing: 8px;
+    filter: drop-shadow(0 0 5px #FFFEF3);
+    color: #FFFEF3;
+}
+
+.login_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    font-weight: normal;
+    font-size: var(--fz18);
+    letter-spacing: 5px;
+    width: 100px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 50px;
+    border: 0;
+}
+
 /* all */
 .All {
     background-color: #fff;
     padding: 25px 13.89vw 100px;
 }
+
 .add_link {
     width: 146px;
     display: block;
 }
+
 .add_btn {
     width: 146px;
     margin: 40px 0px 70px;
@@ -195,7 +265,7 @@
     color: #000;
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+.Add input:-ms-input-placeholder, .Add textarea:-ms-input-placeholder {
     color: #9E9E9E !important;
 }
 
