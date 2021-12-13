@@ -1,4 +1,4 @@
-import Title from "./H_Title";
+import Title from "../Home/H_Title";
 
 import "../AContent.css";
 import IMG_CROSS from "../../assets/im/add_cross.svg";
@@ -21,7 +21,7 @@ export default function Edit({ article }) {
         document.getElementById("content").value = article.content
         var radionum = document.getElementById("articlelist").category_list
         for (var i = 0; i < radionum.length; i++) {
-            if (radionum[i].value == article.category) {
+            if (radionum[i].value === article.category) {
                 radionum[i].checked = true;
             }
         }
@@ -39,25 +39,25 @@ export default function Edit({ article }) {
     }, []);
 
     const handlePutMessage = (id) => {
-        if (title == "") {
+        if (title === "") {
             window.scrollTo(0, document.getElementById("title").offsetTop + 200);
             setTimeout(function () {
                 alert("請填入標題")
             }, 100);
         }
-        else if (img == "新增封面圖片") {
+        else if (img === "新增封面圖片") {
             window.scrollTo(0, document.getElementById("img").offsetTop + 200);
             setTimeout(function () {
                 alert("請選擇圖片")
             }, 100);
         }
-        else if (content == "") {
+        else if (content === "") {
             window.scrollTo(0, document.getElementById("content").offsetTop + 200);
             setTimeout(function () {
                 alert("請填入內文")
             }, 100);
         }
-        else if (category == "") {
+        else if (category === "") {
             window.scrollTo(0, document.getElementById("form_bottom").offsetTop + 200);
             setTimeout(function () {
                 alert("請選擇分類")
@@ -72,7 +72,7 @@ export default function Edit({ article }) {
             edit_time: Today.getFullYear() + "." + (Today.getMonth() + 1) + "." + Today.getDate(),
             id: id
         };
-        if (title != "" && img != "新增封面圖片" && content != "" && category != "") {
+        if (title !== "" && img !== "新增封面圖片" && content !== "" && category !== "") {
             fetch(`${URL}/id/${id}/update`, {
                 method: 'PUT',
                 headers: { "Content-Type": "application/json" },

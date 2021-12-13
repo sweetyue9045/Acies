@@ -1,15 +1,15 @@
 import './HContent.css';
 import { useContext, useEffect } from "react";
 
-import Enter from './content/H_Enter';
-import Feature from './content/H_Feature';
-import Story from './content/H_Story';
-import Tobbi from './content/H_Tobbi';
-import Magic from './content/H_Magic';
-import Ordeal from './content/H_Ordeal';
-import Crisis from './content/H_Crisis';
-import Awards from './content/H_Awards';
-import Sale from './content/H_Sale';
+import Enter from './Home/H_Enter';
+import Feature from './Home/H_Feature';
+import Story from './Home/H_Story';
+import Tobbi from './Home/H_Tobbi';
+import Magic from './Home/H_Magic';
+import Ordeal from './Home/H_Ordeal';
+import Crisis from './Home/H_Crisis';
+import Awards from './Home/H_Awards';
+import Sale from './Home/H_Sale';
 
 import { ScrollY } from '../pages/Home';
 

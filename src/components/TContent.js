@@ -1,5 +1,5 @@
 import './TContent.css';
-import Group from "../components/content/T_Group"
+import Group from "../components/Team/T_Group"
 
 export default function TContent() {
     return (

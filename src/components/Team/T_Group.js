@@ -1,4 +1,4 @@
-import Title from "./B_Title"
+import Title from "../Board/B_Title"
 
 import PHOTO_01 from "../../assets/im/team_photo_01.png"
 import PHOTO_02 from "../../assets/im/team_photo_02.png"

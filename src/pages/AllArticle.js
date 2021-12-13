@@ -1,5 +1,5 @@
 import Nav from "../components/A_Nav"
-import All from "../components/content/A_All"
+import All from "../components/Admin/A_All"
 import Footer from "../components/Footer"
 
 import { useState } from "react";
@@ -26,7 +26,7 @@ function AllArticle() {
 
                 const API = JSON.parse(window.localStorage.getItem("ArticleAPI"))
                 const DEL = API.find(
-                    (x) => x.id == ID
+                    (x) => x.id === ID
                 );
                 API.splice(API.indexOf(DEL), 1)
                 const APIs = JSON.stringify(API)

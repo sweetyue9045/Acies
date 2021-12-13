@@ -1,9 +1,9 @@
 import './GContent.css';
 import { useContext, useEffect } from "react";
 
-import World from './content/G_World';
-import Village from './content/G_Village';
-import Sister from './content/G_Sister';
+import World from './Game/G_World';
+import Village from './Game/G_Village';
+import Sister from './Game/G_Sister';
 
 import { ScrollY } from '../pages/Game';
 
@@ -20,14 +20,13 @@ export default function GContent() {
         console.log(g_top)
 
     }
-    console.log(g_top)
     // 抓取加動畫位置
     useEffect(() => {
         if (document.body.clientWidth > 834) {
             scrolltop();
         }
     }, []);
-    if (g_top != []) {
+    if (g_top !== []) {
         if (offsetY >= g_top[2] -100&& offsetY <= g_top[2] + 10) {
             setTimeout(function () {
                 document.getElementById('sister').children[1].children[0].classList.add('fadein');

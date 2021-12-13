@@ -1,8 +1,8 @@
 import './BContent.css';
 
-import News from './content/B_News';
-import Dev from './content/B_Dev';
-import Data from './content/B_Data';
+import News from './Board/B_News';
+import Dev from './Board/B_Dev';
+import Data from './Board/B_Data';
 
 
 export default function BContent() {

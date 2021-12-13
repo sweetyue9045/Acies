@@ -1,19 +1,19 @@
 import '../AContent.css';
 import { useState, useEffect, useContext } from 'react';
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { login } from '../../actions'
 import { StoreContext } from "../../store"
 
 export default function Login({ redirect }) {
-    const { state: { userSignin: { loading, error } }, dispatch } = useContext(StoreContext);
+    const { state: { userSignin: { loading } }, dispatch } = useContext(StoreContext);
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
     const history = useHistory();
 
     useEffect(() => {
-        console.log("You are Gerent")
+        // console.log("You are Gerent")
         // checkoutHandler();
-    }, null)
+    }, [])
     // const onFinishFailed = (errorInfo) => {
     //     console.log('Failed: ', errorInfo.errorFields[0].errors[0])
     // };

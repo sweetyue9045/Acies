@@ -1,4 +1,3 @@
-import { useHistory } from 'react-router-dom';
 import { useEffect, useContext } from "react";
 import { StoreContext } from "../store"
 import "./A_Nav.css";
@@ -8,7 +7,6 @@ import IM from "../assets/im/a_nav_im.png";
 export default function Nav({ bg, posi }) {
     
    const { state: { userSignin : { userInfo, remember } } } = useContext(StoreContext);
-   const history = useHistory();
 
    useEffect(() => {
     if(remember)

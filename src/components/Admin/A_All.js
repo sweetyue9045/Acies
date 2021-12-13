@@ -13,7 +13,6 @@ export default function All({ props }) {
 
         props(true, id)
     };
-
     const handlePublishMessage = (e, id) => {
         e.stopPropagation();
         e.preventDefault();
@@ -30,9 +29,10 @@ export default function All({ props }) {
                 fetch(`${URL}/all`)
                     .then((res) => res.json())
                     .then((data) => {
-                        const APIs = JSON.stringify(data.reverse());
-                        window.localStorage.setItem('ArticleAPI', APIs);
+                        const API = JSON.stringify(data.reverse());
+                        window.localStorage.setItem('ArticleAPI', API);
                     })
+                window.location.reload();
             })
             .catch((err) => {
                 console.log(err);

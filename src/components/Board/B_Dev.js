@@ -14,7 +14,6 @@ export default function Dev() {
     const [tab, settab] = useState(0);
     const [page, setpage] = useState(1);
     const Devs = [];
-    const DevTs = [];
     const Devtop = [];
     const Devs_page = [];
     var nowpage = "";
@@ -22,7 +21,7 @@ export default function Dev() {
     useEffect(() => {
         console.log("成功加載")
         PAGE_NEXT = document.getElementById("page_next");
-        // textlength()
+        textlength()
     }, []);
 
     const textlength = () => {
@@ -37,20 +36,20 @@ export default function Dev() {
     APIs.map(
         (dev) => {
             for (let i = 0; i < mytab.length; i++) {
-                if (dev.category == mytab[i] && dev.ispublish == true)
-                    if (dev.ispin == false) Dev[i].contents.push(dev)
+                if (dev.category === mytab[i] && dev.ispublish === true)
+                    if (dev.ispin === false) Dev[i].contents.push(dev)
                     else Dev[i].top.push(dev)
             }
         }
     )
     APIs.map(
         (dev) => {
-            if (dev.ispublish == true)
-                if (dev.ispin == false) Dev[0].contents.push(dev)
+            if (dev.ispublish === true)
+                if (dev.ispin === false) Dev[0].contents.push(dev)
                 else Dev[0].top.push(dev)
         }
     )
-    if (tab == 0) {
+    if (tab === 0) {
         //Top
         Devtop.push(Dev[tab].top[0])
         //content
@@ -59,7 +58,7 @@ export default function Dev() {
                 (devs) => Devs.push(devs)
             )
         }
-        console.log(Devs,Dev[0].contents)
+        console.log(Devs, Dev[0].contents)
         pagination(Dev[0].contents, page)
     } else {
         Dev[tab].top.map(
@@ -133,7 +132,7 @@ export default function Dev() {
                     <div className="top_content">
                         <div className="content_title">{dev.title}</div>
                         <div className="content_text" id="content_text">{dev.content}</div>
-                        <a className="top_link" href={dev.a} target="_blank">READ MORE</a>
+                        <a className="top_link">READ MORE</a>
                     </div>
                     <img src={DEV_RIGHT} alt="DEV_RIGHT" />
                 </div>
