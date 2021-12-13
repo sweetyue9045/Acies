@@ -17,6 +17,9 @@ export default function Dev() {
     const Devtop = [];
     const Devs_page = [];
     var nowpage = "";
+    var scrollnum = 800;
+    if (document.body.clientWidth <= 834) scrollnum = 600;
+    else scrollnum = 800;
     useEffect(() => {
         console.log("成功加載")
         PAGE_NEXT = document.getElementById("page_next");
@@ -103,14 +106,14 @@ export default function Dev() {
         nowpage = page;
         nowpage++;
         setpage(nowpage);
-        window.scrollTo(0, document.getElementById("dev").offsetTop + 900);
+        window.scrollTo(0, document.getElementById("dev").offsetTop + scrollnum);
     }
 
     const pre = () => {
         nowpage = page;
         nowpage--;
         setpage(nowpage);
-        window.scrollTo(0, document.getElementById("dev").offsetTop + 900);
+        window.scrollTo(0, document.getElementById("dev").offsetTop + scrollnum);
     }
 
     return (
