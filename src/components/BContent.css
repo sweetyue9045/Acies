@@ -176,9 +176,8 @@
     height: 4px;
     background-color: #fff;
     left: 0;
-    bottom: 0;
+    bottom: -5px;
     transition: all .4s ease-in-out;
-
 }
 
 .dev .choose {
@@ -473,6 +472,9 @@
         padding: 2px 19px 4px 20px;
     }
 
+    .dev .tab_title::after {
+        height: 3px;
+    }
     .dev_box .content_title {
         margin: 0 -5px 0 15px;
     }
@@ -507,4 +509,5 @@
         letter-spacing: 10px;
         margin-right: -8px;
     }
+
 }
