@@ -26,8 +26,7 @@ export default function Dev() {
     }, []);
 
     const Dev = [{ contents: [], top: [] }, { contents: [], top: [] }, { contents: [], top: [] }, { contents: [], top: [] }];
-    APIs.map(
-        (dev) => {
+    APIs.forEach((dev) => {
             for (let i = 0; i < mytab.length; i++) {
                 if (dev.category === mytab[i] && dev.ispublish === true)
                     if (dev.ispin === false) Dev[i].contents.push(dev);
@@ -35,8 +34,7 @@ export default function Dev() {
             }
         }
     )
-    APIs.map(
-        (dev) => {
+    APIs.forEach((dev) => {
             if (dev.ispublish === true)
                 if (dev.ispin === false) Dev[0].contents.push(dev);
                 else Dev[0].top.push(dev);
@@ -134,7 +132,7 @@ export default function Dev() {
                     <div className="top_content">
                         <div className="content_title">{dev.title}</div>
                         <div className="content_text">{dev.content}</div>
-                        <a className="top_link">READ MORE</a>
+                        <Link to={`/article/${dev.id}`} className="top_link">READ MORE</Link>
                     </div>
                     <img src={DEV_RIGHT} alt="DEV_RIGHT" />
                 </div>

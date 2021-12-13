@@ -11,7 +11,7 @@ export default function Tobbi() {
             </div>
             <img src={TOBBI_EYE} alt="STORY_STAFF" />
             <div className="tobbi_link">
-                <a href="https://gaming.tobii.com/zh/home/" target="_blank">Tobbi 官網</a>
+                <a href="https://gaming.tobii.com/zh/home/" target="_blank" rel="noreferrer">Tobbi 官網</a>
             </div>
         </div>
     );
