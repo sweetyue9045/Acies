@@ -1,13 +1,33 @@
 import "./A_Nav.css";
 
 import LOGO from "../assets/im/a_nav_logo.svg";
-import IM from "../assets/im/a_nav_im.png";
+import { logout } from "../actions";
+import { useHistory } from "react-router-dom";
 
 import { useEffect, useContext } from "react";
 import { StoreContext } from "../store"
 
 export default function Nav({ bg, posi }) {
-    const { state: { userSignin: { userInfo, remember } } } = useContext(StoreContext);
+    const { state: { userSignin: { userInfo, remember } }, dispatch } = useContext(StoreContext);
+    const history = useHistory();
+
+    useEffect(() => {
+        LogoutButton();
+    }, [])
+    const LogoutButton = () => {
+        if(userInfo == null){
+            document.getElementById('logout').style.display='none';
+        }else{
+            document.getElementById('logout').style.display='flex';
+        }
+        }
+
+    const Logout = async (e) => {
+        e.preventDefault();
+        await logout(dispatch);
+        history.push("/admin");
+    };
+
     useEffect(() => {
         if (remember)
             localStorage.setItem("userInfo", JSON.stringify(userInfo));
@@ -28,11 +48,9 @@ export default function Nav({ bg, posi }) {
             <div className="nav_right">
                 <div className="user"> {userInfo
                     ? `${userInfo.username}`
-                    : `管理員`
+                    : ``
                 }</div>
-                <div className="user_im">
-                    <img src={IM} alt="IM" />
-                </div>
+                <input id="logout" type="button" value="登出" onClick={Logout} className="login_btn" />
             </div>
         </div>
     );

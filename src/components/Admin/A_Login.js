@@ -6,14 +6,14 @@ import { login } from '../../actions';
 import { StoreContext } from "../../store";
 
 export default function Login({ redirect }) {
-    const { state: { userSignin: { loading } }, dispatch } = useContext(StoreContext);
+    const { state: { userSignin: { loading, userInfo } }, dispatch } = useContext(StoreContext);
+    
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
     const history = useHistory();
-
-    useEffect(() => {
-        // console.log("You are Gerent")
-        // checkoutHandler();
+    var auth;
+    useEffect(() => {    
+        checkoutHandler();
     }, [])
     // const onFinishFailed = (errorInfo) => {
     //     console.log('Failed: ', errorInfo.errorFields[0].errors[0])
@@ -21,15 +21,21 @@ export default function Login({ redirect }) {
 
     const onFinish = async (e) => {
         e.preventDefault();
-        console.log('Received values of form: ', userInfo);
-        const auth = await login(dispatch, userInfo);
+      //  console.log('Received values of form: ', userLogin);
+       
+        auth = await login(dispatch, userLogin);
         auth && history.push("/list");
     };
 
     const checkoutHandler = () => {
-        history.push("/list")
+        if (userInfo ==null){
+           //console.log(userInfo)
+        }
+        else {
+            history.push("/list")
+        }
     }
-    const userInfo = {
+    const userLogin = {
         email: email,
         password: password
     };
