@@ -7,7 +7,7 @@ import MAGIC_Y from "../../assets/im/magic_Y_btn.mp4";
 import { useState } from "react";
 
 export default function Magic() {
-    const [num, setnum] = useState("1");
+    const [num, setnum] = useState(0);
     const [skill, setskill] = useState("物體移動");
 
     return (
