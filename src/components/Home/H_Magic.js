@@ -1,6 +1,6 @@
 import Title from "./H_Title";
 
-import MAGIC_SIS from "../../assets/im/magic_sis.png"
+import MAGIC_SIS from "../../assets/im/magic_sis.png";
 import MAGIC_X from "../../assets/im/magic_X_btn.mp4";
 import MAGIC_Y from "../../assets/im/magic_Y_btn.mp4";
 

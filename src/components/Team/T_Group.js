@@ -1,11 +1,11 @@
-import Title from "../Board/B_Title"
+import Title from "../Board/B_Title";
 
-import PHOTO_01 from "../../assets/im/team_photo_01.png"
-import PHOTO_02 from "../../assets/im/team_photo_02.png"
-import PHOTO_03 from "../../assets/im/team_photo_03.png"
-import PHOTO_04 from "../../assets/im/team_photo_04.png"
-import PHOTO_05 from "../../assets/im/team_photo_05.png"
-import PHOTO_06 from "../../assets/im/team_photo_06.svg"
+import PHOTO_01 from "../../assets/im/team_photo_01.png";
+import PHOTO_02 from "../../assets/im/team_photo_02.png";
+import PHOTO_03 from "../../assets/im/team_photo_03.png";
+import PHOTO_04 from "../../assets/im/team_photo_04.png";
+import PHOTO_05 from "../../assets/im/team_photo_05.png";
+import PHOTO_06 from "../../assets/im/team_photo_06.svg";
 
 export default function Group() {
     return (

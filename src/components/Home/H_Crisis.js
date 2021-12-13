@@ -1,6 +1,6 @@
 import Title from "./H_Title";
 
-import CRISIS_BEAR from "../../assets/im/crisis_bear.png"
+import CRISIS_BEAR from "../../assets/im/crisis_bear.png";
 import CRISIS_BOSS from "../../assets/im/crisis_BOSS.mp4";
 
 export default function Crisis() {

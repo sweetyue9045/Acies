@@ -1,6 +1,6 @@
-import Nav from "../components/Nav"
-import GContent from "../components/GContent"
-import Footer from "../components/Footer"
+import Nav from "../components/Nav";
+import GContent from "../components/GContent";
+import Footer from "../components/Footer";
 
 import { useState, useEffect, createContext } from "react";
 

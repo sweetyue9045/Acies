@@ -1,7 +1,7 @@
-import Nav from "../components/Nav"
-import BArticle from "../components/Board/B_Article"
-import BackNav from "../components/BackNav"
-import Footer from "../components/Footer"
+import Nav from "../components/Nav";
+import BArticle from "../components/Board/B_Article";
+import BackNav from "../components/BackNav";
+import Footer from "../components/Footer";
 
 function Article({ match }) {
     const APIs = JSON.parse(window.localStorage.getItem("ArticleAPI"))

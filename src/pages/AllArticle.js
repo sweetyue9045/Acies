@@ -1,6 +1,6 @@
-import Nav from "../components/A_Nav"
-import All from "../components/Admin/A_All"
-import Footer from "../components/Footer"
+import Nav from "../components/A_Nav";
+import All from "../components/Admin/A_All";
+import Footer from "../components/Footer";
 
 import { useState } from "react";
 

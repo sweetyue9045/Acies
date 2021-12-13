@@ -1,4 +1,4 @@
-import TOBBI_EYE from "../../assets/im/tobbi_eye.svg"
+import TOBBI_EYE from "../../assets/im/tobbi_eye.svg";
 
 export default function Tobbi() {
     return (

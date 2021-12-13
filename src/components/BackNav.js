@@ -1,4 +1,4 @@
-import BACKNAV from "../assets/im/backnav.svg"
+import BACKNAV from "../assets/im/backnav.svg";
 
 import { Link } from 'react-router-dom';
 

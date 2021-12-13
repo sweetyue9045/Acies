@@ -1,7 +1,7 @@
 import Title from "./H_Title";
 
-import ORDEAL_STONE_L from "../../assets/im/ordeal_stone_l.png"
-import ORDEAL_STONE_R from "../../assets/im/ordeal_stone_r.png"
+import ORDEAL_STONE_L from "../../assets/im/ordeal_stone_l.png";
+import ORDEAL_STONE_R from "../../assets/im/ordeal_stone_r.png";
 import ORDEAL_GAME from "../../assets/im/ordeal_game.mp4";
 
 export default function Ordeal() {

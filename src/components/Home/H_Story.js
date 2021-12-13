@@ -1,6 +1,6 @@
 import Title from "./H_Title";
 
-import STORY_STAFF from "../../assets/im/story_staff.png"
+import STORY_STAFF from "../../assets/im/story_staff.png";
 
 export default function Story() {
     return (

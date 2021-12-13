@@ -1,6 +1,6 @@
-import Nav from "../components/Nav"
-import HContent from "../components/HContent"
-import Footer from "../components/Footer"
+import Nav from "../components/Nav";
+import HContent from "../components/HContent";
+import Footer from "../components/Footer";
 
 import { useState, useEffect, createContext } from "react";
 
