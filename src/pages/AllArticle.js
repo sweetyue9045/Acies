@@ -9,7 +9,6 @@ const URL = "https://test-1129.herokuapp.com/api/v1/article";
 function AllArticle() {
     const [confirm, setConfirm] = useState(false);
     const [ID, setID] = useState();
-
     const Confirm = (open, id) => {
         setConfirm(open)
         setID(id)
@@ -23,7 +22,6 @@ function AllArticle() {
             .then((res) => res.json())
             .then(() => {
                 document.body.classList.remove('show-open')
-
                 const API = JSON.parse(window.localStorage.getItem("ArticleAPI"))
                 const DEL = API.find(
                     (x) => x.id === ID
@@ -37,7 +35,6 @@ function AllArticle() {
                 console.log(err);
             });
     }
-
 
     return (
         <>

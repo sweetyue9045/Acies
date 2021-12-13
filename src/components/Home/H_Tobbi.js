@@ -1,6 +1,5 @@
 import TOBBI_EYE from "../../assets/im/tobbi_eye.svg"
 
-
 export default function Tobbi() {
     return (
         <div className="tobbi" id="tobbi">
@@ -12,7 +11,7 @@ export default function Tobbi() {
             </div>
             <img src={TOBBI_EYE} alt="STORY_STAFF" />
             <div className="tobbi_link">
-                <a target="_blank">Tobbi 官網</a>
+                <a href="https://gaming.tobii.com/zh/home/" target="_blank">Tobbi 官網</a>
             </div>
         </div>
     );

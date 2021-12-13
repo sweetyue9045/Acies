@@ -1,8 +1,9 @@
-import Nav from "../components/A_Nav"
-import Edit from "../components/Admin/A_Edit"
+import Nav from "../components/Nav"
+import BArticle from "../components/Board/B_Article"
+import BackNav from "../components/BackNav"
 import Footer from "../components/Footer"
 
-function EditArticle({ match }) {
+function Article({ match }) {
     const APIs = JSON.parse(window.localStorage.getItem("ArticleAPI"))
     const Article = APIs.find(
         (x) => x.id == match.params.articleId
@@ -11,10 +12,11 @@ function EditArticle({ match }) {
     return (
         <>
             <Nav />
-            <Edit article={Article} />
+            <BArticle article={Article} />
+            <BackNav />
             <Footer />
         </>
     );
 }
 
-export default EditArticle;
+export default Article;

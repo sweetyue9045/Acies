@@ -1,4 +1,4 @@
-.a_nav{
+.a_nav {
     min-height: 145px;
     width: 100vw;
     padding: 0px 44.35px 0px 80px;
@@ -8,16 +8,19 @@
     background-color: #fff;
     z-index: 100;
 }
-.a_nav .nav_left,.nav_right{
+
+.a_nav .nav_left, .nav_right {
     display: flex;
     align-items: center;
 }
+
 .a_nav .logo {
     display: flex;
     min-width: none;
     transition: all .5s ease;
 }
-.a_nav .symbol{
+
+.a_nav .symbol {
     background-color: #000;
     color: #fff;
     margin-left: 15px;
@@ -29,7 +32,7 @@
     border-radius: 20px;
 }
 
-.a_nav .user{
+.a_nav .user {
     color: #000;
     margin-right: 20px;
     letter-spacing: 3px;
@@ -37,7 +40,7 @@
     font-weight: normal;
 }
 
-.a_nav .user::after{
+.a_nav .user::after {
     content: " ";
     position: absolute;
     bottom: -2px;

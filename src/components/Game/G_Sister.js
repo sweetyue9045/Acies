@@ -16,38 +16,38 @@ export default function Sister() {
         var spstr = e.target.id.split("");
         var open, close, my_src = "";
 
-        if (spstr[spstr.length - 1] === "R") { open = "R"; close = "L"; my_src = SISTER_R2 }
-        else if (spstr[spstr.length - 1] === "L") { open = "L"; close = "R"; my_src = SISTER_L2 }
+        if (spstr[spstr.length - 1] === "R") { open = "R"; close = "L"; my_src = SISTER_R2; }
+        else if (spstr[spstr.length - 1] === "L") { open = "L"; close = "R"; my_src = SISTER_L2; }
 
-        var target_open = document.getElementById('sister_' + open);
-        var target_close = document.getElementById('sister_' + close);
-        var targetpage_close = document.getElementById('page2' + close);
-        var targettext_close = document.getElementById('text' + close);
-        var targetname_close = document.getElementById('name' + close);
+        var target_open = document.getElementById("sister_" + open);
+        var target_close = document.getElementById("sister_" + close);
+        var targetpage_close = document.getElementById("page2" + close);
+        var targettext_close = document.getElementById("text" + close);
+        var targetname_close = document.getElementById("name" + close);
 
-        target_open.classList.add('flip');
-        target_open.classList.remove('click_point');
-        target_close.classList.add(close + '_fadeout');
-        targetname_close.classList.add('displaynone2');
+        target_open.classList.add("flip");
+        target_open.classList.remove("click_point");
+        target_close.classList.add(close + "_fadeout");
+        targetname_close.classList.add("displaynone2");
 
         var animEnd = function () {
             target_open.src = my_src;
-            target_open.classList.add('flip2');
+            target_open.classList.add("flip2");
 
-            target_close.classList.add('displaynone');
+            target_close.classList.add("displaynone");
 
-            targetpage_close.classList.remove('displaynone');
-            targetpage_close.classList.add(close + '_fadein');
+            targetpage_close.classList.remove("displaynone");
+            targetpage_close.classList.add(close + "_fadein");
 
-            targettext_close.classList.remove('displaynone');
-            targettext_close.classList.add(close + '_fadein');
+            targettext_close.classList.remove("displaynone");
+            targettext_close.classList.add(close + "_fadein");
             setTimeout(reset, 400)
         }
         setTimeout(animEnd, 400);
 
         var reset = function () {
-            target_close.classList.remove(close + '_fadeout');
-            target_close.classList.remove(close + '_fadein');
+            target_close.classList.remove(close + "_fadeout");
+            target_close.classList.remove(close + "_fadein");
         }
     }
 
@@ -56,50 +56,50 @@ export default function Sister() {
         var spstr = e.target.id.split("");
         var open, close, my_src = "";
 
-        if (spstr[spstr.length - 1] === "R") { open = "L"; close = "R"; my_src = SISTER_L }
-        else if (spstr[spstr.length - 1] === "L") { open = "R"; close = "L"; my_src = SISTER_R }
+        if (spstr[spstr.length - 1] === "R") { open = "L"; close = "R"; my_src = SISTER_L; }
+        else if (spstr[spstr.length - 1] === "L") { open = "R"; close = "L"; my_src = SISTER_R; }
 
-        var target_open = document.getElementById('sister_' + open);
-        var target_close = document.getElementById('sister_' + close);
-        var targetpage_close = document.getElementById('page2' + close);
-        var targettext_close = document.getElementById('text' + close);
-        var targetname_close = document.getElementById('name' + close);
+        var target_open = document.getElementById("sister_" + open);
+        var target_close = document.getElementById("sister_" + close);
+        var targetpage_close = document.getElementById("page2" + close);
+        var targettext_close = document.getElementById("text" + close);
+        var targetname_close = document.getElementById("name" + close);
 
-        target_open.classList.add('flip-reverse');
+        target_open.classList.add("flip-reverse");
 
-        targetpage_close.classList.remove(close + '_fadein');
-        targettext_close.classList.remove(close + '_fadein');
+        targetpage_close.classList.remove(close + "_fadein");
+        targettext_close.classList.remove(close + "_fadein");
 
-        targetpage_close.classList.add(close + '_fadeout');
-        targettext_close.classList.add(close + '_fadeout');
+        targetpage_close.classList.add(close + "_fadeout");
+        targettext_close.classList.add(close + "_fadeout");
 
         var animEnd = function () {
             target_open.src = my_src;
-            target_open.classList.add('flip2-reverse');
+            target_open.classList.add("flip2-reverse");
 
-            targetpage_close.classList.add('displaynone');
-            targettext_close.classList.add('displaynone');
+            targetpage_close.classList.add("displaynone");
+            targettext_close.classList.add("displaynone");
 
-            targetname_close.classList.remove('displaynone2');
-            target_close.classList.add(close + '_fadein');
-            target_close.classList.remove('displaynone');
-            target_open.classList.add('click_point');
+            targetname_close.classList.remove("displaynone2");
+            target_close.classList.add(close + "_fadein");
+            target_close.classList.remove("displaynone");
+            target_open.classList.add("click_point");
             setTimeout(reset, 400);
         }
         setTimeout(animEnd, 400);
 
         var reset = function () {
-            target_open.classList.remove('flip');
-            target_open.classList.remove('flip2');
-            target_open.classList.remove('flip-reverse');
-            target_open.classList.remove('flip2-reverse');
-            target_open.classList.remove(close + '_fadeout');
-            target_close.classList.remove(close + '_fadein');
+            target_open.classList.remove("flip");
+            target_open.classList.remove("flip2");
+            target_open.classList.remove("flip-reverse");
+            target_open.classList.remove("flip2-reverse");
+            target_open.classList.remove(close + "_fadeout");
+            target_close.classList.remove(close + "_fadein");
         }
     }
     return (
         <div className="sister" id="sister">
-            <Title Title_top="姐妹倆的旅程故事" Title_bottom="JOURNEY STORY" ls="28" lss="15"/>
+            <Title Title_top="姐妹倆的旅程故事" Title_bottom="JOURNEY STORY" ls="28" lss="15" />
             <div className="sisters">
                 <div className="page">
                     <div className="sis_title" id="nameL">

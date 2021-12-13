@@ -1,8 +1,9 @@
 import '../AContent.css';
+
 import { useState, useEffect, useContext } from 'react';
 import { useHistory } from "react-router-dom";
-import { login } from '../../actions'
-import { StoreContext } from "../../store"
+import { login } from '../../actions';
+import { StoreContext } from "../../store";
 
 export default function Login({ redirect }) {
     const { state: { userSignin: { loading } }, dispatch } = useContext(StoreContext);

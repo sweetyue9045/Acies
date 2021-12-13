@@ -1,11 +1,11 @@
+import "../AContent.css";
 import Title from "../Home/H_Title";
 
-import "../AContent.css";
 import IMG_CROSS from "../../assets/im/add_cross.svg";
 
 import { useState, useEffect } from "react";
-const URL = "https://test-1129.herokuapp.com/api/v1/article";
 
+const URL = "https://test-1129.herokuapp.com/api/v1/article";
 
 export default function Edit({ article }) {
     const [title, settitle] = useState("")

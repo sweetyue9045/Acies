@@ -1,4 +1,3 @@
-
 import "../AContent.css";
 
 import { Link } from "react-router-dom";
@@ -48,7 +47,7 @@ export default function All({ props }) {
             </Link>
             <div className="article">
                 {APIs.map((data, index) => (
-                    <Link to={`/article/${data.id}`} key={data.id}>
+                    <Link to={`/edit/${data.id}`} key={data.id}>
                         <div className="indi_arti">
                             <div className="indi_left">
                                 <div className="indi_title">{data.title}</div>

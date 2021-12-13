@@ -1,6 +1,4 @@
 import './HContent.css';
-import { useContext, useEffect } from "react";
-
 import Enter from './Home/H_Enter';
 import Feature from './Home/H_Feature';
 import Story from './Home/H_Story';
@@ -11,6 +9,7 @@ import Crisis from './Home/H_Crisis';
 import Awards from './Home/H_Awards';
 import Sale from './Home/H_Sale';
 
+import { useContext, useEffect } from "react";
 import { ScrollY } from '../pages/Home';
 
 var h_top = [];
@@ -113,6 +112,7 @@ export default function HContent() {
             }
         }
     }
+
     return (
         <div className="Home">
             <Enter />

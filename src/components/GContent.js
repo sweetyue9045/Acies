@@ -1,10 +1,9 @@
 import './GContent.css';
-import { useContext, useEffect } from "react";
-
 import World from './Game/G_World';
 import Village from './Game/G_Village';
 import Sister from './Game/G_Sister';
 
+import { useContext, useEffect } from "react";
 import { ScrollY } from '../pages/Game';
 
 var g_top = [];
@@ -17,8 +16,6 @@ export default function GContent() {
             document.getElementById("village").offsetTop,
             document.getElementById("sister").offsetTop
         ];
-        console.log(g_top)
-
     }
     // 抓取加動畫位置
     useEffect(() => {
@@ -27,7 +24,7 @@ export default function GContent() {
         }
     }, []);
     if (g_top !== []) {
-        if (offsetY >= g_top[2] -100&& offsetY <= g_top[2] + 10) {
+        if (offsetY >= g_top[2] - 100 && offsetY <= g_top[2] + 10) {
             setTimeout(function () {
                 document.getElementById('sister').children[1].children[0].classList.add('fadein');
             }, 100);
@@ -58,9 +55,8 @@ export default function GContent() {
                 document.getElementById('world').children[2].classList.add('fadein');
             }, 500);
         }
-
-
     }
+
     return (
         <div className="Game">
             <World />

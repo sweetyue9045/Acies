@@ -1,4 +1,5 @@
 import './TContent.css';
+
 import Group from "../components/Team/T_Group"
 
 export default function TContent() {

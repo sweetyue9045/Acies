@@ -26,6 +26,7 @@
 }
 
 /* login */
+
 .Login {
     background-image: url(../assets//im/bg_login.png);
     background-size: contain;
@@ -94,6 +95,7 @@
 }
 
 /* all */
+
 .All {
     background-color: #fff;
     padding: 25px 13.89vw 100px;
@@ -259,6 +261,7 @@
 }
 
 /* add */
+
 .Add, .Edit {
     background-color: #fff;
     padding: 25px 6.5vw 100px;

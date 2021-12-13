@@ -1,50 +1,50 @@
+import "../AContent.css";
 import Title from "../Home/H_Title";
 
-import "../AContent.css";
 import IMG_PLUS from "../../assets/im/add_plus.svg";
 import IMG_CROSS from "../../assets/im/add_cross.svg";
 
-import { useState, useContext } from 'react';
-import { StoreContext } from "../../store"
+import { useState, useContext } from "react";
+import { StoreContext } from "../../store";
 
 const URL = "https://test-1129.herokuapp.com/api/v1/article";
 
 export default function Add() {
     const { state: { userSignin: { userInfo } } } = useContext(StoreContext);
-    const [title, settitle] = useState("")
-    const [img, setimg] = useState("新增封面圖片")
-    const [imgwidth, setimgwidth] = useState(240)
-    const [content, setcontent] = useState("")
-    const [category, setcategory] = useState("")
-    const style = {}
+    const [title, settitle] = useState("");
+    const [img, setimg] = useState("新增封面圖片");
+    const [imgwidth, setimgwidth] = useState(240);
+    const [content, setcontent] = useState("");
+    const [category, setcategory] = useState("");
+    const style = {};
     var Today = new Date();
 
-    if (img === "新增封面圖片") style.WebkitMaskImage = style.maskImage = `url(${IMG_PLUS})`
-    else style.WebkitMaskImage = style.maskImage = `url(${IMG_CROSS})`
+    if (img === "新增封面圖片") style.WebkitMaskImage = style.maskImage = `url(${IMG_PLUS})`;
+    else style.WebkitMaskImage = style.maskImage = `url(${IMG_CROSS})`;
 
     const handlePostMessage = () => {
         if (title === "") {
             window.scrollTo(0, document.getElementById("title").offsetTop + 200);
             setTimeout(function () {
-                alert("請填入標題")
+                alert("請填入標題");
             }, 100);
         }
         else if (img === "新增封面圖片") {
             window.scrollTo(0, document.getElementById("img").offsetTop + 200);
             setTimeout(function () {
-                alert("請選擇圖片")
+                alert("請選擇圖片");
             }, 100);
         }
         else if (content === "") {
             window.scrollTo(0, document.getElementById("content").offsetTop + 200);
             setTimeout(function () {
-                alert("請填入內文")
+                alert("請填入內文");
             }, 100);
         }
         else if (category === "") {
             window.scrollTo(0, document.getElementById("form_bottom").offsetTop + 200);
             setTimeout(function () {
-                alert("請選擇分類")
+                alert("請選擇分類");
             }, 100);
         }
 
@@ -66,8 +66,8 @@ export default function Add() {
 
         if (title !== "" && img !== "新增封面圖片" && content !== "" && category !== "") {
             fetch(`${URL}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(articles)
             })
                 .then((res) => res.json())
@@ -76,12 +76,13 @@ export default function Add() {
                         .then((res) => res.json())
                         .then((data) => {
                             const APIs = JSON.stringify(data.reverse());
-                            window.localStorage.setItem('ArticleAPI', APIs);
+                            window.localStorage.setItem("ArticleAPI", APIs);
                         })
                     window.location = "/list"
                 })
         }
-    };
+    }
+
     return (
         <div className="Add">
             <Title Title="新增文章" />

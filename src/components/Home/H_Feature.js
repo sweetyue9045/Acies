@@ -1,6 +1,5 @@
 import FEATURE_LOGO from "../../assets/im/feature_logo.svg";
 
-
 export default function Feature() {
     return (
         <div className="feature" id="feature">

@@ -1,14 +1,15 @@
 import './Nav.css';
-import LOGO from "../assets/im/nav_logo.svg";
-import { Link } from "react-router-dom"
 
+import LOGO from "../assets/im/nav_logo.svg";
+
+import { Link } from "react-router-dom"
 
 export default function Nav({ posi }) {
     return (
         <nav style={{ position: posi }}>
             <Link to="/">
                 <div className="logo">
-                    <img src={LOGO} alt="LOGO"/>
+                    <img src={LOGO} alt="LOGO" />
                 </div>
             </Link>
             <ul className="menu">

@@ -1,6 +1,7 @@
 import "./App.css";
 import HOME from "./pages/Home"
 import BOARD from "./pages/Board"
+import ARTICLE from "./pages/Article"
 import GAME from "./pages/Game"
 import TEAM from "./pages/Team"
 import LOGIN from "./pages/LoginAdmin"
@@ -27,6 +28,7 @@ function App() {
     useEffect(() => {
         fetchMessages()
     }, []);
+
     return (
         <StoreProvider>
             <BrowserRouter>
@@ -34,12 +36,13 @@ function App() {
                 <Switch>
                     <Route exact path="/" component={HOME} />
                     <Route path="/board" component={BOARD} />
+                    <Route path="/article/:articleId" component={ARTICLE} />
                     <Route path="/game" component={GAME} />
                     <Route path="/team" component={TEAM} />
                     <Route path="/admin" component={LOGIN} />
                     <Route path="/list" component={LIST} />
                     <Route path="/add" component={ADD} />
-                    <Route path="/article/:articleId" component={EDIT} />
+                    <Route path="/edit/:articleId" component={EDIT} />
                 </Switch>
             </BrowserRouter>
         </StoreProvider>
