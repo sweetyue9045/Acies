@@ -4,7 +4,7 @@ import "../AContent.css";
 import IMG_PLUS from "../../assets/im/add_plus.svg";
 import IMG_CROSS from "../../assets/im/add_cross.svg";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const URL = "https://test-1129.herokuapp.com/api/v1/article";
 
@@ -14,8 +14,6 @@ export default function Add() {
     const [imgwidth, setimgwidth] = useState(240)
     const [content, setcontent] = useState("")
     const [category, setcategory] = useState("")
-    // const [APIs, setAPIs] = useState([]);
-    // const [Edit, setEdit] = useState([])
     const style = {}
     var Today = new Date();
 
@@ -68,7 +66,15 @@ export default function Add() {
                 body: JSON.stringify(articles)
             })
                 .then((res) => res.json())
-                .then(() => window.location = "/list")
+                .then(() => {
+                    fetch(`${URL}/all`)
+                        .then((res) => res.json())
+                        .then((data) => {
+                            const APIs = JSON.stringify(data.reverse());
+                            window.localStorage.setItem('ArticleAPI', APIs);
+                        })
+                    window.location = "/list"
+                })
         }
     };
     return (

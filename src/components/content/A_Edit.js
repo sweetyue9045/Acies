@@ -12,9 +12,6 @@ export default function Edit({ article }) {
     const [img, setimg] = useState("新增封面圖片")
     const [content, setcontent] = useState("")
     const [category, setcategory] = useState("")
-    // const [APIs, setAPIs] = useState([]);
-    // const [Edit, setEdit] = useState([])
-    const [unDefined, setunDefined] = useState(0)
     const [imgwidth, setimgwidth] = useState(240)
     var Today = new Date();
 
@@ -37,17 +34,9 @@ export default function Edit({ article }) {
         }, 100);
     }
 
-    const definedMessages = () => {
-        if (article != undefined && unDefined == 0) {
-            editMessages()
-            setunDefined(1)
-        }
-    }
     useEffect(() => {
-        definedMessages()
+        editMessages()
     }, []);
-
-
 
     const handlePutMessage = (id) => {
         if (title == "") {
@@ -90,7 +79,15 @@ export default function Edit({ article }) {
                 body: JSON.stringify(articles)
             })
                 .then((res) => res.json())
-                .then(() => window.location = "/list")
+                .then(() => {
+                    fetch(`${URL}/all`)
+                        .then((res) => res.json())
+                        .then((data) => {
+                            const APIs = JSON.stringify(data.reverse());
+                            window.localStorage.setItem('ArticleAPI', APIs);
+                        })
+                    window.location = "/list"
+                })
                 .catch((err) => {
                     console.log(err);
                 });

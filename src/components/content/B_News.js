@@ -27,7 +27,7 @@ export default function News() {
     return (
         <div className="news">
             <div className="n_left">
-                <Title Title_top="最新消息" Title_bottom="BREAKING NEWS" ls="9.5px" />
+                <Title Title_top="最新消息" Title_bottom="BREAKING NEWS" ls="9.5px" lss="3px"/>
                 <div className="logo">
                     <div className="text">ACIES</div>
                     <div className="text">TWIN JOURNEY</div>
@@ -36,7 +36,7 @@ export default function News() {
             </div>
             <div className="n_right">
                 {news.map((news, index) => (
-                    <div key={news.key} className={tab === index ? 'carousel_img showbox' : 'carousel_img'} style={{ background: "url(" + news.im + ") no-repeat center top" }}>
+                    <div key={news.key} className={tab === index ? 'carousel_img showbox' : 'carousel_img'} style={{ backgroundImage: "url(" + news.im + ")" }}>
                         <div className="mask"></div>
                         <div className="content">
                             <div className="content_title">{news.title}</div>

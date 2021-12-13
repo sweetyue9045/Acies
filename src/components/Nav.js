@@ -3,9 +3,9 @@ import LOGO from "../assets/im/nav_logo.svg";
 import { Link } from "react-router-dom"
 
 
-export default function Nav() {
+export default function Nav({ posi }) {
     return (
-        <nav>          
+        <nav style={{ position: posi }}>
             <Link to="/">
                 <div className="logo">
                     <img src={LOGO} alt="LOGO"/>
@@ -17,8 +17,8 @@ export default function Nav() {
                     <div className="menu_bottom">BULLETIN BOARD</div>
                 </Link></li>
                 <li><Link to="/game" className="menu_link">
-                    <div className="menu_top">專注力遊戲</div>
-                    <div className="menu_bottom">CONCENTRATION GAME</div>
+                    <div className="menu_top">遊戲設定</div>
+                    <div className="menu_bottom">GAME PLANNING</div>
                 </Link></li>
                 <li><Link to="/team" className="menu_link">
                     <div className="menu_top">開發團隊</div>

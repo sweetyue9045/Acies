@@ -3,7 +3,7 @@
 nav {
     min-height: 145px;
     width: 100vw;
-    position: fixed;
+    position: relative;
     top: 0;
     padding: 0px 44.35px 0px 80px;
     display: flex;
@@ -75,7 +75,7 @@ nav img {
 }
 
 .menu li:nth-child(2) .menu_bottom {
-    transform: scale(0.61);
+    transform: scale(0.69);
 }
 
 .menu li:nth-child(3) .menu_bottom {

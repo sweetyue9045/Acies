@@ -1,8 +1,9 @@
 import Nav from "../components/A_Nav"
 import All from "../components/content/A_All"
 import Footer from "../components/Footer"
-import { useState, useEffect, useContext } from "react";
-import { API } from "../App";
+
+import { useState } from "react";
+
 const URL = "https://test-1129.herokuapp.com/api/v1/article";
 
 function AllArticle() {
@@ -14,7 +15,6 @@ function AllArticle() {
         setID(id)
         document.body.classList.add('show-open')
     }
-
     const confirm_yes = () => {
         fetch(`${URL}/id/${ID}/delete`, {
             method: "DELETE",
@@ -22,14 +22,23 @@ function AllArticle() {
         })
             .then((res) => res.json())
             .then(() => {
+                document.body.classList.remove('show-open')
+
+                const API = JSON.parse(window.localStorage.getItem("ArticleAPI"))
+                const DEL = API.find(
+                    (x) => x.id == ID
+                );
+                API.splice(API.indexOf(DEL), 1)
+                const APIs = JSON.stringify(API)
+                window.localStorage.setItem("ArticleAPI", APIs)
                 window.location.reload();
-                document.body.classList.add('show-open');
             })
             .catch((err) => {
                 console.log(err);
             });
-
     }
+
+
     return (
         <>
             <Nav />
@@ -39,7 +48,7 @@ function AllArticle() {
                 <div className="confirm_box">
                     <div className="confirm_title">確定刪除嗎</div>
                     <div className="btn_group">
-                        <div className="btn btn_no" onClick={() => { setConfirm(false) }}>取消</div>
+                        <div className="btn btn_no" onClick={() => { setConfirm(false); document.body.classList.remove('show-open'); }}>取消</div>
                         <div className="btn btn_yes" onClick={() => { confirm_yes() }}>確定</div>
                     </div>
                 </div>

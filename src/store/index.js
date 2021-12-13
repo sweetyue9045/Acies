@@ -15,6 +15,8 @@ export const StoreContext = createContext();
 //   ? JSON.parse(localStorage.getItem("cartItems"))
 //   : [];
 
+console.log(localStorage.getItem("userInfo"))
+
 const initialState = {
   userSignin: {
     loading: false,

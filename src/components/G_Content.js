@@ -30,8 +30,8 @@ export default function G_Content({ redirect }) {
                     initialValues={{
                         remember: true,
                     }}
-                    onFinish={onFinish}
-                    onFihishFailed={onFinishFailed}
+                    // onFinish={onFinish}
+                    // onFihishFailed={onFinishFailed}
                 >
 
                     <div className="text">管理員登入</div>

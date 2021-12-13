@@ -1,7 +1,7 @@
 import Nav from "../components/Nav"
 import HContent from "../components/HContent"
 import Footer from "../components/Footer"
-import { useState, useEffect,createContext } from "react";
+import { useState, useEffect, createContext } from "react";
 
 export const ScrollY = createContext();
 
@@ -15,7 +15,7 @@ function Home() {
     }, []);
     return (
         <>
-            <Nav />
+            <Nav posi="fixed"/>
             <ScrollY.Provider value={offsetY}>
                 <HContent />
             </ScrollY.Provider>

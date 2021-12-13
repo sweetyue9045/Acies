@@ -30,7 +30,10 @@
     background-color: #fff;
     padding: 25px 13.89vw 100px;
 }
-
+.add_link {
+    width: 146px;
+    display: block;
+}
 .add_btn {
     width: 146px;
     margin: 40px 0px 70px;
@@ -40,6 +43,7 @@
     cursor: pointer;
     color: #000
 }
+
 
 .add_btn .imgsvg {
     width: 34px;
@@ -173,6 +177,7 @@
     border-radius: 40px;
     margin: 0 25px;
     color: #000;
+    cursor: pointer;
 }
 
 .btn_no {
