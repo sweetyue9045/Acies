@@ -31,12 +31,7 @@
     color: #A1A1A1;
 }
 
-<<<<<<< Updated upstream
-.text{
-  
-=======
 .Login .text{ 
->>>>>>> Stashed changes
     font-size: var(--fz28);
     margin-top: 60px;
     letter-spacing: 8px;
