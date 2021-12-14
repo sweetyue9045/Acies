@@ -275,7 +275,8 @@ body {
 }
 
 .magic .content {
-    max-width: 77.78vw;
+    width: 77.78vw;
+    max-width: 1120px;
     display: grid;
     grid-template-columns: 64% 36%;
     align-items: center;
@@ -339,6 +340,7 @@ body {
     filter: drop-shadow(0 0 10px #FFFEF3);
     opacity: 0;
     width: 28.19vw;
+    max-width: 405px;
 }
 
 /* ordeal */
@@ -356,7 +358,8 @@ body {
 }
 
 .ordeal .content {
-    max-width: 77.78vw;
+    width: 77.78vw;
+    max-width: 1120px;
     display: grid;
     grid-template-columns: 36% 64%;
     align-items: center;
@@ -373,7 +376,9 @@ body {
 
 .ordeal .left_img {
     width: 36.46vw;
+    max-width: 525px;
     height: 47.57vw;
+    max-height: 685px;
     opacity: 0;
 }
 
@@ -384,6 +389,7 @@ body {
     filter: drop-shadow(0 0 10px #FFFEF3);
     z-index: 100;
     width: 16.32vw;
+    max-width: 235px;
 }
 
 .left_img :last-child {
@@ -391,6 +397,7 @@ body {
     right: 0;
     bottom: 0;
     width: 33.26vw;
+    max-width: 478px;
 }
 
 /* crisis */
@@ -408,7 +415,8 @@ body {
 }
 
 .crisis .content {
-    max-width: 77.78vw;
+    width: 77.78vw;
+    max-width: 1120px;
     display: grid;
     grid-template-columns: 64% 36%;
     align-items: flex-end;
@@ -420,6 +428,7 @@ body {
     filter: drop-shadow(0 0 10px #FFFEF3);
     opacity: 0;
     width: 42.64vw;
+    max-width: 614px;
 }
 
 /* awards */
@@ -434,6 +443,7 @@ body {
 
 .awards .content {
     width: 72.22vw;
+    max-width: 1040px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -441,7 +451,9 @@ body {
 
 .award {
     width: 31.25vw;
+    max-width: 450px;
     height: 17.36vw;
+    max-height: 250px;
     background-image: url("../assets/im/awards_bg.svg");
     background-repeat: no-repeat;
     background-size: contain;

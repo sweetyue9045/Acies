@@ -10,7 +10,7 @@ export default function Crisis() {
                 <div className="introduce">
                     <Title Title="利用專注力解決危機吧！" />
                     <div className="i_content">遇上各式各樣的神奇生物時，冷靜下來觀察周遭，利用技能解決難題吧！</div>
-                    <video controls style={{ width: `49.79vw`, marginTop: `20px` }}>
+                    <video controls style={{ width: `49.79vw`,maxWidth:`716px`, marginTop: `20px` }}>
                         <source src={CRISIS_BOSS} type="video/mp4" />
                         您的瀏覽器不支援此 HTML5 影片標籤
                     </video>

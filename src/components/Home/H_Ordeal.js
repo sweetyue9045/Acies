@@ -15,7 +15,7 @@ export default function Ordeal() {
                 <div className="introduce">
                     <Title Title="部落的考驗來提升專注力" />
                     <div className="i_content">旅途中有許多能夠輔助專注力的解謎，透過解謎讓姊妹更強大吧！</div>
-                    <video controls style={{ width: `49.79vw`, marginTop: `20px` }}>
+                    <video controls style={{ width: `49.79vw`,maxWidth:`716px`, marginTop: `20px` }}>
                         <source src={ORDEAL_GAME} type="video/mp4" />
                         您的瀏覽器不支援此 HTML5 影片標籤
                     </video>
