@@ -113,6 +113,7 @@ hr {
 
 .village .content {
     width: 100%;
+    max-width: 1440px;
     height: 48.61vw;
     max-height: 700px;
     display: flex;
@@ -233,17 +234,24 @@ hr {
 
 /* sister */
 .sister {
-    margin-top: 200px;
+    margin: 200px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .sisters {
-    min-height: 69.44vw;
+    height: 69.44vw;
+    max-height: 900px;
+    width: 100%;
+    max-width: 1440px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     background-image: url("../assets/im/sister_bg.png");
     background-repeat: no-repeat;
-    background-position: center 84%;
+    background-position: center bottom;
     background-size: contain;
     margin-top: 13.89vw;
 }
@@ -262,14 +270,17 @@ hr {
 .page2 {
     margin-top: -65px;
     width: 38.47vw;
+    max-width: 553px;
+
 }
 
 .sisimg .text {
     position: absolute;
     width: 24.31vw;
+    max-width: 350px;
     top: 0;
+    transform: translate(-50%, -50%);
     filter: drop-shadow(0 0 5px #FFFEF3);
-    max-width: 56.94vw;
     font-size: var(--fz28);
     letter-spacing: 5px;
     margin-right: -3px;
@@ -278,22 +289,25 @@ hr {
 
 #cancelL {
     position: absolute;
-    top: 0;
-    margin: -4.86vw -5.56vw;
+    top: -10%;
+    left: 0;
 }
 
 #cancelR {
     position: absolute;
-    top: 0;
-    margin: -4.86vw 19.44vw;
+    top: -10%;
+    right: 0;
+
 }
 
 #textL {
-    margin: 2.43vw 8.73vw;
+    left: 23%;
+    top: 10%;
 }
 
 #textR {
-    margin: 2.43vw 5.56vw;
+    left: 15%;
+    top: 10%;
 }
 
 .click_point {
@@ -303,6 +317,7 @@ hr {
 .state {
     transition: transform 0.15s cubic-bezier(0, 0.2, 0.5, 3) 0s;
     width: 38.47vw;
+    max-width: 553px;
 }
 
 .state:hover {
