@@ -162,7 +162,8 @@ body {
 }
 
 .story .content {
-    max-width: 77.78vw;
+    width: 77.78vw;
+    max-width: 1120px;
     display: grid;
     grid-template-columns: 60% 40%;
     align-items: center;

@@ -54,6 +54,7 @@
 }
 
 .Board {
+    margin: 10.42vw auto 0;
     overflow-x: hidden;
 }
 
@@ -61,7 +62,9 @@
 
 .news {
     width: 78.13vw;
+    max-width: 1125px;
     height: 38.19vw;
+    max-height: 550px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 30% 70%;
@@ -111,6 +114,7 @@
 
 .n_right .carousel_img {
     height: 33.19vw;
+    max-height: 478px;
     display: none;
     background-size: cover;
     background-position: center top;
@@ -144,6 +148,7 @@
 
 .dev {
     width: 78.13vw;
+    max-width: 1125px;
     margin: 13.89vw auto 0;
 }
 
@@ -192,6 +197,7 @@
 .dev .top_box {
     width: 100%;
     height: 25vw;
+    max-height: 360px;
     margin-top: 80px;
     padding: 0 20px;
     display: flex;
@@ -212,6 +218,7 @@
 
 .top_box img {
     height: 22.43vw;
+    max-height: 322px;
 }
 
 .top_box .content_title {
@@ -251,11 +258,14 @@
 
 .dev_box .content_box {
     width: 31.25vw;
+    max-width: 445px;
     height: 34.72vw;
+    max-height: 495px;
 }
 
 .dev_box .content_text {
     width: 23.22vw;
+    max-width: 335px;
 }
 
 .dev .showbox {
@@ -333,6 +343,7 @@
 .data_link img {
     filter: drop-shadow(0 0 3px #FFFEF3);
     width: 6.11vw;
+    max-width: 87px;
 }
 
 .data_ch {
@@ -366,6 +377,7 @@
 
 .Article {
     width: 78.13vw;
+    max-width: 1125px;
     margin: 6.94vw auto;
     display: flex;
     flex-direction: column;
@@ -404,6 +416,7 @@
 
 .BackNav {
     width: 78.13vw;
+    max-width: 1125px;
     margin: 6.94vw auto;
 }
 

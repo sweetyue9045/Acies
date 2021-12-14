@@ -25,6 +25,7 @@
 
 .group {
     width: 78.13vw;
+    max-width: 1125px;
     margin: 10.42vw auto 0;
 }
 

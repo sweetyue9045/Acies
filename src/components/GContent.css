@@ -89,6 +89,7 @@ hr {
 
 .world .content {
     width: 54.86vw;
+    max-width: 790px;
     font-size: var(--fz28);
     letter-spacing: 5px;
     margin-right: -3px;
@@ -103,16 +104,17 @@ hr {
 .village {
     width: 100%;
     height: 55.56vw;
-    margin-top: 50px;
+    max-height: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 300px;
 }
 
 .village .content {
     width: 100%;
     height: 48.61vw;
+    max-height: 700px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -121,7 +123,9 @@ hr {
 
 .village .logo {
     width: 18.06vw;
+    max-width: 260px;
     height: 18.06vw;
+    max-height: 260px;
     transform: translateY(-100px);
     opacity: 0;
     cursor: pointer;
@@ -147,6 +151,7 @@ hr {
     left: 0;
     width: 2px;
     height: 10.07vw;
+    max-height: 145px;
     background-image: none;
     border-left: solid 2px #fff;
     opacity: 0;
@@ -165,6 +170,7 @@ hr {
 
 .village .v_logo {
     height: 8.47vw;
+    max-height: 125px;
     transition: all .5s ease;
     margin-bottom: 50px;
 }
@@ -180,6 +186,7 @@ hr {
 
 .village .v_in {
     width: 15.63vw;
+    max-width: 225px;
     height: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -205,6 +212,7 @@ hr {
 
 .village .logo:hover .v_logo {
     height: 4.24vw;
+    max-height: 61px;
     margin-bottom: 30px;
 }
 
@@ -225,7 +233,7 @@ hr {
 
 /* sister */
 .sister {
-    margin-top: 400px;
+    margin-top: 200px;
 }
 
 .sisters {
