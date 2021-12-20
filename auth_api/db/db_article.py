@@ -84,15 +84,15 @@ def update(user_id: int, db: Session, request: UpdateResponseSchema):
     #     })
 
     db.commit()
-    # access_token = create_access_token(data={'username': request.username})
+    # access_token = create_access_token(data={"username": request.username})
     return {
-        'id': user_id,
-        'category': request.category,
-        'img': request.img,
-        'title': request.title,
-        'content': request.content,
-        'editer': request.editer,
-        'edit_time': request.edit_time
+        "id": user_id,
+        "category": request.category,
+        "img": request.img,
+        "title": request.title,
+        "content": request.content,
+        "editer": request.editer,
+        "edit_time": request.edit_time
     }
 
 def delete(id: int, db: Session) -> list[DbArticle]:
@@ -109,12 +109,12 @@ def get_article_by_id(id: int, db: Session) -> DbArticle:
     article = db.query(DbArticle).filter(DbArticle.id == id).first()
     if not article:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f'Article with id = {id} not found')
+                            detail=f"Article with id = {id} not found")
     return article
 
 def get_article_by_category(category: str, db: Session) -> list[DbArticle]:
     article = db.query(DbArticle).filter(func.upper(DbArticle.category) == category.upper()).all()
     if not article:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                            detail=f'Product with category = {category} not found')
+                            detail=f"Product with category = {category} not found")
     return article

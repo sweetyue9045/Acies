@@ -1,4 +1,4 @@
-import './Nav.css';
+import "./Nav.css";
 
 import LOGO from "../assets/im/nav_logo.svg";
 

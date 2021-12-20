@@ -4,7 +4,7 @@ from sqlalchemy import Column, Integer, String, Boolean
 # from sqlalchemy.sql.schema import ForeignKey
 
 class DbUser(Base):
-    __tablename__ = 'user'
+    __tablename__ = "user"
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String(30), unique=True, nullable=False)
     email = Column(String(30), unique=True, nullable=False)
@@ -12,7 +12,7 @@ class DbUser(Base):
     is_admin = Column(Boolean, default=False, nullable=True)
 
 class DbArticle(Base):
-    __tablename__ = 'article'
+    __tablename__ = "article"
     id = Column(Integer, primary_key=True, index=True)
     category = Column(String)
     img = Column(String)

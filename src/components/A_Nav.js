@@ -16,9 +16,9 @@ export default function Nav({ bg, posi }) {
     }, [])
     const LogoutButton = () => {
         if(userInfo == null){
-            document.getElementById('logout').style.display='none';
+            document.getElementById("logout").style.display="none";
         }else{
-            document.getElementById('logout').style.display='flex';
+            document.getElementById("logout").style.display="flex";
         }
         }
 

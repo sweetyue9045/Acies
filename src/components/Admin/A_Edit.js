@@ -74,7 +74,7 @@ export default function Edit({ article }) {
         };
         if (title !== "" && img !== "新增封面圖片" && content !== "" && category !== "") {
             fetch(`${URL}/id/${id}/update`, {
-                method: 'PUT',
+                method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(articles)
             })
@@ -84,7 +84,7 @@ export default function Edit({ article }) {
                         .then((res) => res.json())
                         .then((data) => {
                             const APIs = JSON.stringify(data.reverse());
-                            window.localStorage.setItem('ArticleAPI', APIs);
+                            window.localStorage.setItem("ArticleAPI", APIs);
                         })
                     window.location = "/list"
                 })

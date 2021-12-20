@@ -22,7 +22,7 @@ function App() {
             .then((res) => res.json())
             .then((data) => {
                 const APIs = JSON.stringify(data.reverse());
-                window.localStorage.setItem('ArticleAPI', APIs);
+                window.localStorage.setItem("ArticleAPI", APIs);
             })
     }
     useEffect(() => {

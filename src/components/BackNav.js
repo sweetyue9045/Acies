@@ -1,6 +1,6 @@
 import BACKNAV from "../assets/im/backnav.svg";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function BackNav() {
     return (

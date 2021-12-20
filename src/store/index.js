@@ -17,7 +17,7 @@ console.log(localStorage.getItem("userInfo"))
 const initialState = {
     userSignin: {
         loading: false,
-        userInfo: (localStorage.getItem("userInfo") && localStorage.getItem("userInfo") !== 'undefined')
+        userInfo: (localStorage.getItem("userInfo") && localStorage.getItem("userInfo") !== "undefined")
             ? JSON.parse(localStorage.getItem("userInfo"))
             : null,
 

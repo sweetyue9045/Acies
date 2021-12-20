@@ -19,7 +19,7 @@ export default function All({ props }) {
             "ispublish": true
         };
         fetch(`${URL}/id/${id}/publish`, {
-            method: 'PUT',
+            method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(articles)
         })
@@ -29,7 +29,7 @@ export default function All({ props }) {
                     .then((res) => res.json())
                     .then((data) => {
                         const API = JSON.stringify(data.reverse());
-                        window.localStorage.setItem('ArticleAPI', API);
+                        window.localStorage.setItem("ArticleAPI", API);
                     })
                 window.location.reload();
             })

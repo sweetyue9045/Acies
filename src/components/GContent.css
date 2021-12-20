@@ -129,7 +129,6 @@ hr {
     max-height: 260px;
     transform: translateY(-100px);
     opacity: 0;
-    cursor: pointer;
 }
 
 .village .v_mossina {
@@ -178,7 +177,7 @@ hr {
 
 .village .v_en {
     font-size: var(--fz32);
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato", sans-serif;
     font-weight: 400;
     transition: all .3s .5s ease;
     letter-spacing: 3px;
@@ -306,12 +305,15 @@ hr {
 }
 
 #textR {
-    left: 15%;
+    left: 14%;
     top: 10%;
 }
 
 .click_point {
     cursor: pointer;
+}
+.click_point:hover{
+    filter: drop-shadow(0 0 5px #FFFEF3);
 }
 
 .state {
@@ -322,7 +324,6 @@ hr {
 
 .state:hover {
     transform: scale(1.03);
-    filter: drop-shadow(0 0 5px #FFFEF3);
 }
 
 .R_fadeout {

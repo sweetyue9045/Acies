@@ -1,4 +1,4 @@
-import './TContent.css';
+import "./TContent.css";
 
 import Group from "../components/Team/T_Group";
 
