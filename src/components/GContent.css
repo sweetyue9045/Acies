@@ -43,17 +43,6 @@
     width: 2.36vw;
 }
 
-hr {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 880px;
-    border: 0;
-    height: 3px;
-    background-image: url("../assets/im/dotted_line.svg");
-    overflow: hidden;
-    margin: 140px 0;
-}
-
 .Game .fadein {
     transform: translateY(0px) !important;
     opacity: 1 !important;

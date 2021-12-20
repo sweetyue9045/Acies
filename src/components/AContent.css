@@ -28,8 +28,9 @@
 /* login */
 
 .Login {
-    background-image: url(../assets//im/bg_login.png);
-    background-size: contain;
+    background-image: url("../assets/im/login_bg.png");
+    background-size: cover;
+    background-position: center;
     height: 62.5vw;
     display: flex;
     justify-content: center;
@@ -89,6 +90,7 @@
     max-width: 30px;
     max-height: 30px;
     background-size: contain;
+    cursor: pointer;
 }
 
 .login_btn {
@@ -398,4 +400,10 @@ input[type=file] {
 
 .sub_btn:hover {
     background-color: #BFBFBF;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 834px) {
+    .Login {
+        height: 95.5vw;
+    }
 }

@@ -116,7 +116,7 @@ body {
 .feature {
     width: 100%;
     min-height: 60.63vw;
-    background-image: url(../assets/im/feature_bg.png);
+    background-image: url("../assets/im/feature_bg.png");
     background-position: center -30px;
     background-repeat: no-repeat;
     display: flex;

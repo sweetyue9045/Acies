@@ -1,7 +1,7 @@
 import Title from "./G_Title";
 
-import ARROW_L from "../../assets/im/home_arrow_l.svg";
-import ARROW_R from "../../assets/im/home_arrow_r.svg";
+import ARROW_L from "../../assets/im/sister_arrow_l.svg";
+import ARROW_R from "../../assets/im/sister_arrow_r.svg";
 import SISTER_L from "../../assets/im/sister_L.png";
 import SISTER_R from "../../assets/im/sister_R.png";
 import SISTER_L2 from "../../assets/im/sister_L2.png";
