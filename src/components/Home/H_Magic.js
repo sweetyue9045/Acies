@@ -30,8 +30,8 @@ export default function Magic() {
                             <div className="text">{skill}</div>
                         </div>
                         <div className="right">
-                            <div className="r_prev" onClick={() => { setnum(0); setskill("凝聚之光"); }} style={{ backgroundColor: num ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0.35)" }}></div>
-                            <div className="r_next" onClick={() => { setnum(1); setskill("物體移動"); }} style={{ backgroundColor: num ? "rgba(255, 255, 255, 0.35)" : "rgba(255, 255, 255, 1)" }}></div>
+                            <div className="r_prev" onClick={() => { setnum(0); setskill("凝聚之光"); }} style={{ backgroundColor: num ? "" : "rgba(255, 255, 255, 0.35)",animation: num ? "clickme 2s linear infinite" : "" }}></div>
+                            <div className="r_next" onClick={() => { setnum(1); setskill("物體移動"); }} style={{ backgroundColor: num ? "rgba(255, 255, 255, 0.35)" : "",animation: num ? "" : "clickme 2s linear infinite" }}></div>
                         </div>
                     </div>
                 </div>

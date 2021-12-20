@@ -301,6 +301,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 2%;
 }
 
 .magic .num {
@@ -322,17 +323,16 @@ body {
 }
 
 .magic .r_prev {
-    width: 22px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
     mask-image: url("../assets/im/magic_prev.svg");
     margin-right: 2.22vw;
 }
 
 .magic .r_next {
-    width: 22px;
-    height: 26px;
+    width: 30px;
+    height: 30px;
     mask-image: url("../assets/im/magic_next.svg");
-
 }
 
 .magic_sis {
@@ -341,6 +341,20 @@ body {
     opacity: 0;
     width: 28.19vw;
     max-width: 405px;
+}
+
+@keyframes clickme {
+    0% {
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+    50% {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    100% {
+        background-color: rgba(255, 255, 255, 1);
+    }
 }
 
 /* ordeal */
