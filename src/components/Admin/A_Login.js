@@ -57,7 +57,7 @@ export default function Login({ redirect }) {
             <div className="login_card">
                 <form action="" id="login">
                     <div className="title">管理員登入</div>
-                    <input type="text" className="input" id="email" placeholder="帳號" onChange={(event) => setemail(event.target.value)} autoComplete="off" required />
+                    <input type="email" className="input" id="email" placeholder="帳號" onChange={(event) => setemail(event.target.value)} autoComplete="off" required />
                     <div>
                         <input type="password" className="input" id="password" placeholder="密碼" onChange={(event) => setpassword(event.target.value)} autoComplete="off" required />
                         <div className="pass_eyes" onClick={ShowHidePassWord}
