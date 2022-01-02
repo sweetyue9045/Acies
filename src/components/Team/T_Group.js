@@ -1,5 +1,4 @@
 import Title from "../Board/B_Title"
-import Loading from "../Loading"
 
 import PHOTO_01 from "../../assets/im/team_photo_01.png";
 import PHOTO_02 from "../../assets/im/team_photo_02.png";
@@ -11,7 +10,6 @@ import PHOTO_06 from "../../assets/im/team_photo_06.svg";
 export default function Group() {
     return (
         <>
-            <Loading></Loading>
             <div className="group">
                 <Title Title_top="遊戲開發團隊" Title_bottom="GAME DEVELOPER" ls="16px" lss="10.5px"/>
                 <div className="g_member">

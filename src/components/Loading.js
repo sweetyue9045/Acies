@@ -1,3 +1,4 @@
+import "./HContent.css";
 import React from "react";
 import Lottie from "react-lottie";
 import animationData from "../assets/lotties/loading.json";
@@ -24,13 +25,13 @@ export default function Loading(){
     },1200);
 
 return(
-    <>
+    <div className="myloading">
         <Lottie 
             options={defaultOptions}
             height={400}
             width={400}
             speed={speed}
             />
-    </>
+    </div>
 );
 }

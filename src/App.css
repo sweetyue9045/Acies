@@ -1,0 +1,16 @@
+.overhidden{
+    overflow: hidden;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+.myloading{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

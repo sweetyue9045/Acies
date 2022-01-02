@@ -9,8 +9,8 @@ import { useState, useEffect, createContext } from "react";
 export const ScrollY = createContext();
 
 function Home() {
-    const [done,setDone]=useState(undefined);
-    const [completed, setcompleted]=useState(undefined);
+    const [done, setDone] = useState(undefined);
+    const [completed, setcompleted] = useState(undefined);
     const [offsetY, setOffsetY] = useState(0);
     const handleScroll = () => setOffsetY(document.documentElement.scrollTop);
     useEffect(() => {
@@ -19,10 +19,10 @@ function Home() {
     }, []);
 
     const defaultOptions = {
-        loop:true,
-        autoplay:true,
-        animationData:animationData,
-        renderSettings:{
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+        renderSettings: {
             preserveAspectRatio: "xMidYMid slice"
         }
     };
@@ -31,23 +31,17 @@ function Home() {
 
         setTimeout(() => {
             setcompleted(true);
-        },3000);
-        
+        }, 3000);
+
     }, [])
 
     return (
         <>
-        {!completed ? (
-               <Loading></Loading>
-        ) : (
-            <>
             <Nav posi="fixed" />
             <ScrollY.Provider value={offsetY}>
                 <HContent />
             </ScrollY.Provider>
-            <Footer /></>
-        )}
-          
+            <Footer />
         </>
     );
 }
