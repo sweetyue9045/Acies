@@ -324,7 +324,7 @@ body {
 .magic .text {
     font-size: var(--fz24);
     letter-spacing: 2px;
-    margin: -0.14vw -0.07vw 0 1.73vw;
+    margin: -0.14vw 0 0 1.73vw;
     width: auto;
 }
 
