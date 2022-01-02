@@ -3,7 +3,7 @@ import All from "../components/Admin/A_All";
 import Footer from "../components/Footer";
 
 import axios from "axios";
-import { useState,useEffect,useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { StoreContext } from "../store";
 
@@ -28,11 +28,14 @@ function AllArticle() {
         setID(id)
         setIMG(img)
         document.getElementById("confirm_del").classList.add('show-open')
+        document.getElementById("ALLOVER").classList.add("overhidden")
     }
     const Confirm_publish = (open, id) => {
         setConfirm_publish(open)
         setID(id)
         document.getElementById("confirm_publish").classList.add('show-open')
+        document.getElementById("ALLOVER").classList.add("overhidden")
+
     }
     const confirm_del_yes = async () => {
         setLoading(true)
@@ -98,7 +101,7 @@ function AllArticle() {
     }
 
     return (
-        <>
+        <div id="ALLOVER">
             <Nav />
             <All del={Confirm_del.bind(this)} publish={Confirm_publish.bind(this)} />
             <Footer />
@@ -106,9 +109,15 @@ function AllArticle() {
                 <div className="confirm_box">
                     <div className="confirm_title">確定刪除嗎</div>
                     <div className="btn_group">
-                        <div className="btn btn_no" onClick={() => { setConfirm_del(false); document.getElementById("confirm_del").classList.remove('show-open'); }}>取消</div>
-                        {loading ?
-                            <div className="btn btn_loading">loading</div>
+                        <div className="btn btn_no" onClick={() => {
+                            setConfirm_del(false);
+                            document.getElementById("confirm_del").classList.remove('show-open');
+                            document.getElementById("ALLOVER").classList.remove("overhidden")
+                        }}>取消</div>
+                        {Loading ?
+                            <div className="btn btn_loading">
+                                <div className="loader"></div>
+                            </div>
                             :
                             <div className="btn btn_yes" onClick={() => { confirm_del_yes() }}>確定</div>
                         }
@@ -120,16 +129,22 @@ function AllArticle() {
                 <div className="confirm_box">
                     <div className="confirm_title">確定發佈嗎</div>
                     <div className="btn_group">
-                        <div className="btn btn_no" onClick={() => { setConfirm_publish(false); document.getElementById("confirm_publish").classList.remove('show-open'); }}>取消</div>
+                        <div className="btn btn_no" onClick={() => {
+                            setConfirm_publish(false);
+                            document.getElementById("confirm_publish").classList.remove('show-open');
+                            document.getElementById("ALLOVER").classList.remove("overhidden")
+                        }}>取消</div>
                         {Loading ?
-                            <div className="btn btn_loading">loading</div>
+                            <div className="btn btn_loading">
+                                <div className="loader"></div>
+                            </div>
                             :
                             <div className="btn btn_yes" onClick={() => { confirm_publish_yes() }}>確定</div>
                         }
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

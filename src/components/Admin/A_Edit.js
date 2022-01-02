@@ -4,11 +4,13 @@ import Title from "../Home/H_Title";
 import IMG_CROSS from "../../assets/im/add_cross.svg";
 
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { StoreContext } from "../../store";
 
 const URL = "http://acies-api.herokuapp.com/api/v1/article";
 
 export default function Edit({ article }) {
+    const { state: { userSignin: { userInfo } } } = useContext(StoreContext);
     const [title, settitle] = useState("")
     const [img, setimg] = useState("新增封面圖片")
     const [content, setcontent] = useState("")
@@ -40,7 +42,7 @@ export default function Edit({ article }) {
         editMessages()
     }, []);
 
-    const handlePutMessage = async(id) => {
+    const handlePutMessage = async (id) => {
         if (title === "") {
             window.scrollTo(0, document.getElementById("title").offsetTop + 200);
             setTimeout(function () {
@@ -67,20 +69,27 @@ export default function Edit({ article }) {
         }
         const articles = {
             category: category,
-            img: img.name,
+            img:
+                img === article.img ?
+                    img : img.name,
             title: title,
             content: content,
-            editer: "欣",
+            editer:
+                userInfo
+                    ? `${userInfo.username}`
+                    : `是誰`,
             edit_time: Today.getFullYear() + "." + (Today.getMonth() + 1) + "." + Today.getDate(),
             id: id
         };
+        console.log(img,article.img,articles)
         if (title !== "" && img !== "新增封面圖片" && content !== "" && category !== "") {
             setloading(true)
+            
             axios({
                 method: "DELETE",
                 url: `${URL}/delete/file/${article.img}`,
                 data: article.img,
-                headers: { "Content-Type": "multipart/form-data" },
+                headers: { "Content-Type": "application/json" },
             })
             let formData = new FormData();
             formData.append("files", img)
@@ -103,9 +112,9 @@ export default function Edit({ article }) {
                             const APIs = JSON.stringify(data.reverse());
                             window.localStorage.setItem("ArticleAPI", APIs);
                         })
-                        setTimeout(() => {
-                            window.location = "/admin/list"
-                        }, 1000);
+                    setTimeout(() => {
+                        window.location = "/admin/list"
+                    }, 10000);
                 })
                 .catch((err) => {
                     console.log(err);
@@ -144,10 +153,11 @@ export default function Edit({ article }) {
                         <label className="categorytext" htmlFor="category_03">#企劃</label>
                     </div>
                     {loading ?
-                        <input type="button" value="loading" className="sub_btn sub_btn_loading" disabled />
+                        <div className="sub_btn sub_btn_loading">
+                            <div className="loader"></div>
+                        </div>
                         :
-                        <input type="button" value="儲存" className="sub_btn" onClick={() => { handlePutMessage(article.id) }} />
-                    }
+                        <div className="sub_btn" onClick={() => { handlePutMessage(article.id) }}>儲存</div>}
                 </div>
             </form>
         </div>
