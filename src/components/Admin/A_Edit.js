@@ -7,7 +7,7 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { StoreContext } from "../../store";
 
-const URL = "http://acies-api.herokuapp.com/api/v1/article";
+const URL = "https://acies-api.herokuapp.com/api/v1/article";
 
 export default function Edit({ article }) {
     const { state: { userSignin: { userInfo } } } = useContext(StoreContext);

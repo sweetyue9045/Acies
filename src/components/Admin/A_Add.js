@@ -8,7 +8,7 @@ import axios from "axios";
 import { useState, useContext } from "react";
 import { StoreContext } from "../../store";
 
-const URL = "http://acies-api.herokuapp.com/api/v1/article";
+const URL = "https://acies-api.herokuapp.com/api/v1/article";
 
 export default function Add() {
     const { state: { userSignin: { userInfo } } } = useContext(StoreContext);

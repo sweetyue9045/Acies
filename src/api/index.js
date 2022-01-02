@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://acies-api.herokuapp.com/api/v1";
+const URL = "https://acies-api.herokuapp.com/api/v1";
 
 export const signInWithEmailPassword = async (email, password) => {
     let user = await axios.post(`${URL}/users/signin`, { email, password });
