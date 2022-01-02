@@ -14,6 +14,7 @@ import Loading from "./components/Loading";
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { StoreProvider } from "./store";
+import PWAPrompt from 'react-ios-pwa-prompt'
 
 const URL = "https://acies-api.herokuapp.com/api/v1/article";
 
@@ -52,6 +53,7 @@ function App() {
     return (
         <div className="overhidden" id="APPOVER">
             <StoreProvider>
+            <PWAPrompt promptOnVisit={1} timesToShow={3} copyClosePrompt="Close" permanentlyHideOnDismiss={false}/>
                 <BrowserRouter>
                     <ScrollToTop />
                     <Switch>
