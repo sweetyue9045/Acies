@@ -36,19 +36,19 @@ function Home() {
     }, [])
 
     return (
-        <>
-        {!completed ? (
-               <Loading></Loading>
-        ) : (
+        // <>
+        // {!completed ? (
+        //        <Loading></Loading>
+        // ) : (
             <>
             <Nav posi="fixed" />
             <ScrollY.Provider value={offsetY}>
                 <HContent />
             </ScrollY.Provider>
             <Footer /></>
-        )}
+        // )}
           
-        </>
+        // </>
     );
 }
 
