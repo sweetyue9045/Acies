@@ -19,9 +19,10 @@ export default function Enter() {
     }
     else {
         gifstyle.top = offsetY * 0.3 + "px";
-        arrowstyle.top = "calc(87vh + "+offsetY * 0.3 + "px)";
+        arrowstyle.top = "calc(87vh + " + offsetY * 2 + "px)";
     }
-
+    if (offsetY > 600) arrowstyle.display = "none";
+    else arrowstyle.display = "block";
     const defaultOptions = {
         loop: true,
         autoplay: true,
