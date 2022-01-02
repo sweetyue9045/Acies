@@ -31,7 +31,7 @@ function App() {
     };
     useEffect(() => {
         setDone(true);
-
+        setcompleted(true);
         setTimeout(() => {
             setcompleted(true);
         }, 3000);
@@ -50,10 +50,10 @@ function App() {
         fetchMessages()
     }, []);
     return (
-        <>
-            {!completed ? (
-                <Loading></Loading>
-            ) : (
+        // <>
+        //     {!completed ? (
+        //         <Loading></Loading>
+        //     ) : (
                 <StoreProvider>
                     <BrowserRouter>
                         <ScrollToTop />
@@ -70,9 +70,9 @@ function App() {
                         </Switch>
                     </BrowserRouter>
                 </StoreProvider>
-            )}
+        //     )}
 
-        </>
+        // </>
     );
 }
 export default App;
