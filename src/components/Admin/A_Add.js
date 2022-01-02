@@ -8,7 +8,7 @@ import axios from "axios";
 import { useState, useContext } from "react";
 import { StoreContext } from "../../store";
 
-const URL = "https://test-1129.herokuapp.com/api/v1/article";
+const URL = "http://acies-api.herokuapp.com/api/v1/article";
 
 export default function Add() {
     const { state: { userSignin: { userInfo } } } = useContext(StoreContext);
@@ -76,14 +76,6 @@ export default function Add() {
                 data: formData,
                 headers: { "Content-Type": "multipart/form-data" },
             })
-                .then(function (response) {
-                    //handle success
-                    console.log(response);
-                })
-                .catch(function (response) {
-                    //handle error
-                    console.log(response);
-                });
             fetch(`${URL}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -140,9 +132,11 @@ export default function Add() {
                         <label className="categorytext" htmlFor="category_03">#企劃</label>
                     </div>
                     {loading ?
-                        <input type="button" value="loading" className="sub_btn sub_btn_loading" disabled />
+                        <div className="sub_btn sub_btn_loading">
+                            <div className="loader"></div>
+                        </div>
                         :
-                        <input type="button" value="儲存" className="sub_btn" onClick={() => { handlePostMessage(); }} />
+                        <div className="sub_btn" onClick={() => { handlePostMessage(); }}>儲存</div>
                     }
                 </div>
             </form>
