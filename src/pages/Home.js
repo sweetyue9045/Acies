@@ -1,7 +1,6 @@
 import Nav from "../components/Nav";
 import HContent from "../components/HContent";
 import Footer from "../components/Footer";
-import Lottie from "react-lottie";
 import animationData from "../assets/lotties/loading.json";
 import Loading from "../components/Loading";
 
@@ -32,24 +31,24 @@ function Home() {
 
         setTimeout(() => {
             setcompleted(true);
-        },2500);
+        },3000);
         
     }, [])
 
     return (
-        <>
-        {!completed ? (
-               <Loading></Loading>
-        ) : (
+        // <>
+        // {!completed ? (
+        //        <Loading></Loading>
+        // ) : (
             <>
             <Nav posi="fixed" />
             <ScrollY.Provider value={offsetY}>
                 <HContent />
             </ScrollY.Provider>
             <Footer /></>
-        )}
+        // )}
           
-        </>
+        // </>
     );
 }
 

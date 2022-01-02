@@ -132,7 +132,7 @@ export default function Dev() {
                     <div className="top_content">
                         <div className="content_title">{dev.title}</div>
                         <div className="content_text">{dev.content}</div>
-                        <Link to={`/article/${dev.id}`} className="top_link">READ MORE</Link>
+                        <Link to={`/board/${dev.id}`} className="top_link">READ MORE</Link>
                     </div>
                     <img src={DEV_RIGHT} alt="DEV_RIGHT" />
                 </div>
@@ -140,7 +140,7 @@ export default function Dev() {
             {Dev.map((dev, index) => (
                 <div key={index} className={tab === index ? "dev_box showbox" : "dev_box"}>
                     {Devs_page.map(devs => (
-                        <Link to={`/article/${devs.id}`} key={devs.id} className="content_box" style={{ background: "url(https://test-1129.herokuapp.com/api/v1/article/file/" + devs.img + ") no-repeat center top",borderRadius: "10px" }}>
+                        <Link to={`/board/${devs.id}`} key={devs.id} className="content_box" style={{ background: "url(https://test-1129.herokuapp.com/api/v1/article/file/" + devs.img + ") no-repeat center top",borderRadius: "10px" }}>
                             <div className="mask"></div>
                             <div className="content">
                                 <div className="content_title">{devs.title}</div>
