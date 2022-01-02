@@ -74,6 +74,7 @@ function App() {
                     timesToShow={3}
                     copyClosePrompt="Close"
                     permanentlyHideOnDismiss={false}
+                    debug={true}
                 />
             </StoreProvider>
             {!completed ? (
