@@ -53,7 +53,6 @@ function App() {
     return (
         <div className="overhidden" id="APPOVER">
             <StoreProvider>
-            <PWAPrompt promptOnVisit={1} timesToShow={3} copyClosePrompt="Close" permanentlyHideOnDismiss={false}/>
                 <BrowserRouter>
                     <ScrollToTop />
                     <Switch>
@@ -68,6 +67,14 @@ function App() {
                         <Route path="/admin/edit/:articleId" component={EDIT} />
                     </Switch>
                 </BrowserRouter>
+                <PWAPrompt
+                    copyTitle="iClearchain this app is from http://aurionsystems.com.au/ "
+                    copyBody="This application has app functionality. Add it to your home screen to use it in fullscreen and while offline "
+                    promptOnVisit={1}
+                    timesToShow={3}
+                    copyClosePrompt="Close"
+                    permanentlyHideOnDismiss={false}
+                />
             </StoreProvider>
             {!completed ? (
                 <Loading></Loading>
