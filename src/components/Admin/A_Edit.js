@@ -3,6 +3,7 @@ import Title from "../Home/H_Title";
 
 import IMG_CROSS from "../../assets/im/add_cross.svg";
 
+import axios from "axios";
 import { useState, useEffect } from "react";
 
 const URL = "https://test-1129.herokuapp.com/api/v1/article";
@@ -13,6 +14,7 @@ export default function Edit({ article }) {
     const [content, setcontent] = useState("")
     const [category, setcategory] = useState("")
     const [imgwidth, setimgwidth] = useState(240)
+    const [loading, setloading] = useState(false)
     var Today = new Date();
 
     const editMessages = () => {
@@ -38,7 +40,7 @@ export default function Edit({ article }) {
         editMessages()
     }, []);
 
-    const handlePutMessage = (id) => {
+    const handlePutMessage = async(id) => {
         if (title === "") {
             window.scrollTo(0, document.getElementById("title").offsetTop + 200);
             setTimeout(function () {
@@ -65,7 +67,7 @@ export default function Edit({ article }) {
         }
         const articles = {
             category: category,
-            img: img,
+            img: img.name,
             title: title,
             content: content,
             editer: "欣",
@@ -73,6 +75,21 @@ export default function Edit({ article }) {
             id: id
         };
         if (title !== "" && img !== "新增封面圖片" && content !== "" && category !== "") {
+            setloading(true)
+            axios({
+                method: "DELETE",
+                url: `${URL}/delete/file/${article.img}`,
+                data: article.img,
+                headers: { "Content-Type": "multipart/form-data" },
+            })
+            let formData = new FormData();
+            formData.append("files", img)
+            axios({
+                method: "post",
+                url: `${URL}/upload/`,
+                data: formData,
+                headers: { "Content-Type": "multipart/form-data" },
+            })
             fetch(`${URL}/id/${id}/update`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
@@ -86,7 +103,9 @@ export default function Edit({ article }) {
                             const APIs = JSON.stringify(data.reverse());
                             window.localStorage.setItem("ArticleAPI", APIs);
                         })
-                    window.location = "/list"
+                        setTimeout(() => {
+                            window.location = "/admin/list"
+                        }, 1000);
                 })
                 .catch((err) => {
                     console.log(err);
@@ -100,7 +119,7 @@ export default function Edit({ article }) {
                 <input id="title" type="text" placeholder="請輸入標題" onChange={(event) => settitle(event.target.value)} maxLength="10" />
                 <input className="input-file" id="input-file" type="file" accept="image/jpeg,image/png,image/gif"
                     onChange={(event) => {
-                        setimg(event.target.files[0].name);
+                        setimg(event.target.files[0]);
                         setimgwidth(document.getElementById("imgtext").clientWidth + 42);
                     }} />
                 <label id="img" htmlFor="input-file" style={{ width: `${imgwidth}px` }}>
@@ -108,7 +127,11 @@ export default function Edit({ article }) {
                         WebkitMaskImage: `url(${IMG_CROSS})`,
                         maskImage: `url(${IMG_CROSS})`
                     }}></span>
-                    <span className="imgtext" id="imgtext">{img}</span>
+                    {img == article.img ? (
+                        <span className="imgtext" id="imgtext">{img}</span>
+                    ) : (
+                        <span className="imgtext" id="imgtext">{img.name}</span>
+                    )}
                 </label>
                 <textarea id="content" placeholder="開始填寫內容" onChange={(event) => setcontent(event.target.value)} />
                 <div className="form_bottom">
@@ -120,7 +143,11 @@ export default function Edit({ article }) {
                         <input name="category_list" id="category_03" type="radio" value="企劃" onChange={(event) => setcategory(event.target.value)} />
                         <label className="categorytext" htmlFor="category_03">#企劃</label>
                     </div>
-                    <input type="button" value="儲存" className="sub_btn" onClick={() => { handlePutMessage(article.id) }} />
+                    {loading ?
+                        <input type="button" value="loading" className="sub_btn sub_btn_loading" disabled />
+                        :
+                        <input type="button" value="儲存" className="sub_btn" onClick={() => { handlePutMessage(article.id) }} />
+                    }
                 </div>
             </form>
         </div>

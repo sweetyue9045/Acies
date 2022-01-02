@@ -276,6 +276,11 @@
     background-color: #fff;
 }
 
+.btn_loading{
+    background-color: #474747;
+    cursor: default;
+}
+
 /* add */
 
 .Add, .Edit {
@@ -400,6 +405,15 @@ input[type=file] {
 
 .sub_btn:hover {
     background-color: #BFBFBF;
+}
+
+.sub_btn_loading{
+    background-color: #474747;
+    color: #000;
+    cursor: default;
+}
+.sub_btn_loading:hover{
+    background-color: #474747;
 }
 
 @media only screen and (min-width: 0px) and (max-width: 834px) {

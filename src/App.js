@@ -28,21 +28,20 @@ function App() {
     useEffect(() => {
         fetchMessages()
     }, []);
-
     return (
         <StoreProvider>
             <BrowserRouter>
                 <ScrollToTop />
                 <Switch>
                     <Route exact path="/" component={HOME} />
-                    <Route path="/board" component={BOARD} />
-                    <Route path="/article/:articleId" component={ARTICLE} />
+                    <Route exact path="/board" component={BOARD} />
+                    <Route path="/board/:articleId" component={ARTICLE} />
                     <Route path="/game" component={GAME} />
                     <Route path="/team" component={TEAM} />
-                    <Route path="/admin" component={LOGIN} />
-                    <Route path="/list" component={LIST} />
-                    <Route path="/add" component={ADD} />
-                    <Route path="/edit/:articleId" component={EDIT} />
+                    <Route exact path="/admin" component={LOGIN} />
+                    <Route path="/admin/list" component={LIST} />
+                    <Route path="/admin/add" component={ADD} />
+                    <Route path="/admin/edit/:articleId" component={EDIT} />
                 </Switch>
             </BrowserRouter>
         </StoreProvider>

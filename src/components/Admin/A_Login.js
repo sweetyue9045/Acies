@@ -24,14 +24,14 @@ export default function Login({ redirect }) {
     const onFinish = async (e) => {
         e.preventDefault();
         auth = await login(dispatch, userLogin);
-        auth && history.push("/list");
+        auth && history.push("/admin/list");
     };
 
     const checkoutHandler = () => {
         if (userInfo == null) {
         }
         else {
-            history.push("/list")
+            history.push("/admin/list")
         }
     }
     const userLogin = {

@@ -4,6 +4,7 @@ import Title from "../Home/H_Title";
 import IMG_PLUS from "../../assets/im/add_plus.svg";
 import IMG_CROSS from "../../assets/im/add_cross.svg";
 
+import axios from "axios";
 import { useState, useContext } from "react";
 import { StoreContext } from "../../store";
 
@@ -16,13 +17,14 @@ export default function Add() {
     const [imgwidth, setimgwidth] = useState(240);
     const [content, setcontent] = useState("");
     const [category, setcategory] = useState("");
+    const [loading, setloading] = useState(false)
     const style = {};
     var Today = new Date();
 
     if (img === "新增封面圖片") style.WebkitMaskImage = style.maskImage = `url(${IMG_PLUS})`;
     else style.WebkitMaskImage = style.maskImage = `url(${IMG_CROSS})`;
 
-    const handlePostMessage = () => {
+    const handlePostMessage = async () => {
         if (title === "") {
             window.scrollTo(0, document.getElementById("title").offsetTop + 200);
             setTimeout(function () {
@@ -50,7 +52,7 @@ export default function Add() {
 
         const articles = {
             category: category,
-            img: "im/" + img,
+            img: img.name,
             title: title,
             content: content,
             writer:
@@ -65,6 +67,23 @@ export default function Add() {
         };
 
         if (title !== "" && img !== "新增封面圖片" && content !== "" && category !== "") {
+            setloading(true)
+            let formData = new FormData();
+            formData.append("files", img)
+            axios({
+                method: "post",
+                url: `${URL}/upload/`,
+                data: formData,
+                headers: { "Content-Type": "multipart/form-data" },
+            })
+                .then(function (response) {
+                    //handle success
+                    console.log(response);
+                })
+                .catch(function (response) {
+                    //handle error
+                    console.log(response);
+                });
             fetch(`${URL}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -78,8 +97,13 @@ export default function Add() {
                             const APIs = JSON.stringify(data.reverse());
                             window.localStorage.setItem("ArticleAPI", APIs);
                         })
-                    window.location = "/list"
+                    setTimeout(() => {
+                        window.location = "/admin/list"
+                    }, 1000);
                 })
+                .catch((err) => {
+                    console.log(err);
+                });
         }
     }
 
@@ -91,14 +115,19 @@ export default function Add() {
 
                 <input className="input-file" id="input-file" type="file" accept="image/jpeg,image/png,image/gif"
                     onChange={(event) => {
-                        setimg(event.target.files[0].name);
+                        setimg(event.target.files[0]);
                         setTimeout(function () {
                             setimgwidth(document.getElementById("imgtext").clientWidth + 42);
                         }, 200);
+                        console.log(event.target.files)
                     }} required />
                 <label id="img" htmlFor="input-file" style={{ width: `${imgwidth}px` }}>
                     <span className="imgsvg" style={style}></span>
-                    <span className="imgtext" id="imgtext">{img}</span>
+                    {img == "新增封面圖片" ? (
+                        <span className="imgtext" id="imgtext">{img}</span>
+                    ) : (
+                        <span className="imgtext" id="imgtext">{img.name}</span>
+                    )}
                 </label>
                 <textarea id="content" placeholder="開始填寫內容" onChange={(event) => setcontent(event.target.value)} required />
                 <div className="form_bottom" id="form_bottom">
@@ -110,7 +139,11 @@ export default function Add() {
                         <input name="category_list" id="category_03" type="radio" value="企劃" onChange={(event) => setcategory(event.target.value)} />
                         <label className="categorytext" htmlFor="category_03">#企劃</label>
                     </div>
-                    <input type="button" value="儲存" className="sub_btn" onClick={() => { handlePostMessage(); }} />
+                    {loading ?
+                        <input type="button" value="loading" className="sub_btn sub_btn_loading" disabled />
+                        :
+                        <input type="button" value="儲存" className="sub_btn" onClick={() => { handlePostMessage(); }} />
+                    }
                 </div>
             </form>
         </div>
