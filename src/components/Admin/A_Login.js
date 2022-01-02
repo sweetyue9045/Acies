@@ -20,7 +20,6 @@ export default function Login({ redirect }) {
         checkoutHandler();
     }, [])
 
-
     const onFinish = async (e) => {
         e.preventDefault();
         auth = await login(dispatch, userLogin);

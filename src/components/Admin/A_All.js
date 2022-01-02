@@ -2,7 +2,7 @@ import "../AContent.css";
 
 import { Link } from "react-router-dom";
 
-const URL = "https://test-1129.herokuapp.com/api/v1/article";
+const URL = "http://acies-api.herokuapp.com/api/v1/article";
 
 export default function All({ del , publish}) {
     const APIs = JSON.parse(window.localStorage.getItem("ArticleAPI"))

@@ -15,7 +15,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { StoreProvider } from "./store";
 
-const URL = "https://test-1129.herokuapp.com/api/v1/article";
+const URL = "https://acies-api.herokuapp.com/api/v1/article";
 
 function App() {
     const [done, setDone] = useState(undefined);

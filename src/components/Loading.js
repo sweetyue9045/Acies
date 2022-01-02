@@ -6,10 +6,6 @@ import { useState } from "react";
 
 export default function Loading(){
     const [speed, setspeed] = useState(1);
-    const sequence = {
-        segments: [5, 0],
-        forceFlag: true
-      }
 
     const defaultOptions = {
         loop:true,
