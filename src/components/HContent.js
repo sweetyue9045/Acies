@@ -2,7 +2,7 @@ import "./HContent.css";
 import Enter from "./Home/H_Enter";
 import Feature from "./Home/H_Feature";
 import Story from "./Home/H_Story";
-import Tobbi from "./Home/H_Tobbi";
+import Tobii from "./Home/H_Tobii";
 import Magic from "./Home/H_Magic";
 import Ordeal from "./Home/H_Ordeal";
 import Crisis from "./Home/H_Crisis";
@@ -19,7 +19,7 @@ export default function HContent() {
         h_top = [
             document.getElementById("feature").offsetTop + 1305,
             document.getElementById("story").offsetTop + 1305,
-            document.getElementById("tobbi").offsetTop + 1305,
+            document.getElementById("tobii").offsetTop + 1305,
             document.getElementById("magic").offsetTop + 1305,
             document.getElementById("ordeal").offsetTop + 1305,
             document.getElementById("crisis").offsetTop + 1305,
@@ -82,12 +82,12 @@ export default function HContent() {
         else if (offsetY >= h_top[2] - 300 && offsetY <= h_top[2] + 10) {
             setTimeout(function () {
                 for (let i = 0; i < 2; i++) {
-                    document.getElementById("tobbi").children[i].classList.add("fadein");
+                    document.getElementById("tobii").children[i].classList.add("fadein");
                 }
             }, 100);
             for (let i = 2; i < 4; i++) {
                 setTimeout(function () {
-                    document.getElementById("tobbi").children[i].classList.add("fadein");
+                    document.getElementById("tobii").children[i].classList.add("fadein");
                 }, 100 + (i - 1) * 500);
             }
         }
@@ -118,7 +118,7 @@ export default function HContent() {
             <Enter />
             <Feature />
             <Story />
-            <Tobbi />
+            <Tobii />
             <Magic />
             <Ordeal />
             <Crisis />

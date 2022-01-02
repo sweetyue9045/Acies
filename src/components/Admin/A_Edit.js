@@ -81,24 +81,25 @@ export default function Edit({ article }) {
             edit_time: Today.getFullYear() + "." + (Today.getMonth() + 1) + "." + Today.getDate(),
             id: id
         };
-        console.log(img,article.img,articles)
+        console.log(img, article.img, articles)
         if (title !== "" && img !== "新增封面圖片" && content !== "" && category !== "") {
             setloading(true)
-            
-            axios({
-                method: "DELETE",
-                url: `${URL}/delete/file/${article.img}`,
-                data: article.img,
-                headers: { "Content-Type": "application/json" },
-            })
-            let formData = new FormData();
-            formData.append("files", img)
-            axios({
-                method: "post",
-                url: `${URL}/upload/`,
-                data: formData,
-                headers: { "Content-Type": "multipart/form-data" },
-            })
+            if (img != article.img) {
+                axios({
+                    method: "DELETE",
+                    url: `${URL}/delete/file/${article.img}`,
+                    data: article.img,
+                    headers: { "Content-Type": "application/json" },
+                })
+                let formData = new FormData();
+                formData.append("files", img)
+                axios({
+                    method: "post",
+                    url: `${URL}/upload/`,
+                    data: formData,
+                    headers: { "Content-Type": "multipart/form-data" },
+                })
+            }
             fetch(`${URL}/id/${id}/update`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },

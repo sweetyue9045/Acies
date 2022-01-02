@@ -220,9 +220,9 @@ body {
     background-color: white;
 }
 
-/* tobbi */
+/* tobii */
 
-.tobbi {
+.tobii {
     min-height: 53.47vw;
     display: flex;
     flex-direction: column;
@@ -230,7 +230,7 @@ body {
     justify-content: center;
 }
 
-.tobbi .content {
+.tobii .content {
     font-size: var(--fz28);
     letter-spacing: 5px;
     margin-right: -3px;
@@ -239,18 +239,18 @@ body {
     opacity: 0;
 }
 
-.tobbi img {
+.tobii img {
     margin: 7.64vw 0 8.84vw;
     filter: drop-shadow(0 0 5px #FFFEF3);
     opacity: 0;
     width: 11.81vw;
 }
 
-.tobbi_link {
+.tobii_link {
     opacity: 0;
 }
 
-.tobbi_link a {
+.tobii_link a {
     font-size: var(--fz28);
     letter-spacing: 8px;
     border: #fff 2px solid;
@@ -261,7 +261,7 @@ body {
     filter: drop-shadow(0 0 5px #FFFEF3);
 }
 
-.tobbi_link a:hover {
+.tobii_link a:hover {
     color: #000;
     background-color: #fff;
 }
@@ -615,7 +615,7 @@ body {
         display: none;
     }
 
-    .tobbi {
+    .tobii {
         min-height: 82.13vw;
     }
 
@@ -640,7 +640,7 @@ body {
         font-size: 25px;
     }
 
-    .feature img, .feature .content, .story .text .title, .story img, .story .t_content, .tobbi .content, .tobbi img, .tobbi_link, .Home .introduce .title, .magic_sis, .Home .i_content, .ordeal .left_img, .crisis_bear, .award, .sale .year, .sale .date, .sale .saleform, .sale .platform {
+    .feature img, .feature .content, .story .text .title, .story img, .story .t_content, .tobii .content, .tobii img, .tobii_link, .Home .introduce .title, .magic_sis, .Home .i_content, .ordeal .left_img, .crisis_bear, .award, .sale .year, .sale .date, .sale .saleform, .sale .platform {
         opacity: 1;
     }
 }
