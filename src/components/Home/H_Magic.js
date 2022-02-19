@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function Magic() {
     const [num, setnum] = useState(0);
-    const [skill, setskill] = useState("物體移動");
+    const [skill, setskill] = useState("凝聚之光");
 
     return (
         <div className="magic" id="magic">
@@ -16,11 +16,11 @@ export default function Magic() {
                 <div className="introduce">
                     <Title Title="姐妹一起，透過專注力" />
                     <Title Title="來施展魔法" />
-                    <video controls style={{ width: `49.79vw`,maxWidth:`716px`, display: num ? "none" : "block", marginTop: `20px` }}>
+                    <video controls style={{ width: `49.79vw`, maxWidth: `716px`, display: num ? "none" : "block", marginTop: `20px` }}>
                         <source src={MAGIC_X} type="video/mp4" />
                         您的瀏覽器不支援此 HTML5 影片標籤
                     </video>
-                    <video controls style={{ width: `49.79vw`,maxWidth:`716px`, display: num ? "block" : "none", marginTop: `20px` }}>
+                    <video controls style={{ width: `49.79vw`, maxWidth: `716px`, display: num ? "block" : "none", marginTop: `20px` }}>
                         <source src={MAGIC_Y} type="video/mp4" />
                         您的瀏覽器不支援此 HTML5 影片標籤
                     </video>
@@ -30,8 +30,8 @@ export default function Magic() {
                             <div className="text">{skill}</div>
                         </div>
                         <div className="right">
-                            <div className="r_prev" onClick={() => { setnum(0); setskill("凝聚之光"); }} style={{ backgroundColor: num ? "" : "rgba(255, 255, 255, 0.35)",animation: num ? "clickme 2s linear infinite" : "" }}></div>
-                            <div className="r_next" onClick={() => { setnum(1); setskill("物體移動"); }} style={{ backgroundColor: num ? "rgba(255, 255, 255, 0.35)" : "",animation: num ? "" : "clickme 2s linear infinite" }}></div>
+                            <div className="r_prev" onClick={() => { setnum(0); setskill("凝聚之光"); }} style={{ backgroundColor: num ? "" : "rgba(255, 255, 255, 0.35)", animation: num ? "clickme 2s linear infinite" : "", cursor: num ? "pointer" : "" }}></div>
+                            <div className="r_next" onClick={() => { setnum(1); setskill("物體移動"); }} style={{ backgroundColor: num ? "rgba(255, 255, 255, 0.35)" : "", animation: num ? "" : "clickme 2s linear infinite", cursor: num ? "" : "pointer" }}></div>
                         </div>
                     </div>
                 </div>
