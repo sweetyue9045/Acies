@@ -293,8 +293,10 @@ body {
 }
 
 .block {
-    width: 49.79vw;
+    width: 49.72vw;
     max-width: 716px;
+    height: 27.96vw;
+    max-height: 402.75px;
     margin-top: 20px;
     background-color: #000;
     z-index: 2;

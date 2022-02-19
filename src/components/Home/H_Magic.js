@@ -19,14 +19,14 @@ export default function Magic() {
                     <Title Title="姐妹一起，透過專注力" />
                     <Title Title="來施展魔法" />
                     <div className="block">
-                        <video controls style={{ width: `100%`, display: num ? "none" : "block" }}>
+                        {/* <video controls style={{ width: `100%`, display: num ? "none" : "block" }}>
                             <source src={MAGIC_X} type="video/mp4" />
                             您的瀏覽器不支援此 HTML5 影片標籤
                         </video>
                         <video controls style={{ width: `100%`, display: num ? "block" : "none" }}>
                             <source src={MAGIC_Y} type="video/mp4" />
                             您的瀏覽器不支援此 HTML5 影片標籤
-                        </video>
+                        </video> */}
                     </div>
 
                     <div className="block_title">
