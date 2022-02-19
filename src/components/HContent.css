@@ -332,7 +332,7 @@ body {
     width: 30px;
     height: 30px;
     mask-image: url("../assets/im/magic_prev.svg");
-    -webkit-mask-image: url("../assets/im/magic_prev.svg");
+    -webkit-mask-box-image: url("../assets/im/magic_prev.svg");
     margin-right: 2.22vw;
 }
 
@@ -340,7 +340,7 @@ body {
     width: 30px;
     height: 30px;
     mask-image: url("../assets/im/magic_next.svg");
-    -webkit-mask-image: url("../assets/im/magic_next.svg");
+    -webkit-mask-box-image: url("../assets/im/magic_next.svg");
 }
 
 .magic_sis {
