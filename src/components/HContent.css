@@ -299,7 +299,7 @@ body {
 }
 
 .magic video{
-    z-index: 100;
+    z-index: 2;
 }
 
 .magic .left, .magic .right {
@@ -311,6 +311,7 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-top: 2%;
+    z-index: 1;
 }
 
 .magic .num {
