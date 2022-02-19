@@ -296,6 +296,7 @@ body {
     width: 49.79vw;
     max-width: 716px;
     margin-top: 20px;
+    background-color: #000;
     z-index: 2;
 }
 
