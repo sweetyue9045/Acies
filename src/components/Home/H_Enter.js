@@ -15,11 +15,11 @@ export default function Enter() {
     const arrowstyle = {}
     if (document.body.clientWidth <= 834) {
         gifstyle.top = 0;
-        arrowstyle.top = "87vh";
+        arrowstyle.top = "80vh";
     }
     else {
         gifstyle.top = offsetY * 0.3 + "px";
-        arrowstyle.top = "calc(87vh + " + offsetY * 2 + "px)";
+        arrowstyle.top = "calc(80vh + " + offsetY * 1.5 + "px)";
     }
     if (offsetY > 600) arrowstyle.display = "none";
     else arrowstyle.display = "block";
