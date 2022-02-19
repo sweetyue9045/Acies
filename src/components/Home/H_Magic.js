@@ -3,6 +3,8 @@ import Title from "./H_Title";
 import MAGIC_SIS from "../../assets/im/magic_sis.png";
 import MAGIC_X from "../../assets/im/magic_X_btn.mp4";
 import MAGIC_Y from "../../assets/im/magic_Y_btn.mp4";
+import MAGIC_PREV from "../../assets/im/magic_prev.svg";
+import MAGIC_NEXT from "../../assets/im/magic_next.svg";
 
 import { useState } from "react";
 
@@ -30,8 +32,12 @@ export default function Magic() {
                             <div className="text">{skill}</div>
                         </div>
                         <div className="right">
-                            <div className="r_prev" onClick={() => { setnum(0); setskill("凝聚之光"); }} style={{ backgroundColor: num ? "" : "rgba(255, 255, 255, 0.35)", animation: num ? "clickme 2s linear infinite" : "", cursor: num ? "pointer" : "" }}></div>
-                            <div className="r_next" onClick={() => { setnum(1); setskill("物體移動"); }} style={{ backgroundColor: num ? "rgba(255, 255, 255, 0.35)" : "", animation: num ? "" : "clickme 2s linear infinite", cursor: num ? "" : "pointer" }}></div>
+                            <div className="r_prev" onClick={() => { setnum(0); setskill("凝聚之光"); }} style={{  cursor: num ? "pointer" : "" }}>
+                                <img src={MAGIC_PREV} alt="MAGIC_PREV" style={{ filter: num ? "" : "drop-shadow(rgba(255, 255, 255, 0.35) 0 100px)", animation: num ? "clickme 2s linear infinite" : ""}}/>
+                            </div>
+                            <div className="r_next" onClick={() => { setnum(1); setskill("物體移動"); }} style={{  cursor: num ? "" : "pointer" }}>
+                                <img src={MAGIC_NEXT} alt="MAGIC_NEXT" style={{ filter: num ? "drop-shadow(rgba(255, 255, 255, 0.35) 0 100px)" : "", animation: num ? "" : "clickme 2s linear infinite"}}/>
+                            </div>
                         </div>
                     </div>
                 </div>
