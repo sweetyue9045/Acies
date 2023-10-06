@@ -11,6 +11,7 @@ let PAGE_NEXT;
 export default function Dev() {
     const mytab = ["ALL", "程式", "美術", "企劃"];
     const APIs = JSON.parse(window.localStorage.getItem("ArticleAPI"));
+    console.log(APIs)
     const [tab, settab] = useState(0);
     const [page, setpage] = useState(1);
     const Devs = [];
