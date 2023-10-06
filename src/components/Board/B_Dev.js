@@ -11,7 +11,6 @@ let PAGE_NEXT;
 export default function Dev() {
     const mytab = ["ALL", "程式", "美術", "企劃"];
     const APIs = JSON.parse(window.localStorage.getItem("ArticleAPI"));
-    console.log(JSON.parse(window.localStorage.getItem("ArticleAPI")))
     const [tab, settab] = useState(0);
     const [page, setpage] = useState(1);
     const Devs = [];
@@ -22,7 +21,8 @@ export default function Dev() {
     if (document.body.clientWidth <= 834) scrollnum = 600;
     else scrollnum = 800;
     useEffect(() => {
-        console.log("成功加載")
+        console.log("成功加載1")
+        console.log(JSON.parse(window.localStorage.getItem("ArticleAPI")))
         PAGE_NEXT = document.getElementById("page_next");
     }, []);
 
