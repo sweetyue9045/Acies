@@ -9,4 +9,4 @@
 
 API使用"Heroku"佈署，現在已經無法使用，網站內API相關內容部分無法顯示。
 ### RWD
-有電腦PC與PAD版。
+PC、PAD
