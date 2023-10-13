@@ -1,5 +1,5 @@
 # Acies 雙生之旅ㅣ官方網站
->網站連接：[Acies 雙生之旅ㅣ官方網站]([https://acies-s.vercel.app/](https://acies-ten.vercel.app/))
+>網站連接：[Acies 雙生之旅ㅣ官方網站](https://acies-ten.vercel.app/)
 >
 ## 介紹
 >此網站以朋友畢業專題為主題設計，其他遊戲介紹可見[新一代設計展-線上展覽](https://flipermag.com/artwork/acies-%E9%9B%99%E7%94%9F%E4%B9%8B%E6%97%85/).
